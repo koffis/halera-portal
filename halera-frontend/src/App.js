@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.css'
+import Navbar from "./Components/Navbar/Navbar";
+import {Route} from "react-router-dom";
+import MainPage from "./Components/MainPage/MainPage";
+import Test from "./Components/TestPage/Test";
+import Profile from "./Components/Profile/Profile";
+import ProjectHome from "./Components/Home/ProjectHome";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = (props) => {
+    return (
+            <div className={s.app_wrapper}>
+                <Navbar />
+                <div className={s.content}>
+                    <Route path='/mainPage' render={()=> <MainPage/>}/>
+                    <Route path='/test' render={()=> <Test/>}/>
+                    <Route path='/profile' render={()=> <Profile/>}/>
+                    <Route path='/home' render={()=> <ProjectHome/>}/>
+                </div>
+            </div>
+    )
+};
 
 export default App;
