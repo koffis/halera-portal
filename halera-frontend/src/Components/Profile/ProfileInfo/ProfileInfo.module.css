@@ -1,0 +1,77 @@
+.ProfileInfo_wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 240px 200px 1fr;
+
+}
+
+.avatarZone {
+    grid-area: 1/1/1/1;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+
+}
+
+.infoZone {
+    grid-area: 1/2/1/2;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+    margin-left: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.profileImage img {
+    width: 200px;
+}
+
+.addFriend button {
+    width: 165px;
+    height: 35px;
+}
+
+.addFriend img {
+    width: 35px
+}
+
+.addFriend {
+    display: flex;
+
+}
+
+.profileInfo{
+    grid-column-start: 1;
+    padding: 15px;
+}
+
+.ratePlace{
+    grid-column-start: 2;
+}
+
+.ratePlace img{
+    width : 160px;
+    padding: 25px;
+}
+
+.QRCodePlace{
+    grid-column-start: 3;
+}
+
+.QRCodePlace img{
+    width: 230px;
+    margin-left: 15px;
+}
+
+.projectsPlace{
+    display: flex;
+    justify-content: space-around;
+    grid-area: 2/1/2/3;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+}
+
+.projectsPlace img{
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
+}

@@ -3,7 +3,7 @@
     grid-template-areas: 'nav'
                          'con';
 
-    grid-template-rows: 100px 1fr ;
+    grid-template-rows: 63px 1fr ;
     grid-template-columns: 12fr;
 }
 

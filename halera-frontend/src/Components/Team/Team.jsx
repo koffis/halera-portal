@@ -1,7 +1,7 @@
 import React from "react";
-import s from  './ProjectHome.module.css';
+import s from './Team.module.css';
 
-const ProjectHome = (props) =>{
+const Team = (props) =>{
     return(
         <div>
             <h1>Here will be your team</h1>
@@ -9,4 +9,4 @@ const ProjectHome = (props) =>{
     )
 };
 
-export default ProjectHome;
+export default Team;
