@@ -1,0 +1,22 @@
+.navbarPlace{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: nav;
+    background-color: cyan;
+}
+
+.item a{
+    color: black;
+    text-decoration: none;
+}
+
+.item a.activeLink{
+    color: #8000ff;
+}
+
+
+
+.item img{
+    width: 180px
+}

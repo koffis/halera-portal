@@ -1,0 +1,14 @@
+.app_wrapper{
+    display: grid;
+    grid-template-areas: 'nav'
+                         'con';
+
+    grid-template-rows: 63px 1fr ;
+    grid-template-columns: 12fr;
+}
+
+.content{
+    grid-area: con;
+    background-color: aquamarine;
+}
+
