@@ -1,0 +1,30 @@
+.projects{
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.projectsPlace{
+    display: flex;
+    justify-content: space-around;
+    grid-row-start: 1;
+}
+
+.projectsPlace img{
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
+}
+
+.projectsSpace{
+    display: grid;
+    grid-template-rows: 1fr 60px;
+}
+
+.projectsNames{
+    grid-row-start: 2;
+    display: flex;
+    justify-content: space-around;
+}
