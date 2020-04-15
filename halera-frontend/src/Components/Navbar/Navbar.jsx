@@ -1,28 +1,38 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import logo from './Images/logo.svg'
-import s from './Navbar.module.scss'
+/*import logo from './Images/logo.svg'*/
+import './Navbar.scss'
+import 'bootstrap'
+import $ from 'jquery'
 
 const Navbar = (props) => {
     return (
-        <div className={s.navbarPlace}>
-            <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/mainPage'><img alt='logo' src={logo}/></NavLink>
-            </div >
-            <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/profile'>Profile</NavLink>
-            </div >
-            <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/team'>Team</NavLink>
+        <nav className="nav">
+            <div className="container">
+                <div className="logo">
+                    <NavLink to='/'>Home</NavLink>
+                </div>
+                <div id="mainListDiv" className="main_list">
+                    <ul className="navlinks">
+                        <li><NavLink activeClassName="activeLink" to='/profile'>Profile</NavLink></li>
+                        <li><NavLink activeClassName="activeLink" to='/team'>Team</NavLink></li>
+                        <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
+                        <li><NavLink activeClassName="activeLink" to='/logIn'>Log in</NavLink></li>
+                    </ul>
+                </div>
+                <span className="navTrigger">
+            </span>
             </div>
-            <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/search'>Search</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/logIn'>Log in</NavLink>
-            </div>
-        </div>
+        </nav>
     )
 };
 
+$(window).scroll(function() {
+    if ($(document).scrollTop() > 40) {
+        $('.nav').addClass('affix');
+        console.log("OK");
+    } else {
+        $('.nav').removeClass('affix');
+    }
+});
 export default Navbar;

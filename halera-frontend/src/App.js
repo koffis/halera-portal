@@ -23,13 +23,13 @@ import Registration from "./Components/LogIn-Registration/Registration/Registrat
 
 const App = (props) => {
     if (isMobile){
-        return <div className={s.textmobile}>USE COMPUTKER DALBAYOB</div>
+        return <div className={s.textmobile}>Enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus</div>
     }
     return (
             <div className={s.app_wrapper}>
                 <Navbar />
                 <div className={s.content}>
-                    <Route path='/mainPage' render={()=> <MainPage/>}/>
+                    <Route exact path='/' render={()=> <MainPage/>}/>
                     <Route path='/test' render={()=> <Test/>}/>
                     <Route path='/profile' render={()=> <Profile/>}/>
                     <Route path='/team' render={()=> <Team/>}/>

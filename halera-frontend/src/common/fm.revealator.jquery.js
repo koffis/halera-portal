@@ -97,7 +97,7 @@ $(function () {
 			}
 
 			if (!$element.hasClass(position_class) && !$element.hasClass('revealator_load')) {
-				if ($element.hasClass('revealator_once')) {
+				if ($element.hasClass('revealatoronce')) {
 					if (!$element.hasClass('revealator_within')) {
 						$element.removeClass('revealator_below revealator_partially_below revealator_within revealator_partially_above revealator_above');
 						$element.addClass(position_class);
@@ -113,7 +113,7 @@ $(function () {
 		});
 	};
 
-	$(window).bind('scroll resize load ready', function () {
+	$(window).bind('scroll resize load ready click', function () {
 		if (!Revealator.busy) {
 			Revealator.busy = true;
 			setTimeout(function () {
