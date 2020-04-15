@@ -7,7 +7,7 @@ const Navbar = (props) => {
     return (
         <div className={s.navbarPlace}>
             <div className={s.item}>
-                <NavLink activeClassName={s.activeLink} to='/mainPage'><img alt='logo' src={logo}/></NavLink>
+                <NavLink activeClassName={s.activeLink} to='/'><img alt='logo' src={logo}/></NavLink>
             </div >
             <div className={s.item}>
                 <NavLink activeClassName={s.activeLink} to='/profile'>Profile</NavLink>

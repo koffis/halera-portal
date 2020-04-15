@@ -1,17 +1,27 @@
 import React from "react";
-import s from  './Profile.module.css';
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import ProjectsProfileInfo from "./ProjectsProfileInfo/ProjectsProfileInfo";
-import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
+import Profile from "./Profile";
+import {connect} from "react-redux";
+import {follow, unfollow} from "../../Redux/profile-reducer";
 
-const Profile = (props) =>{
-    return(
-        <div className={s.profilePage}>
-            <ProfileInfo/>
-            <ProjectsProfileInfo/>
-            <ProfileAchievements/>
-        </div>
-    )
+let mapStateToProps  = (state) => {
+    return {
+        profileData: state.profilePage.profileData,
+        projectsData: state.profilePage.projectsData,
+        achievementData: state.profilePage.achievementData
+    }
 };
 
-export default Profile;
+let mapDispatchToProps = (dispatch) => {
+    return {
+        follow: (userID) => {
+            dispatch(follow(userID))
+        },
+        unfollow: (userID) => {
+            dispatch(unfollow(userID))
+        }
+    }
+};
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);
+
+export default DialogsContainer;

@@ -1,16 +1,15 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import s from './ProfileProjectItem.module.css'
+import s from './ProfileAchievementItem.module.css'
 
-const ProfileProjectItem =(props) => {
+const ProfileAchievementItem =(props) => {
 
-    let path = 'project/' + props.projectID;
+    let path = 'achieve/' + props.achieveID;
     return(
         <div className={s.item}>
-            <NavLink to={path}><img alt={'project'} src={props.projectImage}/></NavLink>
-            <NavLink to={path}><h4>{props.projectName}</h4></NavLink>
+            <NavLink to={path}><img alt={'project'} src={props.achieveImage}/></NavLink>
         </div>
     )
 };
 
-export default ProfileProjectItem;
+export default ProfileAchievementItem;
