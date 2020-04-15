@@ -23,7 +23,7 @@ import Registration from "./Components/LogIn-Registration/Registration/Registrat
 
 const App = (props) => {
     if (isMobile){
-        return <div className={s.textmobile}>Enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus</div>
+        return <div className={s.textmobile}>Use computer please!</div>
     }
     return (
             <div className={s.app_wrapper}>
