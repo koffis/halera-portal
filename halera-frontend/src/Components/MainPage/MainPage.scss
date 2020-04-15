@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    mso-ascii-font-family: fantasy;
+}
+.mainBanner {
+    position: absolute;
+    margin-top:-65px;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/mainbg.png);
+    background-position: bottom;
+    z-index: 1;
+    overflow: hidden;
+
+}
+.mainBanner .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+.mainBanner .clouds img {
+    position: absolute;
+    bottom: 0;
+    max-width: 30%;
+    z-index: 2;
+    opacity: 0.7;
+    overflow: hidden;
+}
+.animate1 {
+    animation: animate calc(8s * (1.5)) linear infinite;
+    bottom: 0;
+}
+.animate2 {
+    animation: animate calc(8s * (2)) linear infinite;
+    bottom: 0;
+}
+.animate3 {
+    animation: animate calc(8s * (3)) linear infinite;
+    bottom: 0;
+}
+.animate4 {
+    animation: animate calc(8s * (4)) linear infinite;
+    bottom: 0;
+}
+.animate5 {
+    animation: animate calc(8s * (5)) linear infinite;
+    bottom: 0;
+}
+.mainBanner .mainText{
+    position: absolute;
+    width: 100%;
+    font-size: 60px;
+    color: azure;
+    padding: 10%;
+    font-family: Tahoma;
+    margin-right: 50%;
+    z-index: 4;
+}
+.mainBanner .mainText p{
+    position: absolute;
+    color: azure;
+    font-size: 40px;
+    font-family: Tahoma;
+}
+@keyframes animate {
+    0%
+    {
+        transform: translate(-100%);
+    }
+    100%
+    {
+        transform: translate(100%);
+    }
+}
+.mainBanner .subText {
+    position: absolute;
+    font-size: 100px;
+    color: azure;
+    font-family: Tahoma;
+    margin-top: 80px;
+    margin-left: 30%;
+    z-index: 4;
+}
+.maincontent {
+    position: relative;
+    padding-top: 100vh;
+    margin-bottom: 100px;
+}
+.mainBanner .subText .button {
+    color: white;
+    border: 1px solid white;
+    font-size: 40px;
+    padding: 7px 12px;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 60px;
+    margin-right: -630px;
+}
+.mainBanner .subText .button:hover {
+    color: #767676 !important;
+    background: white;
+    border: 1px solid white!important;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+.mainBanner .subText .text {
+    font-size: 10px;
+}
