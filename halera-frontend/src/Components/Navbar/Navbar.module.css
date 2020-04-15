@@ -4,6 +4,7 @@
     align-items: center;
     grid-area: nav;
     background-color: cyan;
+
 }
 
 .item a{
@@ -20,3 +21,4 @@
 .item img{
     width: 180px
 }
+
