@@ -1,11 +1,12 @@
 import React from "react";
-import s from './ProfileInfo.module.css';
+import s from './ProfileInfo.module.scss';
 import userImage from '../../../common/Images/user.png';
-import settingsBtn from '../../../common/Images/settings.svg'
 import {NavLink} from "react-router-dom";
 import rateImg from '../../../common/Images/rate.svg'
 import qrCode from '../../../common/Images/qrCode.png'
 import projectImg from '../../../common/Images/project.png'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faCog } from '@fortawesome/free-solid-svg-icons'
 
 const ProfileInfo = (props) => {
     return (
@@ -16,7 +17,7 @@ const ProfileInfo = (props) => {
                 </div>
                 <div className={s.addFriend}>
                     <button>Add friend</button>
-                    <NavLink to='/settings'><img alt='settings' src={settingsBtn}/></NavLink>
+                    <NavLink to='/settings'><FontAwesomeIcon className={`${s.iconCog} ${s.delay05s}`} icon={faCog} /></NavLink>
                 </div>
             </div>
             <div className={s.infoZone}>

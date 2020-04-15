@@ -1,20 +1,22 @@
 .ProfileInfo_wrapper {
+    padding-top: 40px;
+    max-width: 1024px;
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 240px 200px 1fr;
+    margin: auto;
+    background-color: azure;
 
 }
 
 .avatarZone {
     grid-area: 1/1/1/1;
-    outline: 1px outset #22ECDA;
     outline-offset: 0px;
 
 }
 
 .infoZone {
     grid-area: 1/2/1/2;
-    outline: 1px outset #22ECDA;
     outline-offset: 0px;
     margin-left: 15px;
     display: grid;
@@ -74,4 +76,21 @@
     margin-top: 25px;
     width: 150px;
     height: 150px;
+}
+.iconCog {
+    font-size: 30px;
+    color:darkgray;
+    background-color: darkcyan;
+    border-radius: 10px;
+    padding: 5px;
+}
+.iconCog:hover {
+    color: white;
+    cursor: pointer;
+}
+.delay05s {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }

@@ -1,7 +1,13 @@
 import React from 'react';
-import s from './App.module.css'
-import Navbar from "./Components/Navbar/Navbar";
 import {Route} from "react-router-dom";
+/*libs*/
+import './common/bootstrap.css'
+import s from './App.module.css'
+import './common/fm.revealator.jquery.scss'
+import './common/fm.revealator.jquery'
+import {isMobile} from 'react-device-detect'
+/*Components*/
+import Navbar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import Profile from "./Components/Profile/Profile";
@@ -14,7 +20,11 @@ import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
 import Registration from "./Components/LogIn-Registration/Registration/Registration";
 
 
+
 const App = (props) => {
+    if (isMobile){
+        return <div className={s.textmobile}>USE COMPUTKER DALBAYOB</div>
+    }
     return (
             <div className={s.app_wrapper}>
                 <Navbar />
