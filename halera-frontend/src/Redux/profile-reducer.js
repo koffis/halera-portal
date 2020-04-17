@@ -24,10 +24,30 @@ let initialState = {
         rate: rate
     }],
     projectsData: {
-        'Hamno': {projectImage: proj, projectID: 21},
-        'Maxim': {projectImage: proj, projectID: 1488},
-        'IhorLoh': {projectImage: proj, projectID: 322},
-        'Preved': {projectImage: proj, projectID: 69}
+        'Hamno': {
+            projectID: 69,
+            projectImage: proj,
+            projectName: 'Hamno',
+            projectStatus: 'in plan',
+            searchTeam: true},
+        'Maxim': {
+            projectID: 1488,
+            projectImage: proj,
+            projectName: 'Maxim',
+            projectStatus: 'ongoing',
+            searchTeam: true},
+        'IhorLoh': {
+            projectID: 322,
+            projectImage: proj,
+            projectName: 'IhorLoh',
+            projectStatus: 'closed',
+            searchTeam: false},
+        'Preved': {
+            projectID: 1000,
+            projectImage: proj,
+            projectName: 'Halera',
+            projectStatus: 'closed',
+            searchTeam: false}
     },
 
     achievementData: {
@@ -45,7 +65,7 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 profileData: state.profileData.map(u => {
-                    if (u.id === action.userID) {
+                    if (u.userName === action.userID) {
                         return {...u, followed: true}
                     }
                     return u;
@@ -55,7 +75,7 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 profileData: state.profileData.map(u => {
-                    if (u.id === action.userID) {
+                    if (u.userName === action.userID) {
                         return {...u, followed: false}
                     }
                     return u;

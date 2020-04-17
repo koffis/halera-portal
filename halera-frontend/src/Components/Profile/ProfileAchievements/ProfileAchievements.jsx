@@ -4,27 +4,19 @@ import ProfileAchievementItem from "./ProfileAchievementsItem/ProfileAchievement
 import {NavLink} from "react-router-dom";
 
 const ProfileAchievements = (props) => {
-
-
-    let path = 'achieve/' + props.achievementData.achieveID;
-
-
-
     let achievementListData = Object.values(props.achievementData);
     let achievementsListNames = Object.keys(props.achievementData);
 
-
-    let achievementsName = achievementsListNames.map(k => <NavLink
-        to={path}>{k}</NavLink>);
+    let achievementsName = achievementsListNames.map(k => <p>{k}</p>);
 
     let achievementsList = achievementListData.map(a => <ProfileAchievementItem
         achieveImage={a.achieveImage}
         achieveID={a.achieveID}/>);
 
-
     return (
         <div className={s.achievement}>
-            <h4>Biggest achievements</h4>
+            <NavLink to={'/achievements'}>Your skills</NavLink>
+            <NavLink to={'test'}>Pass tests</NavLink>
             <div className={s.achievementSpace}>
                 <div className={s.profileAchievements}>
                     {achievementsList}
