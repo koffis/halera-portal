@@ -1,0 +1,29 @@
+.ProjectPageMembers{
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+    padding: 20px;
+    margin: 50px;
+
+}
+
+.ProjectPageMembersImg{
+    grid-row-start: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ProjectPageMembersImg img{
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #1C6EA4;
+}
+
+.ProjectPageMembersPosition{
+    margin-right: 25px;
+    display: flex;
+    justify-content: space-around;
+    grid-row-start: 2;
+}
+

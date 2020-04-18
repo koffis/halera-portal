@@ -12,12 +12,14 @@ import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import Team from "./Components/Team/Team";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import Users from "./Components/Users/Users";
-import Projects from "./Components/Projects/Projects";
 import Search from "./Components/Search/Search";
 import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
 import Registration from "./Components/LogIn-Registration/Registration/Registration";
+import Settings from "./Components/Settings/Settings";
+import Achievements from "./Components/Achievements/Achievements";
+import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
+import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 
 
 const App = (props) => {
@@ -31,12 +33,14 @@ const App = (props) => {
                 <Route path='/test' render={() => <Test/>}/>
                 <Route path='/profile' render={() => <ProfileContainer/>}/>
                 <Route path='/team' render={() => <Team/>}/>
-                <Route path='/dialogs' render={() => <Dialogs/>}/>
                 <Route path='/users' render={() => <Users/>}/>
-                <Route path='/projects' render={() => <Projects/>}/>
+                <Route path='/projects' render={() => <ProjectsContainer/>}/>
                 <Route path='/search' render={() => <Search/>}/>
-                <Route path='/logIn' render={() => <LogIn/>}/>
+                <Route path='/login' render={() => <LogIn/>}/>
                 <Route path='/registration' render={() => <Registration/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/achievements' render={() => <Achievements/>}/>
+                <Route path='/project' render={() => <ProjectPageContainer/>}/>
             </div>
         </div>
     )

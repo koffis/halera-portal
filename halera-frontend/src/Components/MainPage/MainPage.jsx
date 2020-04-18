@@ -5,6 +5,7 @@ import cloud2 from './images/cloud2.png'
 import cloud3 from './images/cloud3.png'
 import cloud4 from './images/cloud4.png'
 import cloud5 from './images/cloud5.png'
+import {NavLink} from "react-router-dom";
 
 const MainPage = (props) => {
     return(<div>
@@ -15,7 +16,7 @@ const MainPage = (props) => {
                         <p>Enim facilisis gravida neque convallis a cras semper auctor</p>
                         <div className="subText">
                             <div className="text"></div>
-                            <div className="button">Start now</div>
+                            <div className="button"><NavLink to={'/login'}>Start now</NavLink></div>
                         </div>
                     </div>
                 </div>
