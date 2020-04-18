@@ -92,7 +92,7 @@
     padding-top: 100vh;
     margin-bottom: 100px;
 }
-.mainBanner .subText .button {
+.mainBanner .subText a {
     color: white;
     border: 1px solid white;
     font-size: 40px;
@@ -104,7 +104,7 @@
     margin-top: 60px;
     margin-right: -630px;
 }
-.mainBanner .subText .button:hover {
+.mainBanner .subText a:hover {
     color: #767676 !important;
     background: white;
     border: 1px solid white!important;
