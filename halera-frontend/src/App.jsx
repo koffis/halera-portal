@@ -2,7 +2,7 @@ import React from "react";
 import {Route} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
-import './common/mdboot/mdb-free.scss'
+import './common/mdboot/mdb-pro.scss'
 import s from './App.module.css'
 import './common/fm.revealator.jquery.scss'
 import './common/fm.revealator.jquery'

@@ -1,6 +1,5 @@
 import React from "react";
 import s from './ProjectPageMembers.module.css'
-import member from '../../../common/Images/member.png'
 import {NavLink} from "react-router-dom";
 
 const ProjectPageMembers = (props) =>{
@@ -14,6 +13,20 @@ const ProjectPageMembers = (props) =>{
         to={'/profile/'+ m.userName}><img alt={'member'} src={m.profileImg}/></NavLink>);
 
     return(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className={s.ProjectPageMembers}>
             <div className={s.ProjectPageMembersImg}>
                 {memberList}

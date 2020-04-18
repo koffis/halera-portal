@@ -17,7 +17,7 @@ const MainPage = (props) => {
                         <p>Enim facilisis gravida neque convallis a cras semper auctor</p>
                         <div className="subText">
                             <div className="text"></div>
-                            <div className="button">Start now</div>
+                            <NavLink activeClassName="activeLink" to='/login'>Start Now</NavLink>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,6 @@ const MainPage = (props) => {
                         <div className="col-md-2 mb-3">
                                 <NavLink activeClassName="activeLink" to='/profile'>Profile</NavLink>
                         </div>
-
                         <div className="col-md-2 mb-3">
                                 <NavLink activeClassName="activeLink" to='/team'>Team</NavLink>
                         </div>
@@ -58,7 +57,6 @@ const MainPage = (props) => {
                         <div className="col-md-2 mb-3">
                                 <NavLink activeClassName="activeLink" to='/login'>Log in</NavLink>
                         </div>
-
                         <div className="col-md-2 mb-3">
                                 <NavLink activeClassName="activeLink" to='/login'>Test</NavLink>
                         </div>
@@ -130,6 +128,8 @@ const MainPage = (props) => {
                 </div>
             </footer>
         </div>
+            {/*ADDDDDDDD*/}
+
         </div>
 
     )
