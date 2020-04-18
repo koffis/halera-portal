@@ -1,0 +1,28 @@
+.projectsItemSpace{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+    padding: 20px;
+    margin: 50px;
+}
+
+.ProjectsItemName{
+    grid-column-start: 1;
+    float: right;
+}
+
+
+.ProjectItemIcon{
+    grid-column-start: 2;
+}
+
+.ProjectItemStatus{
+    grid-column-start: 3;
+}
+
+.ProjectItemIcon img{
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #1C6EA4;
+}

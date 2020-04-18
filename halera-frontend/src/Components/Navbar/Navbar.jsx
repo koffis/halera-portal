@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-/*import logo from './Images/logo.svg'*/
 import './Navbar.scss'
 import $ from 'jquery'
 
@@ -16,7 +15,7 @@ const Navbar = (props) => {
                         <li><NavLink activeClassName="activeLink" to='/profile'>Profile</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/team'>Team</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
-                        <li><NavLink activeClassName="activeLink" to='/logIn'>Log in</NavLink></li>
+                        <li><NavLink activeClassName="activeLink" to='/login'>Log in</NavLink></li>
                     </ul>
                 </div>
                 <span className="navTrigger">

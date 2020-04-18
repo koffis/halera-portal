@@ -8,17 +8,7 @@ const Profile = (props) =>{
     return(
         <div className={s.profilePage}>
             <ProfileInfo
-                profileImage={props.profileData[0].profileImage}
-                name={props.profileData[0].name}
-                userName={props.profileData[0].userName}
-                followed={props.profileData[0].followed}
-                status={props.profileData[0].status}
-                country={props.profileData[0].location.country}
-                city={props.profileData[0].location.city}
-                project={props.profileData[0].project}
-                work={props.profileData[0].work}
-                qrCode={props.profileData[0].qrCode}
-                rate={props.profileData[0].rate}
+                profileData={props.profileData[0]}
                 follow={props.follow}
                 unfollow={props.unfollow}
                 />
