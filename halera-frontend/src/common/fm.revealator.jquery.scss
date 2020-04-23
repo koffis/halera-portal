@@ -1,6 +1,6 @@
 /*
  Revealator jQuery Plugin
- Revealator is a jQuery_based plugin for adding effects to elements that enter the window. It's simple, and easy to use.
+ Revealator is a jQuery-based plugin for adding effects to elements that enter the window. It's simple, and easy to use.
  version 1.3, Jan 11th, 2016
  by Ingi á Steinamørk
 
@@ -26,383 +26,383 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
-.revealator_fade,
-.revealator_slideup,
-.revealator_slideleft,
-.revealator_slideright,
-.revealator_slidedown,
-.revealator_zoomin,
-.revealator_zoomout,
-.revealator_rotateleft,
-.revealator_rotateright {
+.revealator-fade,
+.revealator-slideup,
+.revealator-slideleft,
+.revealator-slideright,
+.revealator-slidedown,
+.revealator-zoomin,
+.revealator-zoomout,
+.revealator-rotateleft,
+.revealator-rotateright {
 /* Default effect duration */
   transition: all 600ms;
 }
 /* Fade effect */
-.revealator_fade {
+.revealator-fade {
   opacity: 0;
 }
-.revealator_fade.revealator_within,
-.revealator_fade.revealator_partially_above,
-.revealator_fade.revealator_above {
+.revealator-fade.revealator-within,
+.revealator-fade.revealator-partially-above,
+.revealator-fade.revealator-above {
   opacity: 1;
 }
 /* Slide up effect */
-.revealator_slideup {
+.revealator-slideup {
   transform: translate(0, 100px);
   opacity: 0;
 }
-.revealator_slideup.revealator_within,
-.revealator_slideup.revealator_partially_above,
-.revealator_slideup.revealator_above {
+.revealator-slideup.revealator-within,
+.revealator-slideup.revealator-partially-above,
+.revealator-slideup.revealator-above {
   transform: translate(0, 0);
   opacity: 1;
 }
 /* Slide left effect */
-.revealator_slideleft {
+.revealator-slideleft {
   transform: translate(100px, 0);
   opacity: 0;
 }
-.revealator_slideleft.revealator_within,
-.revealator_slideleft.revealator_partially_above,
-.revealator_slideleft.revealator_above {
+.revealator-slideleft.revealator-within,
+.revealator-slideleft.revealator-partially-above,
+.revealator-slideleft.revealator-above {
   transform: translate(0, 0);
   opacity: 1;
 }
 /* Slide right effect */
-.revealator_slideright {
+.revealator-slideright {
   transform: translate(-100px, 0);
   opacity: 0;
 }
-.revealator_slideright.revealator_within,
-.revealator_slideright.revealator_partially_above,
-.revealator_slideright.revealator_above {
+.revealator-slideright.revealator-within,
+.revealator-slideright.revealator-partially-above,
+.revealator-slideright.revealator-above {
   transform: translate(0, 0);
   opacity: 1;
 }
 /* Slide down effect */
-.revealator_slidedown {
+.revealator-slidedown {
   transform: translate(0, -100px);
   opacity: 0;
 }
-.revealator_slidedown.revealator_within,
-.revealator_slidedown.revealator_partially_above,
-.revealator_slidedown.revealator_above {
+.revealator-slidedown.revealator-within,
+.revealator-slidedown.revealator-partially-above,
+.revealator-slidedown.revealator-above {
   transform: translate(0, 0);
   opacity: 1;
 }
 /* Zoom in effect */
-.revealator_zoomin {
+.revealator-zoomin {
   transform: scale(0.75);
   opacity: 0;
 }
-.revealator_zoomin.revealator_within,
-.revealator_zoomin.revealator_partially_above,
-.revealator_zoomin.revealator_above {
+.revealator-zoomin.revealator-within,
+.revealator-zoomin.revealator-partially-above,
+.revealator-zoomin.revealator-above {
   transform: scale(1);
   opacity: 1;
 }
 /* Zoom out effect */
-.revealator_zoomout {
+.revealator-zoomout {
   transform: scale(1.5);
   opacity: 0;
 }
-.revealator_zoomout.revealator_within,
-.revealator_zoomout.revealator_partially_above,
-.revealator_zoomout.revealator_above {
+.revealator-zoomout.revealator-within,
+.revealator-zoomout.revealator-partially-above,
+.revealator-zoomout.revealator-above {
   transform: scale(1);
   opacity: 1;
 }
 /* Rotate left effect */
-.revealator_rotateleft {
+.revealator-rotateleft {
   transform: rotate(20deg);
   opacity: 0;
 }
-.revealator_rotateleft.revealator_within,
-.revealator_rotateleft.revealator_partially_above,
-.revealator_rotateleft.revealator_above {
+.revealator-rotateleft.revealator-within,
+.revealator-rotateleft.revealator-partially-above,
+.revealator-rotateleft.revealator-above {
   transform: rotate(0deg);
   opacity: 1;
 }
 /* Rotate right effect */
-.revealator_rotateright {
+.revealator-rotateright {
   transform: rotate(-20deg);
   opacity: 0;
 }
-.revealator_rotateright.revealator_within,
-.revealator_rotateright.revealator_partially_above,
-.revealator_rotateright.revealator_above {
+.revealator-rotateright.revealator-within,
+.revealator-rotateright.revealator-partially-above,
+.revealator-rotateright.revealator-above {
   transform: rotate(0deg);
   opacity: 1;
 }
-.revealator_delay1 {
-  transition_delay: 100ms !important;
+.revealator-delay1 {
+  transition-delay: 100ms !important;
 }
-.revealator_delay1.revealator_below,
-.revealator_delay1.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay1.revealator-below,
+.revealator-delay1.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay2 {
-  transition_delay: 200ms !important;
+.revealator-delay2 {
+  transition-delay: 200ms !important;
 }
-.revealator_delay2.revealator_below,
-.revealator_delay2.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay2.revealator-below,
+.revealator-delay2.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay3 {
-  transition_delay: 300ms !important;
+.revealator-delay3 {
+  transition-delay: 300ms !important;
 }
-.revealator_delay3.revealator_below,
-.revealator_delay3.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay3.revealator-below,
+.revealator-delay3.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay4 {
-  transition_delay: 400ms !important;
+.revealator-delay4 {
+  transition-delay: 400ms !important;
 }
-.revealator_delay4.revealator_below,
-.revealator_delay4.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay4.revealator-below,
+.revealator-delay4.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay5 {
-  transition_delay: 500ms !important;
+.revealator-delay5 {
+  transition-delay: 500ms !important;
 }
-.revealator_delay5.revealator_below,
-.revealator_delay5.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay5.revealator-below,
+.revealator-delay5.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay6 {
-  transition_delay: 600ms !important;
+.revealator-delay6 {
+  transition-delay: 600ms !important;
 }
-.revealator_delay6.revealator_below,
-.revealator_delay6.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay6.revealator-below,
+.revealator-delay6.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay7 {
-  transition_delay: 700ms !important;
+.revealator-delay7 {
+  transition-delay: 700ms !important;
 }
-.revealator_delay7.revealator_below,
-.revealator_delay7.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay7.revealator-below,
+.revealator-delay7.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay8 {
-  transition_delay: 800ms !important;
+.revealator-delay8 {
+  transition-delay: 800ms !important;
 }
-.revealator_delay8.revealator_below,
-.revealator_delay8.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay8.revealator-below,
+.revealator-delay8.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay9 {
-  transition_delay: 900ms !important;
+.revealator-delay9 {
+  transition-delay: 900ms !important;
 }
-.revealator_delay9.revealator_below,
-.revealator_delay9.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay9.revealator-below,
+.revealator-delay9.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay10 {
-  transition_delay: 1000ms !important;
+.revealator-delay10 {
+  transition-delay: 1000ms !important;
 }
-.revealator_delay10.revealator_below,
-.revealator_delay10.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay10.revealator-below,
+.revealator-delay10.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay11 {
-  transition_delay: 1100ms !important;
+.revealator-delay11 {
+  transition-delay: 1100ms !important;
 }
-.revealator_delay11.revealator_below,
-.revealator_delay11.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay11.revealator-below,
+.revealator-delay11.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay12 {
-  transition_delay: 1200ms !important;
+.revealator-delay12 {
+  transition-delay: 1200ms !important;
 }
-.revealator_delay12.revealator_below,
-.revealator_delay12.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay12.revealator-below,
+.revealator-delay12.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay13 {
-  transition_delay: 1300ms !important;
+.revealator-delay13 {
+  transition-delay: 1300ms !important;
 }
-.revealator_delay13.revealator_below,
-.revealator_delay13.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay13.revealator-below,
+.revealator-delay13.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay14 {
-  transition_delay: 1400ms !important;
+.revealator-delay14 {
+  transition-delay: 1400ms !important;
 }
-.revealator_delay14.revealator_below,
-.revealator_delay14.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay14.revealator-below,
+.revealator-delay14.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay15 {
-  transition_delay: 1500ms !important;
+.revealator-delay15 {
+  transition-delay: 1500ms !important;
 }
-.revealator_delay15.revealator_below,
-.revealator_delay15.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay15.revealator-below,
+.revealator-delay15.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay16 {
-  transition_delay: 1600ms !important;
+.revealator-delay16 {
+  transition-delay: 1600ms !important;
 }
-.revealator_delay16.revealator_below,
-.revealator_delay16.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay16.revealator-below,
+.revealator-delay16.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay17 {
-  transition_delay: 1700ms !important;
+.revealator-delay17 {
+  transition-delay: 1700ms !important;
 }
-.revealator_delay17.revealator_below,
-.revealator_delay17.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay17.revealator-below,
+.revealator-delay17.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay18 {
-  transition_delay: 1800ms !important;
+.revealator-delay18 {
+  transition-delay: 1800ms !important;
 }
-.revealator_delay18.revealator_below,
-.revealator_delay18.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay18.revealator-below,
+.revealator-delay18.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay19 {
-  transition_delay: 1900ms !important;
+.revealator-delay19 {
+  transition-delay: 1900ms !important;
 }
-.revealator_delay19.revealator_below,
-.revealator_delay19.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay19.revealator-below,
+.revealator-delay19.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay20 {
-  transition_delay: 2000ms !important;
+.revealator-delay20 {
+  transition-delay: 2000ms !important;
 }
-.revealator_delay20.revealator_below,
-.revealator_delay20.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay20.revealator-below,
+.revealator-delay20.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay21 {
-  transition_delay: 2100ms !important;
+.revealator-delay21 {
+  transition-delay: 2100ms !important;
 }
-.revealator_delay21.revealator_below,
-.revealator_delay21.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay21.revealator-below,
+.revealator-delay21.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay22 {
-  transition_delay: 2200ms !important;
+.revealator-delay22 {
+  transition-delay: 2200ms !important;
 }
-.revealator_delay22.revealator_below,
-.revealator_delay22.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay22.revealator-below,
+.revealator-delay22.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay23 {
-  transition_delay: 2300ms !important;
+.revealator-delay23 {
+  transition-delay: 2300ms !important;
 }
-.revealator_delay23.revealator_below,
-.revealator_delay23.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay23.revealator-below,
+.revealator-delay23.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay24 {
-  transition_delay: 2400ms !important;
+.revealator-delay24 {
+  transition-delay: 2400ms !important;
 }
-.revealator_delay24.revealator_below,
-.revealator_delay24.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay24.revealator-below,
+.revealator-delay24.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay25 {
-  transition_delay: 2500ms !important;
+.revealator-delay25 {
+  transition-delay: 2500ms !important;
 }
-.revealator_delay25.revealator_below,
-.revealator_delay25.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay25.revealator-below,
+.revealator-delay25.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay26 {
-  transition_delay: 2600ms !important;
+.revealator-delay26 {
+  transition-delay: 2600ms !important;
 }
-.revealator_delay26.revealator_below,
-.revealator_delay26.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay26.revealator-below,
+.revealator-delay26.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay27 {
-  transition_delay: 2700ms !important;
+.revealator-delay27 {
+  transition-delay: 2700ms !important;
 }
-.revealator_delay27.revealator_below,
-.revealator_delay27.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay27.revealator-below,
+.revealator-delay27.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay28 {
-  transition_delay: 2800ms !important;
+.revealator-delay28 {
+  transition-delay: 2800ms !important;
 }
-.revealator_delay28.revealator_below,
-.revealator_delay28.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay28.revealator-below,
+.revealator-delay28.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay29 {
-  transition_delay: 2900ms !important;
+.revealator-delay29 {
+  transition-delay: 2900ms !important;
 }
-.revealator_delay29.revealator_below,
-.revealator_delay29.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay29.revealator-below,
+.revealator-delay29.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_delay30 {
-  transition_delay: 3000ms !important;
+.revealator-delay30 {
+  transition-delay: 3000ms !important;
 }
-.revealator_delay30.revealator_below,
-.revealator_delay30.revealator_partially_below {
-  transition_delay: 0ms !important;
+.revealator-delay30.revealator-below,
+.revealator-delay30.revealator-partially-below {
+  transition-delay: 0ms !important;
 }
-.revealator_speed1,
-.revealator_duration1 {
-  transition_duration: 100ms !important;
+.revealator-speed1,
+.revealator-duration1 {
+  transition-duration: 100ms !important;
 }
-.revealator_speed2,
-.revealator_duration2 {
-  transition_duration: 200ms !important;
+.revealator-speed2,
+.revealator-duration2 {
+  transition-duration: 200ms !important;
 }
-.revealator_speed3,
-.revealator_duration3 {
-  transition_duration: 300ms !important;
+.revealator-speed3,
+.revealator-duration3 {
+  transition-duration: 300ms !important;
 }
-.revealator_speed4,
-.revealator_duration4 {
-  transition_duration: 400ms !important;
+.revealator-speed4,
+.revealator-duration4 {
+  transition-duration: 400ms !important;
 }
-.revealator_speed5,
-.revealator_duration5 {
-  transition_duration: 500ms !important;
+.revealator-speed5,
+.revealator-duration5 {
+  transition-duration: 500ms !important;
 }
-.revealator_speed6,
-.revealator_duration6 {
-  transition_duration: 600ms !important;
+.revealator-speed6,
+.revealator-duration6 {
+  transition-duration: 600ms !important;
 }
-.revealator_speed7,
-.revealator_duration7 {
-  transition_duration: 700ms !important;
+.revealator-speed7,
+.revealator-duration7 {
+  transition-duration: 700ms !important;
 }
-.revealator_speed8,
-.revealator_duration8 {
-  transition_duration: 800ms !important;
+.revealator-speed8,
+.revealator-duration8 {
+  transition-duration: 800ms !important;
 }
-.revealator_speed9,
-.revealator_duration9 {
-  transition_duration: 900ms !important;
+.revealator-speed9,
+.revealator-duration9 {
+  transition-duration: 900ms !important;
 }
-.revealator_speed10,
-.revealator_duration10 {
-  transition_duration: 1000ms !important;
+.revealator-speed10,
+.revealator-duration10 {
+  transition-duration: 1000ms !important;
 }
-.revealator_speed11,
-.revealator_duration11 {
-  transition_duration: 1100ms !important;
+.revealator-speed11,
+.revealator-duration11 {
+  transition-duration: 1100ms !important;
 }
-.revealator_speed12,
-.revealator_duration12 {
-  transition_duration: 1200ms !important;
+.revealator-speed12,
+.revealator-duration12 {
+  transition-duration: 1200ms !important;
 }
-.revealator_speed13,
-.revealator_duration13 {
-  transition_duration: 1300ms !important;
+.revealator-speed13,
+.revealator-duration13 {
+  transition-duration: 1300ms !important;
 }
-.revealator_speed14,
-.revealator_duration14 {
-  transition_duration: 1400ms !important;
+.revealator-speed14,
+.revealator-duration14 {
+  transition-duration: 1400ms !important;
 }
-.revealator_speed15,
-.revealator_duration15 {
-  transition_duration: 1500ms !important;
+.revealator-speed15,
+.revealator-duration15 {
+  transition-duration: 1500ms !important;
 }
 /*# sourceMappingURL=fm.revealator.jquery.css.map */
