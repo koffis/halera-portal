@@ -41,10 +41,10 @@ let initialState = {
             projectName: 'IhorLoh',
             projectStatus: 'closed',
             searchTeam: false},
-        'Preved': {
-            projectID: 1000,
+        'gavno': {
+            projectID: 322,
             projectImage: proj,
-            projectName: 'Halera',
+            projectName: 'IhorLoh3000',
             projectStatus: 'closed',
             searchTeam: false}
     },
@@ -53,7 +53,7 @@ let initialState = {
         'Java': {achieveImage: achievement, achieveID: 21},
         'JS': {achieveImage: achievement, achieveID: 1488},
         'Python': {achieveImage: achievement, achieveID: 322},
-        'C++': {achieveImage: achievement, achieveID: 69}
+        'Minet': {achieveImage: achievement, achieveID: 223}
     }
 };
 

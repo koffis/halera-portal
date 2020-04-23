@@ -26,9 +26,9 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
+
 import $ from 'jquery'
 import './fm.revealator.jquery.scss'
-
 var Revealator = typeof Revealator !== 'undefined' ? Revealator : {};
 
 $(function () {
@@ -49,29 +49,29 @@ $(function () {
 		var window_bottom = $window.height() - Revealator.effects_padding;
 		var document_top = Revealator.scroll_padding;
 		var document_bottom = $document.height() - Revealator.scroll_padding;
-
+		
 		if ($window.scrollTop() === 0) {
-			if (!$body.hasClass('at_top')) {
-				$body.addClass('at_top').removeClass('at_bottom').removeClass('near_top').removeClass('near_bottom');
+			if (!$body.hasClass('at-top')) {
+				$body.addClass('at-top').removeClass('at-bottom').removeClass('near-top').removeClass('near-bottom');
 			}
 		} else if ($window.scrollTop() + $window.height() === $document.height()) {
-			if (!$body.hasClass('at_bottom')) {
-				$body.addClass('at_bottom').removeClass('at_top').removeClass('near_top').removeClass('near_bottom');
+			if (!$body.hasClass('at-bottom')) {
+				$body.addClass('at-bottom').removeClass('at-top').removeClass('near-top').removeClass('near-bottom');
 			}
 		} else if ($window.scrollTop() <= document_top) {
-			if (!$body.hasClass('near_top')) {
-				$body.addClass('near_top').removeClass('near_bottom').removeClass('at_top').removeClass('at_bottom');
+			if (!$body.hasClass('near-top')) {
+				$body.addClass('near-top').removeClass('near-bottom').removeClass('at-top').removeClass('at-bottom');
 			}
 		} else if ($window.scrollTop() + $window.height() >= document_bottom) {
-			if (!$body.hasClass('near_bottom')) {
-				$body.addClass('near_bottom').removeClass('near_top').removeClass('at_top').removeClass('at_bottom');
+			if (!$body.hasClass('near-bottom')) {
+				$body.addClass('near-bottom').removeClass('near-top').removeClass('at-top').removeClass('at-bottom');
 			}
 		} else {
-			if ($body.hasClass('at_top') || $body.hasClass('at_bottom') || $body.hasClass('near_top') || $body.hasClass('near_bottom')) {
-				$body.removeClass('at_top').removeClass('at_bottom').removeClass('near_top').removeClass('near_bottom');
+			if ($body.hasClass('at-top') || $body.hasClass('at-bottom') || $body.hasClass('near-top') || $body.hasClass('near-bottom')) {
+				$body.removeClass('at-top').removeClass('at-bottom').removeClass('near-top').removeClass('near-bottom');
 			}
 		}
-
+		
 		$('*[class*="revealator"]').each(function () {
 			i++;
 			var element = this;
@@ -80,40 +80,40 @@ $(function () {
 
 			var position_class = undefined;
 			if (element_bounding.top > window_bottom && element_bounding.bottom > window_bottom) {
-				position_class = 'revealator_below';
+				position_class = 'revealator-below';
 			} else if (element_bounding.top < window_bottom && element_bounding.bottom > window_bottom) {
-				position_class = 'revealator_partially_below'
+				position_class = 'revealator-partially-below'
 			} else if (element_bounding.top < window_top && element_bounding.bottom > window_top) {
-				position_class = 'revealator_partially_above'
+				position_class = 'revealator-partially-above'
 			} else if (element_bounding.top < window_top && element_bounding.bottom < window_top) {
-				position_class = 'revealator_above';
+				position_class = 'revealator-above';
 			} else {
-				position_class = 'revealator_within';
+				position_class = 'revealator-within';
 			}
 
-			if ($element.hasClass('revealator_load') && !$element.hasClass('revealator_within')) {
-				$element.removeClass('revealator_below revealator_partially_below revealator_within revealator_partially_above revealator_above');
-				$element.addClass('revealator_within');
+			if ($element.hasClass('revealator-load') && !$element.hasClass('revealator-within')) {
+				$element.removeClass('revealator-below revealator-partially-below revealator-within revealator-partially-above revealator-above');
+				$element.addClass('revealator-within');
 			}
 
-			if (!$element.hasClass(position_class) && !$element.hasClass('revealator_load')) {
-				if ($element.hasClass('revealatoronce')) {
-					if (!$element.hasClass('revealator_within')) {
-						$element.removeClass('revealator_below revealator_partially_below revealator_within revealator_partially_above revealator_above');
+			if (!$element.hasClass(position_class) && !$element.hasClass('revealator-load')) {
+				if ($element.hasClass('revealator-once')) {
+					if (!$element.hasClass('revealator-within')) {
+						$element.removeClass('revealator-below revealator-partially-below revealator-within revealator-partially-above revealator-above');
 						$element.addClass(position_class);
 					}
-					if ($element.hasClass('revealator_partially_above') || $element.hasClass('revealator_above')) {
-						$element.addClass('revealator_within');
+					if ($element.hasClass('revealator-partially-above') || $element.hasClass('revealator-above')) {
+						$element.addClass('revealator-within');
 					}
 				} else {
-					$element.removeClass('revealator_below revealator_partially_below revealator_within revealator_partially_above revealator_above');
+					$element.removeClass('revealator-below revealator-partially-below revealator-within revealator-partially-above revealator-above');
 					$element.addClass(position_class);
 				}
 			}
 		});
 	};
 
-	$(window).bind('scroll resize load ready click', function () {
+	$(window).bind('scroll resize load ready click jQuery.ready', function () {
 		if (!Revealator.busy) {
 			Revealator.busy = true;
 			setTimeout(function () {
