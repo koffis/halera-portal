@@ -3,26 +3,24 @@ import s from "./ProjectsProfileInfo.module.css"
 import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
 
+
 const ProjectsProfileInfo = (props) => {
+    let projectListData = Object.entries(props.projectsData);
+    let projectsList = [];
+    for(let i = 0; i < 3; i++){
+       projectsList.push(<ProfileProjectItem projectName={projectListData[i][0]}
+                                             projectImage={projectListData[i][1].projectImage}
+                                             projectID={projectListData[i][1].projectID}
+       />)
+    }
 
-    let projectListData = Object.values(props.projectsData);
-    let projectsListNames = Object.keys(props.projectsData);
-
-    let achievementsName = projectsListNames.map(k => <p>{k}</p>);
-
-    let projectsList = projectListData.map(p => <ProfileProjectItem
-        projectImage={p.projectImage}
-        projectID={p.projectID}/>);
 
     return (
         <div className={s.projects}>
             <NavLink to={'/projects'} >Last projects</NavLink>
             <div className={s.projectsSpace}>
                 <div className={s.projectsPlace}>
-                    {projectsList}
-                </div>
-                <div className={s.projectsNames}>
-                    {achievementsName}
+                  {projectsList}
                 </div>
             </div>
         </div>

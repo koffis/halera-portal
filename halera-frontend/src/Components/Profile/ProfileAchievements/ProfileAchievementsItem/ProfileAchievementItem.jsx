@@ -8,6 +8,7 @@ const ProfileAchievementItem =(props) => {
     return(
         <div className={s.item}>
             <NavLink to={path}><img alt={'project'} src={props.achieveImage}/></NavLink>
+            <p >{props.achieveName}</p>
         </div>
     )
 };

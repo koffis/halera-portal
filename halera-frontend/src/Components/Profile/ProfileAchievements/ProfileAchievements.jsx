@@ -4,14 +4,14 @@ import ProfileAchievementItem from "./ProfileAchievementsItem/ProfileAchievement
 import {NavLink} from "react-router-dom";
 
 const ProfileAchievements = (props) => {
-    let achievementListData = Object.values(props.achievementData);
-    let achievementsListNames = Object.keys(props.achievementData);
-
-    let achievementsName = achievementsListNames.map(k => <p>{k}</p>);
-
-    let achievementsList = achievementListData.map(a => <ProfileAchievementItem
-        achieveImage={a.achieveImage}
-        achieveID={a.achieveID}/>);
+    let achievementsListData = Object.entries(props.achievementData);
+    let achievementsList = [];
+    for(let i = 1; i <= 3; i++){
+        achievementsList.push(<ProfileAchievementItem achieveName={achievementsListData[i][0]}
+                                              achieveImage={achievementsListData[i][1].achieveImage}
+                                              achieveID={achievementsListData[i][1].achieveID}
+        />)
+    }
 
     return (
         <div className={s.achievement}>
@@ -20,9 +20,6 @@ const ProfileAchievements = (props) => {
             <div className={s.achievementSpace}>
                 <div className={s.profileAchievements}>
                     {achievementsList}
-                </div>
-                <div className={s.profileAchievementsNames}>
-                    {achievementsName}
                 </div>
             </div>
         </div>
