@@ -1,30 +1,29 @@
 import React from "react";
-import s from "./ProjectsProfileInfo.module.css"
+import "./ProjectsProfileInfo.scss"
 import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
 
+
 const ProjectsProfileInfo = (props) => {
+    let projectListData = Object.entries(props.projectsData);
+    let projectsList = [];
+    for(let i = 0; i < 4; i++){
+       projectsList.push(<ProfileProjectItem projectName={projectListData[i][0]}
+                                             projectImage={projectListData[i][1].projectImage}
+                                             projectID={projectListData[i][1].projectID}
+       />)
+    }
 
-    let projectListData = Object.values(props.projectsData);
-    let projectsListNames = Object.keys(props.projectsData);
 
-    let achievementsName = projectsListNames.map(k => <p>{k}</p>);
-
-    let projectsList = projectListData.map(p => <ProfileProjectItem
-        projectImage={p.projectImage}
-        projectID={p.projectID}/>);
-
-    return (
-        <div className={s.projects}>
+    return (<div className="containerprj revealator-fade revealator-delay2 revealator-once">
+        <div className="container card testimonial-card">
             <NavLink to={'/projects'} >Last projects</NavLink>
-            <div className={s.projectsSpace}>
-                <div className={s.projectsPlace}>
-                    {projectsList}
-                </div>
-                <div className={s.projectsNames}>
-                    {achievementsName}
-                </div>
-            </div>
+            <div className="row">
+
+                  {projectsList}
+
+        </div>
+        </div>
         </div>
     )
 };

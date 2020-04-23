@@ -1,8 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-/*import logo from './Images/logo.svg'*/
 import './Navbar.scss'
-import 'bootstrap'
 import $ from 'jquery'
 
 const Navbar = (props) => {

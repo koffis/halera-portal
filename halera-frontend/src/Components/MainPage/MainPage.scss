@@ -10,6 +10,10 @@
     width: 100%;
     height: 100vh;
     background-image: url(./images/mainbg.png);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-position: bottom;
     z-index: 1;
     overflow: hidden;
@@ -92,7 +96,7 @@
     padding-top: 100vh;
     margin-bottom: 100px;
 }
-.mainBanner .subText .button {
+.mainBanner .subText a{
     color: white;
     border: 1px solid white;
     font-size: 40px;
@@ -104,8 +108,7 @@
     margin-top: 60px;
     margin-right: -630px;
 }
-
-.mainBanner .subText .button:hover {
+.mainBanner .subText a:hover {
     color: #767676 !important;
     background: white;
     border: 1px solid white!important;
@@ -114,4 +117,28 @@
 }
 .mainBanner .subText .text {
     font-size: 10px;
+}
+.footerlink i {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footerlink i:hover {
+    color: darkgray;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.footerlink a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footerlink a:hover {
+    color: darkgray;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }

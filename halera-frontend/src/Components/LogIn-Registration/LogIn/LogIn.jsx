@@ -1,20 +1,61 @@
 import React from "react";
-import s from './LogIn.module.css'
+import './LogIn.scss'
 import {NavLink} from "react-router-dom";
 
 const LogIn = (props) => {
-    return(
-        <div className={s.loginPlace}>
-            <h5>Username</h5>
-            <input type={'text'} placeholder={'Enter your user name'}/>
+    return (
+        <div className="loignbackgr rare-wind-gradient">
+            <div className="loginPlace container">
+                <div className="card revealator-fade revealator-delay1 revealator-once">
 
-            <h5>Password</h5>
-            <input type={'text'} placeholder={'Enter your password'}/><br></br>
+                    <h5 className="card-header aqua-gradient white-text text-center py-4">
+                        <strong>Sign in</strong>
+                    </h5>
 
-            <button type="submit">Login</button>
-            <button><NavLink to={'/registration'}>Registration</NavLink></button><br></br>
-                <input type="checkbox"  name="remember"/> Remember me
+                    <div className="card-body px-lg-5 pt-0">
 
+                        <form className="text-center" action="#!">
+                            <div className="md-form">
+                                <input type="email" placeholder="E-mail" className="form-control"/>
+                            </div>
+
+                            <div className="md-form">
+                                <input type="password" id="materialLoginFormPassword" placeholder="Password"
+                                       className="form-control"/>
+                            </div>
+
+                            <div className="d-flex justify-content-around">
+                                <div>
+                                    <div className="form-check">
+                                        <input type="checkbox" className="form-check-input"
+                                               id="materialLoginFormRemember"/>
+                                        <label className="form-check-label" htmlFor="materialLoginFormRemember">Remember
+                                            me</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                            </div>
+
+                            <button className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect"
+                                    type="submit">Sign in
+                            </button>
+
+                            <p>Not a member?&nbsp;&nbsp;
+                                <NavLink to={'/registration'}>Sign Up</NavLink>
+                            </p>
+
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div className="wave">
+        </div>
         </div>
     )
 };

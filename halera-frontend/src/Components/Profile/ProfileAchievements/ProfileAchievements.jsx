@@ -1,32 +1,32 @@
 import React from "react";
-import s from './ProfileAchievements.module.css'
+import './ProfileAchievements.scss'
 import ProfileAchievementItem from "./ProfileAchievementsItem/ProfileAchievementItem";
 import {NavLink} from "react-router-dom";
 
 const ProfileAchievements = (props) => {
-    let achievementListData = Object.values(props.achievementData);
-    let achievementsListNames = Object.keys(props.achievementData);
+    let achievementsListData = Object.entries(props.achievementData);
+    let achievementsList = [];
+    for(let i = 0; i < 4; i++){
+        achievementsList.push(<ProfileAchievementItem achieveName={achievementsListData[i][0]}
+                                              achieveImage={achievementsListData[i][1].achieveImage}
+                                              achieveID={achievementsListData[i][1].achieveID}
+        />)
+    }
 
-    let achievementsName = achievementsListNames.map(k => <p>{k}</p>);
-
-    let achievementsList = achievementListData.map(a => <ProfileAchievementItem
-        achieveImage={a.achieveImage}
-        achieveID={a.achieveID}/>);
-
-    return (
-        <div className={s.achievement}>
+    return (<div className="revealator-fade revealator-delay3 revealator-once profileAchievements">
+        <div className="container card testimonial-card">
+            <p/>
             <NavLink to={'/achievements'}>Your skills</NavLink>
+            <p/>
             <NavLink to={'test'}>Pass tests</NavLink>
-            <div className={s.achievementSpace}>
-                <div className={s.profileAchievements}>
+            <p/>
+            <div className="achievementSpace">
+                <div className="profileAchievements">
                     {achievementsList}
-                </div>
-                <div className={s.profileAchievementsNames}>
-                    {achievementsName}
                 </div>
             </div>
         </div>
-
+        </div>
     )
 };
 
