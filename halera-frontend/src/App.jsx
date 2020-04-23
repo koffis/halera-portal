@@ -23,6 +23,7 @@ import Settings from "./Components/Settings/Settings";
 import Achievements from "./Components/Achievements/Achievements";
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
+import SearchContainer from "./Components/Search/SearchContainer";
 
 
 const App = (props) => {
@@ -38,7 +39,7 @@ const App = (props) => {
                 <Route path='/team' render={() => <Team/>}/>
                 <Route path='/users' render={() => <Users/>}/>
                 <Route path='/projects' render={() => <ProjectsContainer/>}/>
-                <Route path='/search' render={() => <Search/>}/>
+                <Route path='/search' render={() => <SearchContainer/>}/>
                 <Route path='/login' render={() => <LogIn/>}/>
                 <Route path='/registration' render={() => <Registration/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>

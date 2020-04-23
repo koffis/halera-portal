@@ -4,6 +4,7 @@ import './ProfileAchievementItem.scss'
 
 const ProfileAchievementItem = (props) => {
     let path = 'achieve/' + props.achieveID;
+
     return (
 
             <div>
@@ -12,6 +13,7 @@ const ProfileAchievementItem = (props) => {
                 <NavLink to={path}><img alt={'project'} src={props.achieveImage}/></NavLink>
                 <p>{props.achieveName}</p>
             </div>
+
 
     )
 };

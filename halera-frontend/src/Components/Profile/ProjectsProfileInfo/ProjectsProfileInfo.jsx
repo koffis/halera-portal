@@ -3,7 +3,6 @@ import "./ProjectsProfileInfo.scss"
 import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
 
-
 const ProjectsProfileInfo = (props) => {
     let projectListData = Object.entries(props.projectsData);
     let projectsList = [];
@@ -24,6 +23,7 @@ const ProjectsProfileInfo = (props) => {
 
         </div>
         </div>
+
         </div>
     )
 };

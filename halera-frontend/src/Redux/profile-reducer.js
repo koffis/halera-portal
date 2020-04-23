@@ -1,6 +1,5 @@
 import avatar from '../common/Images/user.png'
 import qr from '../common/Images/qrCode.png'
-import rate from '../common/Images/rate.svg'
 import proj from '../common/Images/project.png'
 import achievement from '../common/Images/achiev.svg'
 
@@ -21,7 +20,7 @@ let initialState = {
         project: 'Halera',
         work: 'Google',
         qrCode: qr,
-        rate: rate
+        rate: 1
     }],
     projectsData: {
         'Hamno': {

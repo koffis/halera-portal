@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import logo from '../../common/Images/logo.svg'
 import './Navbar.scss'
 import $ from 'jquery'
 
@@ -8,7 +9,7 @@ const Navbar = (props) => {
         <nav className="nav">
             <div className="container">
                 <div className="logo">
-                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/'><img alt={'logo'} src={logo}/></NavLink>
                 </div>
                 <div id="mainListDiv" className="main_list">
                     <ul className="navlinks">
