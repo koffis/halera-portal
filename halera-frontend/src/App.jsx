@@ -1,14 +1,14 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {NavLink, Route} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
-import s from './App.module.css'
+import './App.css'
 import './common/fm.revealator.jquery.scss'
 import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
-import './common/fa.css'
-
+import './common/fa/all.css'
+import './common/fa/font-mfizz.scss'
 /*Components*/
 import Navbar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
@@ -28,11 +28,12 @@ import SearchContainer from "./Components/Search/SearchContainer";
 
 const App = (props) => {
     if (isMobile) {
-        return <div className={s.textmobile}>Use computer please!</div>
+        return <div className="textmobile">Use computer please!</div>
     }
-    return (<div className={s.app_wrapper}>
+    return (<div className="app_wrapper">
             <Navbar/>
-            <div className={s.content}>
+            <div className="content">
+
                 <Route exact path='/' render={() => <MainPage/>}/>
                 <Route path='/test' render={() => <Test/>}/>
                 <Route path='/profile' render={() => <ProfileContainer/>}/>
