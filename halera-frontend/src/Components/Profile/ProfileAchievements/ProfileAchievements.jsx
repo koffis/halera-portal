@@ -13,7 +13,7 @@ const ProfileAchievements = (props) => {
         />)
     }
 
-    return (<div className="revealator-fade revealator-delay3 revealator-once profileAchievements">
+    return (<div className="revealator-fade revealator-delay1 revealator-once profileAchievements">
             <div className="container card testimonial-card">
                 <p/>
                 <NavLink to={'/achievements'}>Your skills</NavLink>
