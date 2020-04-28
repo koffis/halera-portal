@@ -6,7 +6,7 @@ let initialState = {
        projectID: 69,
        projectImage: projectIcon,
        projectName: 'Halera project',
-       projectStatus: 2,
+       projectStatus: 1,
        searchTeam: true,
        members:[
            {position: 'Frontend', userName:'dog', profileImage:member, name: 'Julia Sitka'},

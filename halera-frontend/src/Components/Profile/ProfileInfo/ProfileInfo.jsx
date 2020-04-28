@@ -5,6 +5,11 @@ import ratelvl1 from '../../../common/Images/rateBoats/rate1.png'
 import ratelvl2 from '../../../common/Images/rateBoats/rate2.png'
 import ratelvl3 from '../../../common/Images/rateBoats/rate3.png'
 import ratelvl4 from '../../../common/Images/rateBoats/rate4.png'
+import ratelvl5 from '../../../common/Images/rateBoats/rate5.png'
+import ratelvl6 from '../../../common/Images/rateBoats/rate6.png'
+import ratelvl7 from '../../../common/Images/rateBoats/rate7.png'
+import ratelvl8 from '../../../common/Images/rateBoats/rate8.png'
+
 
 const ProfileInfo = (props) => {
 
@@ -19,6 +24,14 @@ const ProfileInfo = (props) => {
             return ratelvl3;
         } else if (props.profileData.rate === 4) {
             return ratelvl4;
+        } else if (props.profileData.rate === 5) {
+            return ratelvl5;
+        } else if (props.profileData.rate === 6) {
+            return ratelvl6;
+        } else if (props.profileData.rate === 7) {
+            return ratelvl7;
+        } else if (props.profileData.rate === 8) {
+            return ratelvl8;
         }
     };
 
@@ -31,6 +44,14 @@ const ProfileInfo = (props) => {
             return 'Reputation: 3 lvl';
         } else if (props.profileData.rate === 4) {
             return 'Reputation: 4 lvl';
+        } else if (props.profileData.rate === 5) {
+            return 'Reputation: 5 lvl';
+        } else if (props.profileData.rate === 6) {
+            return 'Reputation: 6 lvl';
+        } else if (props.profileData.rate === 7) {
+            return 'Reputation: 7 lvl';
+        } else if (props.profileData.rate === 8) {
+            return 'Reputation: 8 lvl';
         }
     };
 
