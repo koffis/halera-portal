@@ -1,0 +1,17 @@
+.languageImage i{
+    font-size: 150px ;
+}
+
+.header{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.languageItem{
+    display: flex;
+    justify-content: space-around;
+    outline: 1px outset #22ECDA;
+    outline-offset: 0px;
+    padding: 20px;
+    margin: 50px;
+}

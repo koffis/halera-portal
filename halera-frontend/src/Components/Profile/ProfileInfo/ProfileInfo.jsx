@@ -10,6 +10,7 @@ import ratelvl4 from '../../../common/Images/rateBoats/rate4.svg'
 const ProfileInfo = (props) => {
 
     let path = '/profile/' + props.profileData.userName;
+
     let rateImage = () => {
         if (props.profileData.rate === 1) {
             return ratelvl1;
@@ -58,6 +59,7 @@ const ProfileInfo = (props) => {
                         <p>About me: {props.profileData.status}</p>
                         <p>My location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
                         <p>My project: {props.profileData.project}</p>
+                        <p>My work: {props.profileData.work}</p>
                         <div className={'ratePlace'}>
                             <img alt={'rate'} title={rateTitle()} src={rateImage()}/>
                         </div>

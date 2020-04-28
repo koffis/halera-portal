@@ -1,5 +1,5 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {NavLink, Route} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
@@ -7,7 +7,8 @@ import s from './App.module.css'
 import './common/fm.revealator.jquery.scss'
 import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
-import './common/fa.css'
+import './common/fa/all.css'
+import './common/fa/font-mfizz.scss'
 
 /*Components*/
 import Navbar from "./Components/Navbar/Navbar";
@@ -15,8 +16,6 @@ import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import Team from "./Components/Team/Team";
-import Users from "./Components/Users/Users";
-import Search from "./Components/Search/Search";
 import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
 import Registration from "./Components/LogIn-Registration/Registration/Registration";
 import Settings from "./Components/Settings/Settings";
@@ -24,6 +23,7 @@ import Achievements from "./Components/Achievements/Achievements";
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
+
 
 
 const App = (props) => {
@@ -37,7 +37,6 @@ const App = (props) => {
                 <Route path='/test' render={() => <Test/>}/>
                 <Route path='/profile' render={() => <ProfileContainer/>}/>
                 <Route path='/team' render={() => <Team/>}/>
-                <Route path='/users' render={() => <Users/>}/>
                 <Route path='/projects' render={() => <ProjectsContainer/>}/>
                 <Route path='/search' render={() => <SearchContainer/>}/>
                 <Route path='/login' render={() => <LogIn/>}/>

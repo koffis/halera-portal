@@ -20,7 +20,7 @@ let initialState = {
         project: 'Halera',
         work: 'Google',
         qrCode: qr,
-        rate: 1
+        rate: 4
     }],
     projectsData: {
         'Hamno': {

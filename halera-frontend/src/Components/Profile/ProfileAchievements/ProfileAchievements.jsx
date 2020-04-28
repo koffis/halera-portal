@@ -15,9 +15,6 @@ const ProfileAchievements = (props) => {
 
     return (<div className="revealator-fade revealator-delay3 revealator-once profileAchievements">
             <div className="container card testimonial-card">
-                <p/>
-                <NavLink to={'/achievements'}>Your skills</NavLink>
-                <p/>
                 <NavLink to={'test'}>Pass tests</NavLink>
                 <p/>
                 <div className="achievementSpace">
