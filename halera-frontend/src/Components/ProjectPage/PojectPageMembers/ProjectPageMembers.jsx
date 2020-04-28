@@ -14,14 +14,14 @@ const ProjectPageMembers = (props) => {
                 <div className="card-body">
                     <h4 className="card-title">{m.name}</h4>
                     <hr/>
-                    <p/><i className="fas fa-quote-left"/><p>{m.position}</p>
+                    <p>{m.position}</p>
                 </div>
             </NavLink>
         </div>
     </div>);
 
     return (
-        <div className="card container members_prj">
+        <div className="card container members_prj revealator-fade revealator-delay2 revealator-once">
             <p/>
             <div className="container">
                 <p/>
@@ -30,7 +30,11 @@ const ProjectPageMembers = (props) => {
                     {memberList}
                 </div>
             </div>
+
         </div>
+
+
+
     )
 };
 
