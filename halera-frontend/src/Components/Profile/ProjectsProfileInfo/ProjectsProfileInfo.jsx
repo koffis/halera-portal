@@ -17,6 +17,7 @@ const ProjectsProfileInfo = (props) => {
     return (<div className="containerprj revealator-fade revealator-delay2 revealator-once">
         <div className="container card testimonial-card">
             <NavLink to={'/projects'} >Last projects</NavLink>
+            <p/>
             <div className="row">
 
                   {projectsList}

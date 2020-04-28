@@ -123,7 +123,7 @@ const MainPage = (props) => {
 
                     </div>
                 </div>
-                <div className="footer-copyright text-center py-3 footerlink">© 2020
+                <div className="footer-copyright text-center py-3 footerlink ">© 2020
                      Copyright:
                     <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
                 </div>

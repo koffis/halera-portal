@@ -27,25 +27,25 @@ let initialState = {
             projectID: 69,
             projectImage: proj,
             projectName: 'Hamno',
-            projectStatus: 'in plan',
+            projectStatus: 1,
             searchTeam: true},
         'Maxim': {
             projectID: 1488,
             projectImage: proj,
             projectName: 'Maxim',
-            projectStatus: 'ongoing',
+            projectStatus: 2,
             searchTeam: true},
         'IhorLoh': {
             projectID: 322,
             projectImage: proj,
             projectName: 'IhorLoh',
-            projectStatus: 'closed',
+            projectStatus: 3,
             searchTeam: false},
         'gavno': {
             projectID: 322,
             projectImage: proj,
             projectName: 'IhorLoh3000',
-            projectStatus: 'closed',
+            projectStatus: 1,
             searchTeam: false}
     },
 
