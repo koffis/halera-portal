@@ -16,8 +16,6 @@ import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import Team from "./Components/Team/Team";
-import Users from "./Components/Users/Users";
-import Search from "./Components/Search/Search";
 import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
 import Registration from "./Components/LogIn-Registration/Registration/Registration";
 import Settings from "./Components/Settings/Settings";
@@ -25,6 +23,10 @@ import Achievements from "./Components/Achievements/Achievements";
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
+import ProjectPageAllMembers
+    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembers";
+import ProjectPageAllMembersContainer
+    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 
 
 const App = (props) => {
@@ -34,19 +36,17 @@ const App = (props) => {
     return (<div className="app_wrapper">
             <Navbar/>
             <div className="content">
-
                 <Route exact path='/' render={() => <MainPage/>}/>
                 <Route path='/test' render={() => <Test/>}/>
                 <Route path='/profile' render={() => <ProfileContainer/>}/>
                 <Route path='/team' render={() => <Team/>}/>
-                <Route path='/users' render={() => <Users/>}/>
                 <Route path='/projects' render={() => <ProjectsContainer/>}/>
                 <Route path='/search' render={() => <SearchContainer/>}/>
                 <Route path='/login' render={() => <LogIn/>}/>
                 <Route path='/registration' render={() => <Registration/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>
-                <Route path='/achievements' render={() => <Achievements/>}/>
                 <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
             </div>
         </div>
     )

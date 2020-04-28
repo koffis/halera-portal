@@ -9,6 +9,7 @@ import ratelvl4 from '../../../common/Images/rateBoats/rate4.png'
 const ProfileInfo = (props) => {
 
     let path = '/profile/' + props.profileData.userName;
+
     let rateImage = () => {
         if (props.profileData.rate === 1) {
             return ratelvl1;

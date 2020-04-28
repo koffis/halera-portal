@@ -40,8 +40,10 @@ const ProjectsItem = (props) => {
                 </div>
                 <div className="col-9 status_col">
                     <div className="row">
-                        <div className="col-5"><h5>Project name: {props.projectName}</h5><p/><h6>Members:</h6></div>
-
+                        <div className="col-5">
+                            <h5>{props.projectName}</h5><p/>
+                            <h6>Members:</h6>
+                        </div>
                         <div className="col-4">
                             <h5>Project status: {projectStatus()}</h5>
                             <p/>
@@ -50,7 +52,11 @@ const ProjectsItem = (props) => {
                     </div>
                     <div className="row">
                         <div className="col-9">
-                       {/*     {props.}*/}
+                            <img alt={'team member'} src={props.members[0].profileImage}/>
+                            <img alt={'team member'} src={props.members[1].profileImage}/>
+                            <img alt={'team member'} src={props.members[2].profileImage}/>
+                            <img alt={'team member'} src={props.members[3].profileImage}/>
+                            <img alt={'team member'} src={props.members[4].profileImage}/>
                         </div>
                     </div>
                 </div>
