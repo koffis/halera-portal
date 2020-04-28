@@ -1,5 +1,5 @@
 import React from "react";
-import s from './ProjectPageMembers.module.css'
+import './ProjectPageMembers.scss'
 import {NavLink} from "react-router-dom";
 
 const ProjectPageMembers = (props) =>{
@@ -16,8 +16,8 @@ const ProjectPageMembers = (props) =>{
     }
 
     return(
-        <div className={s.ProjectPageMembers}>
-            <div className={s.ProjectPageMembersImg}>
+        <div className="">
+            <div className="">
                 {memberList}
             </div>
         </div>
