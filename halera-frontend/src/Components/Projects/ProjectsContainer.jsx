@@ -4,6 +4,7 @@ import Projects from "./Projects";
 let mapStateToProps  = (state) => {
     return {
         projectsData: state.profilePage.projectsData,
+        members: state.projectPage.projectData.members
     }
 };
 
