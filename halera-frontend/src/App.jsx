@@ -23,7 +23,10 @@ import Achievements from "./Components/Achievements/Achievements";
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
-
+import ProjectPageAllMembers
+    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembers";
+import ProjectPageAllMembersContainer
+    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 
 
 const App = (props) => {
@@ -33,7 +36,6 @@ const App = (props) => {
     return (<div className="app_wrapper">
             <Navbar/>
             <div className="content">
-
                 <Route exact path='/' render={() => <MainPage/>}/>
                 <Route path='/test' render={() => <Test/>}/>
                 <Route path='/profile' render={() => <ProfileContainer/>}/>
@@ -43,8 +45,8 @@ const App = (props) => {
                 <Route path='/login' render={() => <LogIn/>}/>
                 <Route path='/registration' render={() => <Registration/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>
-                <Route path='/achievements' render={() => <Achievements/>}/>
                 <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
             </div>
         </div>
     )
