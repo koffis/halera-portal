@@ -66,13 +66,13 @@ const ProfileInfo = (props) => {
                         <p>Work: {props.profileData.work}</p>
                     </div>
                     <div className="col-4 text-center">
-                        <img className="avatar-img qr_code_img" src={props.profileData.qrCode}/>
+                        <img className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrCode}/>
                         <div className="align-content-center">
                             {props.profileData.followed
-                                ? <button className="btn btn-outline-danger btn-rounded" onClick={() => {
+                                ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {
                                     props.unfollow(props.profileData.userName)
                                 }}>Un follow</button>
-                                : <button className="btn btn-outline-success btn-rounded" onClick={() => {
+                                : <button className="btn btn-outline-success btn-rounded btn-follow" onClick={() => {
                                     props.follow(props.profileData.userName)
                                 }}>Add friend</button>}
                         </div>

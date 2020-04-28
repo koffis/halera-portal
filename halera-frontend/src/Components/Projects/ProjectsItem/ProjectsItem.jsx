@@ -5,26 +5,27 @@ import {NavLink} from "react-router-dom";
 
 const ProjectsItem = (props) => {
     let path = '/project/' + props.projectID;
+
     let projectStatus = () => {
         if (props.projectStatus === 1) {
-            return (<div className="badge badge-primary">Planning</div>);
+            return (<span className="badge badge-primary">Planning</span>);
         } else if (props.projectStatus === 2) {
-            return (<div className="badge badge-success">Ongoing</div>);
+            return (<span className="badge badge-success">Ongoing</span>);
         } else if (props.projectStatus === 3) {
-            return (<div className="badge badge-danger">Closed</div>);
+            return (<span className="badge badge-danger">Closed</span>);
         }
     };
 
     let teamSearch = () => {
         if (props.searchTeam === true) {
-            return (<div className="badge badge-success">Yes</div>);
+            return (<span className="badge badge-success">Yes</span>);
         } else if (props.searchTeam === false) {
-            return (<div className="badge badge-danger">No</div>);
+            return (<span className="badge badge-danger">No</span>);
         }
         };
     let hide_text = () => {
         if (props.projectStatus=== 3) {
-            return ("text-hide");
+            return ("d-none");
         }
     };
 
