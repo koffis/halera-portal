@@ -34,7 +34,7 @@ const ProjectsItem = (props) => {
             <div className="row">
                 <div className="col-3 text-center">
                     <NavLink to={path}><img alt={'project img'}
-                                            className="rounded-circle z-depth-2 white profile_list_img "
+                                            className="rounded-circle z-depth-2 white profile_list_img"
                                             src={props.projectImage}/></NavLink>
 
                 </div>
@@ -54,15 +54,15 @@ const ProjectsItem = (props) => {
                     </div>
                     <div className="row">
                         <div className="col-9">
-                            <img className="rounded-circle img_prj_small z-depth-1 border border-light"
+                            <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[0].profileImage}/>
-                            <img className="rounded-circle img_prj_small z-depth-1 border border-light"
+                            <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[1].profileImage}/>
-                            <img className="rounded-circle img_prj_small z-depth-1 border border-light"
+                            <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[2].profileImage}/>
-                            <img className="rounded-circle img_prj_small z-depth-1 border border-light"
+                            <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[3].profileImage}/>
-                            <img className="rounded-circle img_prj_small z-depth-1 border border-light"
+                            <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[4].profileImage}/>
                         </div>
                     </div>
