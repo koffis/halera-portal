@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const ProjectPageAllMembersItem = (props) => {
-    let path = '/profile' + props.userName;
+    let path = '/profile/' + props.userName;
 
     return (
         <div>

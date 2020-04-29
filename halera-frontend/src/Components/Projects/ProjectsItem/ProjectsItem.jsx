@@ -52,11 +52,12 @@ const ProjectsItem = (props) => {
                     </div>
                     <div className="row">
                         <div className="col-9">
-                            <img alt={'team member'} src={props.members[0].profileImage}/>
-                            <img alt={'team member'} src={props.members[1].profileImage}/>
-                            <img alt={'team member'} src={props.members[2].profileImage}/>
-                            <img alt={'team member'} src={props.members[3].profileImage}/>
-                            <img alt={'team member'} src={props.members[4].profileImage}/>
+                            <NavLink to={'/profile/' + props.members[0].userName}><img alt={'team member'} src={props.members[0].profileImage}/></NavLink>
+                            <NavLink to={'/profile/' + props.members[1].userName}><img alt={'team member'} src={props.members[1].profileImage}/></NavLink>
+                            <NavLink to={'/profile/' + props.members[2].userName}><img alt={'team member'} src={props.members[2].profileImage}/></NavLink>
+                            <NavLink to={'/profile/' + props.members[3].userName}><img alt={'team member'} src={props.members[3].profileImage}/></NavLink>
+                            <NavLink to={'/profile/' + props.members[4].userName}><img alt={'team member'} src={props.members[4].profileImage}/></NavLink>
+
                         </div>
                     </div>
                 </div>
