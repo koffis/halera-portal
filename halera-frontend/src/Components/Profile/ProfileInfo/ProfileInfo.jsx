@@ -9,6 +9,7 @@ import ratelvl5 from '../../../common/Images/rateBoats/rate5.png'
 import ratelvl6 from '../../../common/Images/rateBoats/rate6.png'
 import ratelvl7 from '../../../common/Images/rateBoats/rate7.png'
 import ratelvl8 from '../../../common/Images/rateBoats/rate8.png'
+import ratelvl9 from '../../../common/Images/rateBoats/rate9.png'
 
 
 const ProfileInfo = (props) => {
@@ -32,6 +33,8 @@ const ProfileInfo = (props) => {
             return ratelvl7;
         } else if (props.profileData.rate === 8) {
             return ratelvl8;
+        } else if (props.profileData.rate === 9) {
+            return ratelvl9;
         }
     };
 
@@ -52,6 +55,8 @@ const ProfileInfo = (props) => {
             return 'Reputation: 7 lvl';
         } else if (props.profileData.rate === 8) {
             return 'Reputation: 8 lvl';
+        } else if (props.profileData.rate === 9) {
+            return 'Reputation: 9 lvl';
         }
     };
 
@@ -59,7 +64,7 @@ const ProfileInfo = (props) => {
         <div className="revealator-fade revealator-delay1 revealator-once container_profile_info">
             <div className="container card testimonial-card">
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-3">
                         <div className="profileImage">
                             <div className="ratePlace">
                                 <img alt={'rate'} className="rounded-circle z-depth-2 white" title={rateTitle()}
@@ -80,14 +85,84 @@ const ProfileInfo = (props) => {
                         </div>
 
                     </div>
-                    <div className="col-4">
-                        <NavLink to={path}><h4>{props.profileData.name}</h4></NavLink>
-                        <p>About: {props.profileData.status}</p>
-                        <p>Location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
-                        <p>Project: {props.profileData.project}</p>
-                        <p>Work: {props.profileData.work}</p>
+                    <div className="col-6">
+                        <div className="row">
+                            <div className="col-9">
+                                <NavLink to={path}><h4>{props.profileData.name}</h4></NavLink>
+                                <p>About: {props.profileData.status}</p>
+                                <p>Location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
+                                <p>Age: {props.profileData.age}</p>
+                                <p>Project: {props.profileData.project}</p>
+                                <p>Work: {props.profileData.work}</p>
+                                <div className="row follow_btn_group">
+                                    <div className="col-6">
+                                        <button type="button" className="btn btn-outline-default btn-rounded">
+                                            <span>Followers</span>
+                                        </button>
+                                        <span className="counter">123</span>
+                                    </div>
+                                    <div className="col-6">
+                                        <button type="button" className="btn btn-outline-info btn-rounded">
+                                            <span>Followed</span>
+                                        </button>
+                                        <span className="counter">567</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-3">
+                                <div className="row">
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-git" title="GitHub" type="button"
+                                           role="button"><i
+                                            className="fab fa-github"/></a>
+                                    </div>
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
+                                           role="button"><i
+                                            className="fab fa-stack-overflow"/></a>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-tw" title="Twitter" type="button"
+                                           role="button"><i
+                                            className="fab fa-twitter"/></a>
+                                    </div>
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-ins" title="Instagram" type="button"
+                                           role="button"><i
+                                            className="fab fa-instagram"/></a>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-li" title="Linkedin" type="button"
+                                           role="button"><i
+                                            className="fab fa-linkedin-in"/></a>
+                                    </div>
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-yt" title="YouTube" type="button"
+                                           role="button"><i
+                                            className="fab fa-youtube"/></a>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-6">
+                                        <a className="btn-floating btn-md btn-tw" title="Telegram" type="button"
+                                           role="button"><i
+                                            className="fab fa-telegram"/></a>
+                                    </div>
+                                    <div className="col-6">
+                                        <a class="btn-floating btn-md btn-reddit" title="Reddit" type="button"
+                                           role="button"><i
+                                            class="fab fa-reddit-alien"/></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-4 text-center">
+                    <div className="col-3 text-center">
                         <img className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrCode}/>
                         <div className="align-content-center">
                             {props.profileData.followed

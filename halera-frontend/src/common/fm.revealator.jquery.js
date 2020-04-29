@@ -1,31 +1,32 @@
 import $ from 'jquery'
 import './fm.revealator.jquery.scss'
-var Revealator = typeof Revealator !== 'undefined' ? Revealator : {};
+var Revealator = typeof Revealator !== 'undefined' ? Revealator : {
+	timer:           null,
+	busy:            false,
+	scroll_padding:  0,
+	effects_padding: 0,
+	refresh:         function () {}
 
+};
 $(function () {
 	Revealator = $.extend({}, {
-		timer:           null,
-		busy:            false,
-		scroll_padding:  0,
-		effects_padding: 0,
-		refresh:         function () {}
 	}, typeof Revealator !== 'undefined' ? Revealator : {});
 
 	Revealator.refresh = function () {
-		var $window = $(window);
-		var $document = $(document);
-		var $body = $(document.body);
-		var i = 0;
-		var window_top = Revealator.effects_padding;
-		var window_bottom = $window.height() - Revealator.effects_padding;
-		var document_top = Revealator.scroll_padding;
-		var document_bottom = $document.height() - Revealator.scroll_padding;
+		let $window = $(window);
+		let $document = $(document);
+		let $body = $(document.body);
+		let i = 0;
+		let window_top = Revealator.effects_padding;
+		let window_bottom = $window.height() - Revealator.effects_padding;
+		let document_top = Revealator.scroll_padding;
+		let document_bottom = $document.height() - Revealator.scroll_padding;
 		
 		if ($window.scrollTop() === 0) {
 			if (!$body.hasClass('at-top')) {
 				$body.addClass('at-top').removeClass('at-bottom').removeClass('near-top').removeClass('near-bottom');
 			}
-		} else if ($window.scrollTop() + $window.height() === $document.height()) {
+		} else if ($window.scrollTop() + $window.height()=== $document.height()) {
 			if (!$body.hasClass('at-bottom')) {
 				$body.addClass('at-bottom').removeClass('at-top').removeClass('near-top').removeClass('near-bottom');
 			}
@@ -45,18 +46,18 @@ $(function () {
 		
 		$('*[class*="revealator"]').each(function () {
 			i++;
-			var element = this;
-			var $element = $(element);
-			var element_bounding = element.getBoundingClientRect();
+			let element = this;
+			let $element = $(element);
+			let element_bounding = element.getBoundingClientRect();
 
-			var position_class = undefined;
+			let position_class = undefined;
 			if (element_bounding.top > window_bottom && element_bounding.bottom > window_bottom) {
 				position_class = 'revealator-below';
-			} else if (element_bounding.top < window_bottom && element_bounding.bottom > window_bottom) {
+			} else if (element_bounding.top + 100 > window_bottom && element_bounding.bottom > window_bottom) {
 				position_class = 'revealator-partially-below'
-			} else if (element_bounding.top < window_top && element_bounding.bottom > window_top) {
+			} else if (element_bounding.top + 100> window_top && element_bounding.bottom > window_top) {
 				position_class = 'revealator-partially-above'
-			} else if (element_bounding.top < window_top && element_bounding.bottom < window_top) {
+			} else if (element_bounding.top + 100> window_top && element_bounding.bottom < window_top) {
 				position_class = 'revealator-above';
 			} else {
 				position_class = 'revealator-within';
@@ -84,7 +85,7 @@ $(function () {
 		});
 	};
 
-	$(window).bind('scroll resize load ready click jQuery.ready change', function () {
+	$(window).bind('scroll resize load ready click jQuery.ready change popstate', function () {
 		if (!Revealator.busy) {
 			Revealator.busy = true;
 			setTimeout(function () {
@@ -92,5 +93,6 @@ $(function () {
 				Revealator.refresh();
 			}, 150);
 		}
+
 	});
 });
