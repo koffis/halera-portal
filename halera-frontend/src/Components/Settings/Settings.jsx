@@ -1,12 +1,31 @@
 import React from "react";
 
 const Settings = (props) => {
+    debugger;
+
+    let onSetChanges = () => {
+        props.setChanges();
+    };
+
+    let onStatusChanged = (event) => {
+        let text = event.target.value;
+        props.updateNewStatusText(text);
+    };
+
+    let onNameChanged = (event) => {
+        let text = event.target.value;
+        props.updateNewNameText(text);
+    };
+
     return (
         <div>
             <div className={'SetProfileInfo'}>
                 <h3>Set profile info</h3>
                 <h4>Set status</h4>
-                <input placeholder={'how are u?'}/>
+                <input onChange={onStatusChanged}
+                       placeholder={'how are u?'}
+                       value={props.newStatusText}
+                />
                 <h4>Set workplace</h4>
                 <input placeholder={'your work place'}/>
             </div>
@@ -14,7 +33,10 @@ const Settings = (props) => {
             <div className={'ChangeProfile'}>
                 <h3>Change profile</h3>
                 <h4>Change name</h4>
-                <input placeholder={'your name'}/>
+                <input onChange={onNameChanged}
+                       placeholder={'your name'}
+                       value={props.newName}
+                />
                 <h4>Change location</h4>
                 <div>
                     <h4>Country</h4>
@@ -42,7 +64,7 @@ const Settings = (props) => {
                 <h4>Facebook</h4>
                 <input placeholder={'link'}/>
             </div>
-            <button>Save changes</button>
+            <button onClick={onSetChanges}>Save changes</button>
         </div>
     )
 };

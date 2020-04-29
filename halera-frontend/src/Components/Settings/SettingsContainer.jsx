@@ -1,29 +1,19 @@
 import React from "react";
 import Settings from "./Settings";
 import {connect} from "react-redux";
-import {
-    setNewFacebookURL, setNewGitHubURL,
-    setNewInstagramURL,
-    setNewLinkedInURL,
-    setNewName, setNewStackOverflowURL,
-    setNewStatusText,
-    setNewTelegramURL,
-    setNewTwitterURL, setNewYouTubeURL
-} from "../../Redux/profile-reducer";
+import {setChanges, updateNewNameText, updateNewStatusText} from "../../Redux/profile-reducer";
 
 
 let mapStateToProps  = (state) => {
     return {
-        profileData: state.profilePage.profileData
+        profileData: state.profilePage.profileData,
+        newStatusText: state.profilePage.newStatusText,
+        newName: state.profilePage.newName
     }
 };
 
 const SettingsContainer = connect(mapStateToProps,
-    { setNewStatusText, setNewName, setNewTwitterURL,
-        setNewLinkedInURL, setNewTelegramURL, setNewStackOverflowURL,
-        setNewInstagramURL, setNewYouTubeURL, setNewFacebookURL,
-        setNewGitHubURL
-    })
+    {setChanges, updateNewStatusText, updateNewNameText})
 (Settings);
 
 export default SettingsContainer;
