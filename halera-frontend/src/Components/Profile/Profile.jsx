@@ -9,7 +9,7 @@ const Profile = (props) => {
     return (
             <div className="page_bg heavy-rain-gradient">
                 <ProfileInfo
-                    profileData={props.profileData[0]}
+                    profileData={props.profileData}
                     follow={props.follow}
                     unfollow={props.unfollow}
                 />
