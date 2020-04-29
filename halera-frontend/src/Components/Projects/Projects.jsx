@@ -12,6 +12,7 @@ const Projects = (props) => {
         projectStatus={p.projectStatus}
         searchTeam={p.searchTeam}
         members = {props.members}
+
     />);
     return(
         <div className="project_list_bg rare-wind-gradient">

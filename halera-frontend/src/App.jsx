@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
@@ -20,15 +20,12 @@ import ProfileContainer from "./Components/Profile/ProfileContainer";
 import Team from "./Components/Team/Team";
 import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
 import Registration from "./Components/LogIn-Registration/Registration/Registration";
-import Settings from "./Components/Settings/Settings";
-import Achievements from "./Components/Achievements/Achievements";
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
-import ProjectPageAllMembers
-    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembers";
 import ProjectPageAllMembersContainer
     from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
+import SettingsContainer from "./Components/Settings/SettingsContainer";
 
 
 const App = (props) => {
@@ -46,7 +43,7 @@ const App = (props) => {
                 <Route path='/search' render={() => <SearchContainer/>}/>
                 <Route path='/login' render={() => <LogIn/>}/>
                 <Route path='/registration' render={() => <Registration/>}/>
-                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/settings' render={() => <SettingsContainer/>}/>
                 <Route path='/project' render={() => <ProjectPageContainer/>}/>
                 <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
             </div>

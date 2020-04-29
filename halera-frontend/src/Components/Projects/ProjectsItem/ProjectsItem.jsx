@@ -64,6 +64,7 @@ const ProjectsItem = (props) => {
                                  alt={'team member'} src={props.members[3].profileImage}/>
                             <img className="rounded-circle img_prj_small z-depth-1 border border-dark"
                                  alt={'team member'} src={props.members[4].profileImage}/>
+
                         </div>
                     </div>
                 </div>
