@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 const Profile = (props) => {
     return (
-            <div className="page_bg rare-wind-gradient">
+            <div className="page_bg heavy-rain-gradient">
                 <ProfileInfo
                     profileData={props.profileData}
                     follow={props.follow}

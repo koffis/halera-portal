@@ -9,6 +9,7 @@ import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
+import './common/globalDark.scss'
 
 /*Components*/
 import Navbar from "./Components/Navbar/Navbar";
