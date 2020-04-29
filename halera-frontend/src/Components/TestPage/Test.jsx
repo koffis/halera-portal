@@ -1,99 +1,37 @@
 import React from "react";
-import s from './Test.module.css'
+import './Test.scss'
 
 const Test = (props) => {
     return (
-        <div>
-            <div className={s.header}>
-                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-            </div>
-            <div className={s.languagesPlace}>
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="fab fa-python"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>Phyton</h5>
-                        <p>
-                            Python is powerful... and fast, plays well with others, runs everywhere;
-                            is friendly & easy to learn ,is Open.
-                        </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
-                    </div>
-                </div>
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="fab fa-js-square"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>JavaScript</h5>
-                        <p>
-                            JavaScript is a dynamic computer programming language.
-                            It is lightweight and most commonly used as a part of web pages
-                        </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
-                    </div>
-                </div>
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="fab fa-java"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>Java</h5>
-                        <p>
-                            Java is a general-purpose programming language that is class-based, object-oriented,
-                            and designed to have as few implementation dependencies as possible.
-                        </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
-                    </div>
-                </div>
-
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="icon-csharp"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>C#</h5>
-                        <p>
-                            C# is a hybrid of C and C++, it is a Microsoft programming language developed to compete
-                            with Sun's Java language
-                        </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
-                    </div>
-                </div>
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="icon-cplusplus"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>C++</h5>
-                        <p>
-                            C++ is a general-purpose object-oriented programming (OOP) language, developed by Bjarne Stroustrup
-                        </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
-                    </div>
-                </div>
-                <div className={s.languageItem}>
-                    <div className={s.languageImage}>
-                        <i className="icon-ruby"></i>
-                    </div>
-                    <div className={s.languageInfo}>
-                        <h5>Ruby</h5>
-                        <p>
-                            A dynamic, open source programming language with a focus on simplicity and productivity.                         </p>
-                    </div>
-                    <div className={s.passTest}>
-                        <button>Try yourself</button>
+        <div className="rare-wind-gradient page_bg">
+            <div className="container test_container">
+                <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                <div className="container">
+                    <div className="card">
+                        <div className="row p-3">
+                            <div className="col-3 text-center">
+                                <i className="fab fa-python icon_test"/>
+                                <h5>Python</h5>
+                                <button type="button"
+                                        className="btn btn-outline-success btn-rounded waves-effect">Try Yourself
+                                </button>
+                            </div>
+                            <div className="col-9 text-justify text_test">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                    <p/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                    deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

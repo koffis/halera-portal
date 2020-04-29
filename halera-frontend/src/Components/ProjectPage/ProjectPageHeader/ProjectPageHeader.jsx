@@ -34,7 +34,7 @@ const ProjectPageHeader = (props) =>{
         }
     };
     return(
-        <div className="container card">
+        <div className="container card revealator-fade revealator-delay1 revealator-once">
             <div className="row">
                 <div className="col-3 text-center padding_prj">
                     <img className="rounded-circle z-depth-2 prg_page_img" alt={'project img'} src = {props.projectImage}/>

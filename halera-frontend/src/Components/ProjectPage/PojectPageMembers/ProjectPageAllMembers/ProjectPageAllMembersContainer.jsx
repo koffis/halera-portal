@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import './ProjectPageAllMembers.scss'
 import ProjectPageAllMembers from "./ProjectPageAllMembers";
 
 let mapStateToProps  = (state) => {
