@@ -17,6 +17,11 @@ const Settings = (props) => {
         props.updateNewNameText(text);
     };
 
+    let onWorkChanged = (event) => {
+        let text =event.target.value;
+        props.updateNewWorkText(text);
+    };
+
     return (
         <div>
             <div className={'SetProfileInfo'}>
@@ -27,7 +32,10 @@ const Settings = (props) => {
                        value={props.newStatusText}
                 />
                 <h4>Set workplace</h4>
-                <input placeholder={'your work place'}/>
+                <input onChange={onWorkChanged}
+                    placeholder={'your work place'}
+                    value={props.newWork}
+                />
             </div>
             <p/>
             <div className={'ChangeProfile'}>

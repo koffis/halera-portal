@@ -75,6 +75,7 @@ let initialState = {
 
     newStatusText : '',
     newName: '',
+    newWork: '',
     newTwitterURL: '',
     newLinkedInURL: '',
     newTelegramURL: '',
@@ -125,10 +126,18 @@ const profileReducer = (state = initialState, action) => {
                     return state.newName
                 }
             };
+            let newWork = () =>{
+                if(state.newWork === ''){
+                    return state.profileData.work
+                }else{
+                    return state.newWork
+                }
+            };
             return {
                 ...state,
                 ...state.profileData.status = newStatus(),
-                ...state.profileData.name = newName()
+                ...state.profileData.name = newName(),
+                ...state.profileData.work = newWork()
             };
         case UPDATE_NEW_STATUS_TEXT:
             return {
@@ -138,16 +147,22 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state, newName: action.nameText
             };
+        case UPDATE_NEW_WORK_TEXT:
+            return {
+                ...state, newWork: action.workText
+            };
         default:
             return state;
     }
 };
 
 const UPDATE_NEW_NAME_TEXT = 'UPDATE_NEW_NAME_TEXT';
+const UPDATE_NEW_WORK_TEXT = 'UPDATE_NEW_WORK_TEXT';
 
 export const setChanges = () => ({type: SET_CHANGES});
 export const updateNewStatusText = (statusText) => ({type: UPDATE_NEW_STATUS_TEXT, statusText});
 export const updateNewNameText = (nameText) => ({type: UPDATE_NEW_NAME_TEXT, nameText});
+export const updateNewWorkText = (workText) => ({type: UPDATE_NEW_WORK_TEXT, workText})
 
 
 export const follow = (userID) => ({type: FOLLOW, userID});
