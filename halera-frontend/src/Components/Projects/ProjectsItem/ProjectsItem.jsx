@@ -54,6 +54,7 @@ const ProjectsItem = (props) => {
                     </div>
                     <div className="row">
                         <div className="col-9">
+
                             <img className="rounded-circle img_prj_small z-depth-1 border border-light"
                                  alt={'team member'} src={props.members[0].profileImage}/>
                             <img className="rounded-circle img_prj_small z-depth-1 border border-light"
@@ -64,6 +65,7 @@ const ProjectsItem = (props) => {
                                  alt={'team member'} src={props.members[3].profileImage}/>
                             <img className="rounded-circle img_prj_small z-depth-1 border border-light"
                                  alt={'team member'} src={props.members[4].profileImage}/>
+
                         </div>
                     </div>
                 </div>
