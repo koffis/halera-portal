@@ -111,12 +111,24 @@ const profileReducer = (state = initialState, action) => {
                 })
             };
         case SET_CHANGES:
-            let newStatus = state.newStatusText;
-            let newName = state.newName;
+            let newStatus = () =>{
+                if(state.newStatusText === ''){
+                    return state.profileData.status
+                }else{
+                    return state.newStatusText
+                }
+            };
+            let newName = () =>{
+                if(state.newName === ''){
+                    return state.profileData.name
+                }else{
+                    return state.newName
+                }
+            };
             return {
                 ...state,
-                ...state.profileData.status = newStatus,
-                ...state.profileData.name = newName
+                ...state.profileData.status = newStatus(),
+                ...state.profileData.name = newName()
             };
         case UPDATE_NEW_STATUS_TEXT:
             return {

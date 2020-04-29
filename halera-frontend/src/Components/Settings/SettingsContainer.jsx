@@ -7,7 +7,9 @@ import {setChanges, updateNewNameText, updateNewStatusText} from "../../Redux/pr
 let mapStateToProps  = (state) => {
     return {
         profileData: state.profilePage.profileData,
+/*
         newStatusText: state.profilePage.newStatusText,
+*/
         newName: state.profilePage.newName
     }
 };
