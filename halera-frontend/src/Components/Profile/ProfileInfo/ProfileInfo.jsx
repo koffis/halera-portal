@@ -114,48 +114,56 @@ const ProfileInfo = (props) => {
                             <div className="col-3">
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.GitHub} className="btn-floating btn-md btn-git" title="GitHub" type="button"
+                                        <a href={socialLink.GitHub} target="_blank"
+                                           className="btn-floating btn-md btn-git" title="GitHub" type="button"
                                            role="button"><i
                                             className="fab fa-github"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.StackOverflow} className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
+                                        <a href={socialLink.StackOverflow} target="_blank"
+                                           className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
                                            role="button"><i
                                             className="fab fa-stack-overflow"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Twitter} className="btn-floating btn-md btn-tw" title="Twitter" type="button"
+                                        <a href={socialLink.Twitter} target="_blank"
+                                           className="btn-floating btn-md btn-tw" title="Twitter" type="button"
                                            role="button"><i
                                             className="fab fa-twitter"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Instagram} className="btn-floating btn-md btn-ins" title="Instagram" type="button"
+                                        <a href={socialLink.Instagram} target="_blank"
+                                           className="btn-floating btn-md btn-ins" title="Instagram" type="button"
                                            role="button"><i
                                             className="fab fa-instagram"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.LinkedIn} className="btn-floating btn-md btn-li" title="Linkedin" type="button"
+                                        <a href={socialLink.LinkedIn} target="_blank"
+                                           className="btn-floating btn-md btn-li" title="Linkedin" type="button"
                                            role="button"><i
                                             className="fab fa-linkedin-in"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.YouTube} className="btn-floating btn-md btn-yt" title="YouTube" type="button"
+                                        <a href={socialLink.YouTube} target="_blank"
+                                           className="btn-floating btn-md btn-yt" title="YouTube" type="button"
                                            role="button"><i
                                             className="fab fa-youtube"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Telegram} className="btn-floating btn-md btn-tw" title="Telegram" type="button"
+                                        <a href={socialLink.Telegram} target="_blank"
+                                           className="btn-floating btn-md btn-tw" title="Telegram" type="button"
                                            role="button"><i
                                             className="fab fa-telegram"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Facebook} className="btn-floating btn-md btn-reddit" title="Facebook" type="button"
+                                        <a href={socialLink.Facebook} target="_blank"
+                                           className="btn-floating btn-md btn-reddit" title="Facebook" type="button"
                                            role="button"><i
                                             className="fab fa-facebook-square"/></a>
                                     </div>

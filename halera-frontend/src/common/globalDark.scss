@@ -96,10 +96,10 @@ footer {
 
 }
 .mainBanner .mainText {
-  color: #a5a5a5 !important;
+  color: #dcdcdc !important;
 }
 .mainBanner .mainText p {
-  color: #a5a5a5 !important;
+  color: #dcdcdc !important;
 }
 .mainBanner .subText a {
   color: #9c9c9c !important;
@@ -113,4 +113,10 @@ footer {
 .profile_list_cont:hover {
   background-color: #282828 !important;
   box-shadow: 0 0 10px rgba(62, 62, 62, 0.5);
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
