@@ -11,6 +11,7 @@ import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
 import './common/globalDark.scss'
 
+
 /*Components*/
 import Navbar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
@@ -22,8 +23,7 @@ import Registration from "./Components/LogIn-Registration/Registration/Registrat
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
-import ProjectPageAllMembersContainer
-    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
+import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
 
 
