@@ -23,6 +23,7 @@ import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
 import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
+import AllStats from "./Components/allStatsPage/AllStats"
 import Error from './Components/404/404';
 import {dark_theme_enable} from './Config';
 
@@ -57,6 +58,7 @@ const App = (props) => {
                     <Route path='/registration' render={() => <Registration/>}/>
                     <Route path='/settings' render={() => <SettingsContainer/>}/>
                     <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                    <Route path='/AllStats' render={() => <AllStats/>}/>
                     <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
                     <Route path='*' component={Error}/>
                 </Switch>
