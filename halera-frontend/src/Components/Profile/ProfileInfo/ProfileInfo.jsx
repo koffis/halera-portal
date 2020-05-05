@@ -115,13 +115,15 @@ const ProfileInfo = (props) => {
                                 <div className="row">
                                     <div className="col-6">
                                         <a href={socialLink.GitHub} target="_blank"
-                                           className="btn-floating btn-md btn-git" title="GitHub" type="button"
+                                           className="btn-floating btn-md btn-git" rel="noopener noreferrer"
+                                           title="GitHub" type="button"
                                            role="button"><i
                                             className="fab fa-github"/></a>
                                     </div>
                                     <div className="col-6">
                                         <a href={socialLink.StackOverflow} target="_blank"
-                                           className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
+                                           className="btn-floating btn-md btn-so" rel="noopener noreferrer"
+                                           title="Stack Overflow" type="button"
                                            role="button"><i
                                             className="fab fa-stack-overflow"/></a>
                                     </div>
@@ -129,13 +131,15 @@ const ProfileInfo = (props) => {
                                 <div className="row">
                                     <div className="col-6">
                                         <a href={socialLink.Twitter} target="_blank"
-                                           className="btn-floating btn-md btn-tw" title="Twitter" type="button"
+                                           className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
+                                           title="Twitter" type="button"
                                            role="button"><i
                                             className="fab fa-twitter"/></a>
                                     </div>
                                     <div className="col-6">
                                         <a href={socialLink.Instagram} target="_blank"
-                                           className="btn-floating btn-md btn-ins" title="Instagram" type="button"
+                                           className="btn-floating btn-md btn-ins" rel="noopener noreferrer"
+                                           title="Instagram" type="button"
                                            role="button"><i
                                             className="fab fa-instagram"/></a>
                                     </div>
@@ -143,13 +147,15 @@ const ProfileInfo = (props) => {
                                 <div className="row">
                                     <div className="col-6">
                                         <a href={socialLink.LinkedIn} target="_blank"
-                                           className="btn-floating btn-md btn-li" title="Linkedin" type="button"
+                                           className="btn-floating btn-md btn-li" rel="noopener noreferrer"
+                                           title="Linkedin" type="button"
                                            role="button"><i
                                             className="fab fa-linkedin-in"/></a>
                                     </div>
                                     <div className="col-6">
                                         <a href={socialLink.YouTube} target="_blank"
-                                           className="btn-floating btn-md btn-yt" title="YouTube" type="button"
+                                           className="btn-floating btn-md btn-yt" rel="noopener noreferrer"
+                                           title="YouTube" type="button"
                                            role="button"><i
                                             className="fab fa-youtube"/></a>
                                     </div>
@@ -157,13 +163,15 @@ const ProfileInfo = (props) => {
                                 <div className="row">
                                     <div className="col-6">
                                         <a href={socialLink.Telegram} target="_blank"
-                                           className="btn-floating btn-md btn-tw" title="Telegram" type="button"
+                                           className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
+                                           title="Telegram" type="button"
                                            role="button"><i
                                             className="fab fa-telegram"/></a>
                                     </div>
                                     <div className="col-6">
                                         <a href={socialLink.Facebook} target="_blank"
-                                           className="btn-floating btn-md btn-reddit" title="Facebook" type="button"
+                                           className="btn-floating btn-md btn-reddit" rel="noopener noreferrer"
+                                           title="Facebook" type="button"
                                            role="button"><i
                                             className="fab fa-facebook-square"/></a>
                                     </div>
@@ -172,7 +180,7 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                     <div className="col-3 text-center">
-                        <img className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrCode}/>
+                        <img alt="qr code" className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrCode}/>
                         <div className="align-content-center">
                             {props.profileData.followed
                                 ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {

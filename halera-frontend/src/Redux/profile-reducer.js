@@ -77,10 +77,11 @@ let initialState = {
         }
     },
     achievementData: {
-        'Java': {achieveImage: achievement, achieveID: 21},
-        'JS': {achieveImage: achievement, achieveID: 1488},
-        'Python': {achieveImage: achievement, achieveID: 322},
-        'Minet': {achieveImage: achievement, achieveID: 223}
+        'Java': {achieveImage: achievement, achieveID: 21, achievementStateValue: 45},
+        'JS': {achieveImage: achievement, achieveID: 1488, achievementStateValue: 56},
+        'Python': {achieveImage: achievement, achieveID: 322, achievementStateValue: 21},
+        'Debian': {achieveImage: achievement, achieveID: 223, achievementStateValue: 95},
+        'sass': {achieveImage: achievement, achieveID: 223, achievementStateValue: 11}
     },
 
     newStatusText : '',

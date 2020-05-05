@@ -2,11 +2,13 @@ import React from "react";
 import "./ProjectsProfileInfo.scss"
 import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
+import {def_max_cards_prj} from "../../../Config";
 
 const ProjectsProfileInfo = (props) => {
     let projectListData = Object.entries(props.projectsData);
     let projectsList = [];
-    for(let i = 0; i < 4; i++){
+
+    for(let i = 0; i < def_max_cards_prj; i++){
        projectsList.push(<ProfileProjectItem projectName={projectListData[i][0]}
                                              projectImage={projectListData[i][1].projectImage}
                                              projectID={projectListData[i][1].projectID}

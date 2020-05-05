@@ -34,6 +34,7 @@ const LogIn = (props) => {
                                     </div>
                                 </div>
                                 <div>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                     <a href="#">Forgot password?</a>
                                 </div>
                             </div>

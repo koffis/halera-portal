@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb {
 .content{
     grid-area: con;
 }
-.textmobile {
+.text_mobile {
     background: white;
     position: absolute;
     top: 50%;
