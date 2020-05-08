@@ -29,7 +29,6 @@ let LinkedInRegex = new RegExp('^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|i
 let TwitterRegex = new RegExp('^(http\:\/\/|https\:\/\/)?(?:www\.)?twitter\.com\/(?:#!\/)?@?([^\?#]*)(?:[?#].*)?$');
 */
 const Settings = (props) => {
-    debugger;
 
     let onSetChanges = () => {
         props.setChanges();
