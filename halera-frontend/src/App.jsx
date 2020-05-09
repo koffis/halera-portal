@@ -10,9 +10,8 @@ import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
 import dark from './common/globalDark.component.scss'
-
 /*Components*/
-import Navbar from "./Components/Navbar/Navbar";
+import NavBar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -22,18 +21,11 @@ import Registration from "./Components/LogIn-Registration/Registration/Registrat
 import ProjectPageContainer from "./Components/ProjectPage/ProjectPageContainer";
 import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
-import ProjectPageAllMembersContainer
-    from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
+import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
 import AllStats from "./Components/allStatsPage/AllStats"
 import Error from './Components/404/404';
-import {
-    dark_theme_enable,
-    check_mobile_enable,
-    check_server_connection,
-    global_url,
-    global_way, maintenance_mode_enable
-} from './Config';
+import {dark_theme_enable, check_mobile_enable, check_server_connection, global_url, global_way, maintenance_mode_enable} from './Config';
 
 const App = (props) => {
 
@@ -51,6 +43,7 @@ const App = (props) => {
             return <div className="text_mobile">Site is closed!</div>
 
         }
+
         if (check_server_connection === true) {
 
 
@@ -59,19 +52,21 @@ const App = (props) => {
                 let started = new Date().getTime();
                 let connection = false
                 let http = new XMLHttpRequest();
-                console.log("Checking server connection with " + global_url)
-                http.open("GET", "http://" + global_way, /*async*/true);
 
+                console.log("Checking server connection with " + global_url)
+
+                http.open("GET", "http://" + global_way, /*async*/true);
                 http.onreadystatechange = function () {
+
                     if (http.readyState === 4) {
 
                         let ended = new Date().getTime();
+                        let milliseconds = ended - started;
 
-                         let milliseconds = ended - started;
                         console.log("Ping: " + milliseconds + " ms")
+
                         if (pong != null) {
                             pong(milliseconds);
-
                         }
                     } else {
                         console.log("Connected!")
@@ -79,33 +74,26 @@ const App = (props) => {
                         connection = true
 
                     }
-
                     if (connection === false) {
 
                         console.log("Connection failed!!")
 
                         function disable_class() {
                             let element = document.getElementById("Error_cont");
+
                             element.classList.remove("d-none");
+
                         }
-
                         disable_class()
-
-
                     }
                 };
 
                 try {
+
                     http.send(null);
 
-                } catch (err) {
-
-
-                }
-
+                } catch (err) {}
             }
-
-
             ping()
         } else {
             console.log("Checking connection disabled")
@@ -122,7 +110,7 @@ const App = (props) => {
         }
 
         return (<div className="app_wrapper">
-                <Navbar/>
+                <NavBar/>
                 <div className="content">
                     <Switch>
                         <Route exact path='/' render={() => <MainPage/>}/>
@@ -147,6 +135,5 @@ const App = (props) => {
                 </div>
             </div>
         )
-    }
-;
+    };
 export default App;

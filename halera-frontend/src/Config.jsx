@@ -9,7 +9,7 @@ export const dark_theme_enable = false
 /*Site settings*/
 export const check_mobile_enable = true
 export const maintenance_mode_enable = false
-export const check_server_connection = true
+export const check_server_connection = false
 export const unable_https = false
 
 
