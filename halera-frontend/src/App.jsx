@@ -54,7 +54,7 @@ const App = (props) => {
     if (check_server_connection === true) {
 
 
-        function ping(host, port, pong, ReferenceError) {
+        function ping(host, port, pong) {
 
             let started = new Date().getTime();
 
@@ -113,10 +113,6 @@ const App = (props) => {
 
     return (<div className="app_wrapper">
             <Navbar/>
-            <div id="Error_cont" className="alert alert-danger d-none alert_connect text_mobile_center" role="alert">
-                <h4 className="alert-heading">Site is in Offline Mode!!!</h4>
-                <p>Error! Backend is offline! React Backend: errors not found</p>
-            </div>
             <div className="content">
                 <Switch>
                     <Route exact path='/' render={() => <MainPage/>}/>
@@ -133,6 +129,10 @@ const App = (props) => {
                     <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
                     <Route path='*' component={Error}/>
                 </Switch>
+            </div>
+            <div id="Error_cont" className="alert alert-danger d-none alert_connect text_mobile_center" role="alert">
+                <h4 className="alert-heading">Site is in Offline Mode!!!</h4>
+                <p>Error! Backend is offline! React Backend: errors not found</p>
             </div>
         </div>
     )

@@ -3,13 +3,13 @@ export const def_max_cards_prj = 4
 export const def_max_cards_ach = 5
 export const def_max_cards_prj_mem = 4
 
-/*theme settings*/
+/*theme settings*/ /*not working*/
 export const dark_theme_enable = false
 
 /*Site settings*/
 export const check_mobile_enable = true
 export const maintenance_mode_enable = false
-export const check_server_connection = true
+export const check_server_connection = false
 export const unable_https = false
 
 
@@ -23,8 +23,8 @@ export const pinterest_main_link = "#"
 
 
 /*Connect*/
-export const site_ip = "localhost"
-export const site_port = "5050"
+export const connect_ip = "localhost"
+export const connect_port = "5050"
 
 /*Scripts*/
 let html_protocol
@@ -39,7 +39,7 @@ if (unable_https === true) {
 
 
 /*Other*/
-export const global_ip = site_ip + ":" + site_port;
+export const global_ip = connect_ip + ":" + connect_port;
 export const global_url = html_protocol + global_ip + "/api/v1/";
 export const global_way = global_ip + "/api/v1/";
 
