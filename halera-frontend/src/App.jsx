@@ -37,104 +37,116 @@ import {
 
 const App = (props) => {
 
-    if (check_mobile_enable === true) {
+        if (check_mobile_enable === true) {
+            if (maintenance_mode_enable === true) {
+
+                return <div className="text_mobile">Site is closed!</div>
+
+            } else if (isMobile) {
+                return <div className="text_mobile">Use computer please!</div>
+            }
+        }
         if (maintenance_mode_enable === true) {
 
             return <div className="text_mobile">Site is closed!</div>
 
-        } else if (isMobile) {
-            return <div className="text_mobile">Use computer please!</div>
         }
-    }
-    if (maintenance_mode_enable === true) {
-
-        return <div className="text_mobile">Site is closed!</div>
-
-    }
-    if (check_server_connection === true) {
+        if (check_server_connection === true) {
 
 
-        function ping(host, port, pong) {
+            function ping(host, port, pong) {
 
-            let started = new Date().getTime();
+                let started = new Date().getTime();
+                let connection = false
+                let http = new XMLHttpRequest();
+                console.log("Checking server connection with " + global_url)
+                http.open("GET", "http://" + global_way, /*async*/true);
 
-            let http = new XMLHttpRequest();
-            console.log("Checking server connection with " + global_url)
-            http.open("GET", "http://" + global_way, /*async*/true);
+                http.onreadystatechange = function () {
+                    if (http.readyState === 4) {
 
-            http.onreadystatechange = function () {
-                if (http.readyState === 4) {
+                        let ended = new Date().getTime();
 
-                    let ended = new Date().getTime();
+                         let milliseconds = ended - started;
+                        console.log("Ping: " + milliseconds + " ms")
+                        if (pong != null) {
+                            pong(milliseconds);
 
-                    let milliseconds = ended - started;
+                        }
+                    } else {
+                        console.log("Connected!")
 
-                    if (pong != null) {
-                        pong(milliseconds);
+                        connection = true
 
                     }
-                } else {
-                    console.log("Connected!")
-                }
-                if (Error) {
-                    console.log("Connection failed!!")
-                    function disable_class() {
-                        let element = document.getElementById("Error_cont");
-                        element.classList.remove("d-none");
+
+                    if (connection === false) {
+
+                        console.log("Connection failed!!")
+
+                        function disable_class() {
+                            let element = document.getElementById("Error_cont");
+                            element.classList.remove("d-none");
+                        }
+
+                        disable_class()
+
+
                     }
-                    disable_class()
+                };
+
+                try {
+                    http.send(null);
+
+                } catch (err) {
+
+
                 }
-            };
-
-            try {
-                http.send(null);
-
-            }  catch (err) {
-
 
             }
 
+
+            ping()
+        } else {
+            console.log("Checking connection disabled")
         }
 
 
-        ping()
-    }
-    else {console.log("Checking connection disabled")}
+        let css = dark;
+        if (dark_theme_enable === true) {
+            return (
+                <React.Fragment>
+                    <style>{css}</style>
+                </React.Fragment>
+            );
+        }
 
-
-    let css = dark;
-    if (dark_theme_enable === true) {
-        return (
-            <React.Fragment>
-                <style>{css}</style>
-            </React.Fragment>
-        );
-    }
-
-    return (<div className="app_wrapper">
-            <Navbar/>
-            <div className="content">
-                <Switch>
-                    <Route exact path='/' render={() => <MainPage/>}/>
-                    <Route path='/test' render={() => <Test/>}/>
-                    <Route path='/profile' render={() => <ProfileContainer/>}/>
-                    <Route path='/team' render={() => <Team/>}/>
-                    <Route path='/projects' render={() => <ProjectsContainer/>}/>
-                    <Route path='/search' render={() => <SearchContainer/>}/>
-                    <Route path='/login' render={() => <LogIn/>}/>
-                    <Route path='/registration' render={() => <Registration/>}/>
-                    <Route path='/settings' render={() => <SettingsContainer/>}/>
-                    <Route path='/project' render={() => <ProjectPageContainer/>}/>
-                    <Route path='/AllStats' render={() => <AllStats/>}/>
-                    <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
-                    <Route path='*' component={Error}/>
-                </Switch>
+        return (<div className="app_wrapper">
+                <Navbar/>
+                <div className="content">
+                    <Switch>
+                        <Route exact path='/' render={() => <MainPage/>}/>
+                        <Route path='/test' render={() => <Test/>}/>
+                        <Route path='/profile' render={() => <ProfileContainer/>}/>
+                        <Route path='/team' render={() => <Team/>}/>
+                        <Route path='/projects' render={() => <ProjectsContainer/>}/>
+                        <Route path='/search' render={() => <SearchContainer/>}/>
+                        <Route path='/login' render={() => <LogIn/>}/>
+                        <Route path='/registration' render={() => <Registration/>}/>
+                        <Route path='/settings' render={() => <SettingsContainer/>}/>
+                        <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                        <Route path='/AllStats' render={() => <AllStats/>}/>
+                        <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
+                        <Route path='*' component={Error}/>
+                    </Switch>
+                </div>
+                <div id="Error_cont" className="alert alert-danger d-none alert_connect text_mobile_center"
+                     role="alert">
+                    <h4 className="alert-heading">Site is in Offline Mode!!!</h4>
+                    <p>Error! Backend is offline! React Backend: errors not found</p>
+                </div>
             </div>
-            <div id="Error_cont" className="alert alert-danger d-none alert_connect text_mobile_center" role="alert">
-                <h4 className="alert-heading">Site is in Offline Mode!!!</h4>
-                <p>Error! Backend is offline! React Backend: errors not found</p>
-            </div>
-        </div>
-    )
-};
+        )
+    }
+;
 export default App;
