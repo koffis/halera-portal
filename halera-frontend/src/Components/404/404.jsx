@@ -12,7 +12,6 @@ const Error = () => {
                         <h2><p>Go <NavLink activeClassName="activeLink" to='/'>home</NavLink></p></h2>
                     </div>
                 </div>
-
             </div>
         </div>
     );

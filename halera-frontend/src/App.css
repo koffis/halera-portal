@@ -39,3 +39,15 @@ body::-webkit-scrollbar-thumb {
     font-family: Tahoma;
     font-size: 20px;
 }
+.alert_connect  {
+    z-index: 10000;
+    position: absolute;
+    margin-top: -300px;
+}
+.text_mobile_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}

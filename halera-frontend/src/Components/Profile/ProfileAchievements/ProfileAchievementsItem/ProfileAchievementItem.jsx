@@ -6,7 +6,7 @@ import $ from 'jquery'
 const ProfileAchievementItem = (props) => {
     let path = 'achieve/' + props.achieveID;
 
-    let data_achievement_value = 11 /*props.achievementStateValue*/;
+    let data_achievement_value = 80 /*props.achievementStateValue*/;
     let achieve_icon;
     if (props.achieveName === "Python") {
         achieve_icon = "icon-python"

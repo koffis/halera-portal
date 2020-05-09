@@ -6,13 +6,7 @@ import cloud2 from './images/cloud2.png'
 import cloud3 from './images/cloud3.png'
 import cloud4 from './images/cloud4.png'
 import cloud5 from './images/cloud5.png'
-import {
-    facebook_main_link,
-    google_plus_main_link,
-    instagram_main_link,
-    linkedin_main_link, pinterest_main_link,
-    twitter_main_link
-} from "../../Config";
+import {facebook_main_link, google_plus_main_link, instagram_main_link, linkedin_main_link, pinterest_main_link, twitter_main_link} from "../../Config";
 
 
 const MainPage = (props) => {

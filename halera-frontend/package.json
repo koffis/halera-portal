@@ -11,11 +11,15 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "internet-available": "^1.0.0",
     "jquery": "^3.5.0",
     "mdbootstrap": "^4.16.0",
     "mdbreact": "^4.25.6",
     "node-sass": "^4.13.1",
     "percircle": "^1.0.29",
+    "ping": "^0.2.3",
+    "ping.js": "^0.2.3",
+    "promise": "^8.1.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-circular-progressbar": "^2.0.3",
@@ -28,7 +32,8 @@
     "react-scripts": "3.4.1",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "save": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
