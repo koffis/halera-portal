@@ -17,7 +17,7 @@ export const unable_https = false
 export const facebook_main_link = "#"
 export const twitter_main_link = "#"
 export const google_plus_main_link = "#"
-export const linkedin_main_link = "#"
+export const linked_in_main_link = "#"
 export const instagram_main_link = "#"
 export const pinterest_main_link = "#"
 

@@ -6,7 +6,7 @@ import cloud2 from './images/cloud2.png'
 import cloud3 from './images/cloud3.png'
 import cloud4 from './images/cloud4.png'
 import cloud5 from './images/cloud5.png'
-import {facebook_main_link, google_plus_main_link, instagram_main_link, linkedin_main_link, pinterest_main_link, twitter_main_link} from "../../Config";
+import {facebook_main_link, google_plus_main_link, instagram_main_link, linked_in_main_link, pinterest_main_link, twitter_main_link} from "../../Config";
 
 
 const MainPage = (props) => {
@@ -17,7 +17,7 @@ const MainPage = (props) => {
                     <div className="revealator-slideup revealator-once ">
                         <p>Enim facilisis gravida neque convallis a cras semper auctor</p>
                         <div className="subText">
-                            <div className="text"></div>
+                            <div className="text"/>
                             <NavLink activeClassName="activeLink" to='/login'>Start Now </NavLink>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ const MainPage = (props) => {
                                         <i className="fab fa-google-plus-g fa-lg  mr-4"> </i>
                                     </a>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                                    <a target="_blank" rel="noopener noreferrer" href={linkedin_main_link}>
+                                    <a target="_blank" rel="noopener noreferrer" href={linked_in_main_link}>
                                         <i className="fab fa-linkedin-in fa-lg t mr-4"> </i>
                                     </a>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
