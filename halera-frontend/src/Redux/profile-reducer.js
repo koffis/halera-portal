@@ -1,6 +1,5 @@
 import achievement from './../common/Images/achiev.svg'
-import {authAPI, userAPI} from "../api/api";
-import {setToken} from "./auth-reducer";
+import {userAPI} from "../api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
