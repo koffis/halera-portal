@@ -10,10 +10,7 @@ import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
 import './common/globalDark.scss'
-
-
 /*Components*/
-import Navbar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
@@ -25,6 +22,8 @@ import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
 import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
+import NavbarContainer from "./Components/Navbar/NavbarContainer";
+
 
 
 const App = (props) => {
@@ -32,11 +31,11 @@ const App = (props) => {
         return <div className="textmobile">Use computer please!</div>
     }
     return (<div className="app_wrapper">
-            <Navbar/>
+            <NavbarContainer/>
             <div className="content">
                 <Route exact path='/' render={() => <MainPage/>}/>
                 <Route path='/test' render={() => <Test/>}/>
-                <Route path='/profile' render={() => <ProfileContainer/>}/>
+                <Route path='/user' render={() => <ProfileContainer/>}/>
                 <Route path='/team' render={() => <Team/>}/>
                 <Route path='/projects' render={() => <ProjectsContainer/>}/>
                 <Route path='/search' render={() => <SearchContainer/>}/>
@@ -49,5 +48,7 @@ const App = (props) => {
         </div>
     )
 };
+
+
 
 export default App;

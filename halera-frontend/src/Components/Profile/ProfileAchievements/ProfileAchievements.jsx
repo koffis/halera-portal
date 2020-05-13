@@ -4,14 +4,11 @@ import ProfileAchievementItem from "./ProfileAchievementsItem/ProfileAchievement
 import {NavLink} from "react-router-dom";
 
 const ProfileAchievements = (props) => {
-    let achievementsListData = Object.entries(props.achievementData);
-    let achievementsList = [];
-    for(let i = 0; i < 4; i++){
-        achievementsList.push(<ProfileAchievementItem achieveName={achievementsListData[i][0]}
-                                                      achieveImage={achievementsListData[i][1].achieveImage}
-                                                      achieveID={achievementsListData[i][1].achieveID}
-        />)
-    }
+
+    let achievementsList = props.profileData.skill_list.map(s => <ProfileAchievementItem
+        achieveID = {s.achieveID}
+        achieveImage = {s.achieveImage}
+    />);
 
     return (<div className="revealator-fade revealator-delay1 revealator-once profileAchievements">
             <div className="container card testimonial-card">

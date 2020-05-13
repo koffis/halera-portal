@@ -3,9 +3,12 @@ import './Profile.scss';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProjectsProfileInfo from "./ProjectsProfileInfo/ProjectsProfileInfo";
 import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 const Profile = (props) => {
+
+    if(props.isAuth === false) return <Redirect to={'/login'}/>;
+
     return (
             <div className="page_bg heavy-rain-gradient">
                 <ProfileInfo
@@ -13,8 +16,8 @@ const Profile = (props) => {
                     follow={props.follow}
                     unfollow={props.unfollow}
                 />
-                <ProjectsProfileInfo projectsData={props.projectsData}/>
-                <ProfileAchievements achievementData={props.achievementData}/>
+                <ProjectsProfileInfo profileData={props.profileData}/>
+                <ProfileAchievements profileData={props.profileData}/>
                 <div className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">© 2020
                     Copyright:
                     <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>

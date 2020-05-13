@@ -1,7 +1,5 @@
-import avatar from '../common/Images/user.png'
-import qr from '../common/Images/qrCode.png'
-import proj from '../common/Images/project.png'
-import achievement from '../common/Images/achiev.svg'
+import achievement from './../common/Images/achiev.svg'
+import {userAPI} from "../api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -9,97 +7,80 @@ const SET_CHANGES = 'SET_CHANGES';
 const UPDATE_NEW_STATUS_TEXT = 'UPDATE_NEW_STATUS_TEXT';
 const UPDATE_NEW_NAME_TEXT = 'UPDATE_NEW_NAME_TEXT';
 const UPDATE_NEW_WORK_TEXT = 'UPDATE_NEW_WORK_TEXT';
-const UPDATE_NEW_TWITTER_URL = 'UPDATE_NEW_TWITTER_URL';
-const UPDATE_NEW_LINKEDIN_URL = 'UPDATE_NEW_LINKEDIN_URL';
-const UPDATE_NEW_TELEGRAM_URL = 'UPDATE_NEW_WORK_TEXT';
-const UPDATE_NEW_STACKOVERFLOW_URL = 'UPDATE_NEW_STACKOVERFLOW_URL';
-const UPDATE_NEW_INSTAGRAM_URL = 'UPDATE_NEW_INSTAGRAM_URL';
-const UPDATE_NEW_YOUTUBE_URL = 'UPDATE_NEW_YOUTUBE_URL';
-const UPDATE_NEW_FACEBOOK_URL = 'UPDATE_NEW_FACEBOOK_URL';
-const UPDATE_NEW_GITHUB_URL = 'UPDATE_NEW_GITHUB_URL';
-
+const GET_USER = 'GET_USER';
 
 let initialState = {
     profileData: {
-        name: "Yaroslav Kravchenko",
-        userName: "koffis",
-        followed: false,
-        profileImage: avatar,
-        status: 'hello fucking dogs',
         age: 20,
+        company: "LNU",
+        followed: null,
+        invitations: [
+            {projectName: 'Full project2', projectId: 10, projectImage: '', role: 'backend', author: 'Dron'},
+            {projectName: 'Full project2', projectId: 1, projectImage: '', role: 'backend', author: 'Dron2'},
+            {projectName: 'ARGames', projectId: 2, projectImage: '', role: 'backend', author: 'Dron'},
+            {projectName: 'ARGames', projectId: 1, projectImage: '', role: 'backend', author: 'Mask'},
+            {projectName: 'test', projectId: 2, projectImage: '', role: 'backend', author: 'Dron'}
+        ],
         location: {
-            country: 'Ukraine',
-            city: "Lviv"
+            city: "Lviv",
+            country: "Ukraine"
         },
-        socials: {
-            GitHub: 'https://github.com/',
-            Twitter: 'https://twitter.com/explore',
-            LinkedIn: 'https://www.linkedin.com/',
-            Telegram: 'https://web.telegram.org/',
-            StackOverflow: 'https://stackoverflow.com/',
-            Instagram: 'https://www.instagram.com/',
-            YouTube: 'https://www.youtube.com/',
-            Facebook: 'https://www.facebook.com/'
-        },
-        project: 'Halera',
-        work: 'Google',
-        qrCode: qr,
-        rate: 9
-    },
-    projectsData: {
-        'Hamno': {
-            projectID: 69,
-            projectImage: proj,
-            projectName: 'Hamno',
-            projectStatus: 1,
-            searchTeam: true
-        },
-        'Maxim': {
-            projectID: 1488,
-            projectImage: proj,
-            projectName: 'Maxim',
-            projectStatus: 2,
-            searchTeam: true
-        },
-        'IhorLoh': {
-            projectID: 322,
-            projectImage: proj,
-            projectName: 'IhorLoh',
-            projectStatus: 3,
-            searchTeam: false
-        },
-        'gavno': {
-            projectID: 322,
-            projectImage: proj,
-            projectName: 'IhorLoh3000',
-            projectStatus: 1,
-            searchTeam: false
-        }
-    },
-    achievementData: {
-        'Java': {achieveImage: achievement, achieveID: 21},
-        'JS': {achieveImage: achievement, achieveID: 1488},
-        'Python': {achieveImage: achievement, achieveID: 322},
-        'Minet': {achieveImage: achievement, achieveID: 223}
+        name: "Minkal Andrii",
+        position: "Middle",
+        profileImage: "",
+        project_list: [
+            {
+                author: "Dron",
+                data: "",
+                id: 3,
+                image_url: "",
+                name: "test",
+                searching: 1,
+                status: 2
+            },
+            {
+                author: "Dron",
+                data: "",
+                id: 2,
+                image_url: "",
+                name: "test",
+                searching: 1,
+                status: 2
+            },
+            {
+                author: "Mask",
+                data: "",
+                id: 1,
+                image_url: "",
+                name: "ARGames",
+                searching: 1,
+                status: 2
+            }
+        ],
+        qrcode: "",
+        rate: 8,
+        skill_list: [
+            {achieveImage: achievement, achieveID: 21},
+            {achieveImage: achievement, achieveID: 1488},
+            {achieveImage: achievement, achieveID: 322},
+            {achieveImage: achievement, achieveID: 223}
+        ],
+        username: "Dron"
     },
 
-    newStatusText : '',
+    newStatusText: '',
     newName: '',
-    newWork: '',
-    newTwitterURL: '',
-    newLinkedInURL: '',
-    newTelegramURL: '',
-    newStackOverflowURL: '',
-    newInstagramURL: '',
-    newYouTubeURL: '',
-    newFacebookURL: '',
-    newGitHubURL: ''
-
+    newCompany: '',
 };
 
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
+        case GET_USER:
+            return {
+                ...state,
+                profileData: action.payload
+            };
         case FOLLOW:
             return {
                 ...state,
@@ -121,96 +102,32 @@ const profileReducer = (state = initialState, action) => {
                 })
             };
         case SET_CHANGES:
-            let newStatus = () =>{
-                if(state.newStatusText === ''){
+            let newStatus = () => {
+                if (state.newStatusText === '') {
                     return state.profileData.status
-                }else{
+                } else {
                     return state.newStatusText
                 }
             };
-            let newName = () =>{
-                if(state.newName === ''){
+            let newName = () => {
+                if (state.newName === '') {
                     return state.profileData.name
-                }else{
+                } else {
                     return state.newName
                 }
             };
-            let newWork = () =>{
-                if(state.newWork === ''){
+            let newWork = () => {
+                if (state.newCompany === '') {
                     return state.profileData.work
-                }else{
-                    return state.newWork
-                }
-            };
-            let newTwitter = () =>{
-                if(state.newTwitterURL === ''){
-                    return state.profileData.socials.Twitter
-                }else{
-                    return state.newTwitterURL
-                }
-            };
-            let newLinkedIn = () =>{
-                if(state.newLinkedInURL === ''){
-                    return state.profileData.socials.LinkedIn
-                }else{
-                    return state.newLinkedInURL
-                }
-            };
-            let newTelegram = () =>{
-                if(state.newTelegramURL === ''){
-                    return state.profileData.socials.Telegram
-                }else{
-                    return state.newTelegramURL
-                }
-            };
-            let newInstagram = () =>{
-                if(state.newInstagramURL === ''){
-                    return state.profileData.socials.Instagram
-                }else{
-                    return state.newInstagramURL
-                }
-            };
-            let newStackOverflow = () =>{
-                if(state.newStackOverflowURL === ''){
-                    return state.profileData.socials.StackOverflow
-                }else{
-                    return state.newStackOverflowURL
-                }
-            };
-            let newYouTube = () =>{
-                if(state.newYouTubeURL === ''){
-                    return state.profileData.socials.YouTube
-                }else{
-                    return state.newYouTubeURL
-                }
-            };
-            let newFacebook = () =>{
-                if(state.newFacebookURL === ''){
-                    return state.profileData.socials.Facebook
-                }else{
-                    return state.newFacebookURL
-                }
-            };
-            let newGitHub = () =>{
-                if(state.newGitHubURL === ''){
-                    return state.profileData.socials.GitHub
-                }else{
-                    return state.newGitHubURL
+                } else {
+                    return state.newCompany
                 }
             };
             return {
                 ...state,
                 ...state.profileData.status = newStatus(),
                 ...state.profileData.name = newName(),
-                ...state.profileData.work = newWork(),
-                ...state.profileData.socials.Twitter = newTwitter(),
-                ...state.profileData.socials.LinkedIn = newLinkedIn(),
-                ...state.profileData.socials.Telegram = newTelegram(),
-                ...state.profileData.socials.StackOverflow = newStackOverflow(),
-                ...state.profileData.socials.Instagram = newInstagram(),
-                ...state.profileData.socials.YouTube = newYouTube(),
-                ...state.profileData.socials.Facebook = newFacebook(),
-                ...state.profileData.socials.GitHub = newGitHub(),
+                ...state.profileData.company = newWork(),
             };
         case UPDATE_NEW_STATUS_TEXT:
             return {
@@ -222,63 +139,27 @@ const profileReducer = (state = initialState, action) => {
             };
         case UPDATE_NEW_WORK_TEXT:
             return {
-                ...state, newWork: action.workText
-            };
-        case UPDATE_NEW_TWITTER_URL:
-            return {
-                ...state, newTwitterURL: action.twitterText
-            };
-        case UPDATE_NEW_LINKEDIN_URL:
-            return {
-                ...state, newLinkedInURL: action.linkedInText
-            };
-        case UPDATE_NEW_TELEGRAM_URL:
-            return {
-                ...state, newTelegramURL: action.telegramText
-            };
-        case UPDATE_NEW_STACKOVERFLOW_URL:
-            return {
-                ...state, newStackOverflowURL: action.stackOverflowText
-            };
-        case UPDATE_NEW_INSTAGRAM_URL:
-            return {
-                ...state, newInstagramURL: action.instagramText
-            };
-        case UPDATE_NEW_YOUTUBE_URL:
-            return {
-                ...state, newYouTubeURL: action.youtubeText
-            };
-            case UPDATE_NEW_FACEBOOK_URL:
-            return {
-                ...state, newFacebookURL: action.facebookText
-            };
-            case UPDATE_NEW_GITHUB_URL:
-            return {
-                ...state, newGitHubURL: action.githubText
+                ...state, newCompany: action.workText
             };
         default:
             return state;
     }
 };
 
-
+export const getUser = (payload) =>({type: GET_USER, payload});
 export const setChanges = () => ({type: SET_CHANGES});
 export const updateNewStatusText = (statusText) => ({type: UPDATE_NEW_STATUS_TEXT, statusText});
 export const updateNewNameText = (nameText) => ({type: UPDATE_NEW_NAME_TEXT, nameText});
 export const updateNewWorkText = (workText) => ({type: UPDATE_NEW_WORK_TEXT, workText});
-export const updateNewTwitterURL = (twitterText) => ({type: UPDATE_NEW_TWITTER_URL, twitterText});
-export const updateNewLinkedInURL = (linkedInText) => ({type: UPDATE_NEW_LINKEDIN_URL, linkedInText});
-export const updateNewTelegramURL = (telegramText) => ({type: UPDATE_NEW_TELEGRAM_URL, telegramText});
-export const updateNewStackOverflowURL = (stackOverflowText) => ({type: UPDATE_NEW_STACKOVERFLOW_URL, stackOverflowText});
-export const updateNewInstagramURL = (instagramText) => ({type: UPDATE_NEW_INSTAGRAM_URL, instagramText});
-export const updateNewYouTubeURL = (youtubeText) => ({type: UPDATE_NEW_YOUTUBE_URL, youtubeText});
-export const updateNewFacebookURL = (facebookText) => ({type: UPDATE_NEW_FACEBOOK_URL, facebookText});
-export const updateNewGitHubURL = (githubText) => ({type: UPDATE_NEW_GITHUB_URL, githubText});
-
-
 export const follow = (userID) => ({type: FOLLOW, userID});
 export const unfollow = (userID) => ({type: UNFOLLOW, userID});
 
-
+export const setUserData = (username) =>(dispatch)=> {
+    userAPI.me(username)
+        .then(response => {
+            dispatch(getUser(response.data));
+            console.log(response);
+        });
+};
 
 export default profileReducer;

@@ -4,14 +4,12 @@ import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
 
 const ProjectsProfileInfo = (props) => {
-    let projectListData = Object.entries(props.projectsData);
-    let projectsList = [];
-    for(let i = 0; i < 4; i++){
-       projectsList.push(<ProfileProjectItem projectName={projectListData[i][0]}
-                                             projectImage={projectListData[i][1].projectImage}
-                                             projectID={projectListData[i][1].projectID}
-       />)
-    }
+
+    let projectsList = props.profileData.project_list.map(p => <ProfileProjectItem
+        projectID = {p.id}
+        projectImage={p.image_url}
+        projectName={p.name}
+    />);
 
 
     return (<div className="containerprj revealator-fade revealator-delay2 revealator-once">
@@ -19,9 +17,7 @@ const ProjectsProfileInfo = (props) => {
             <NavLink  to={'/projects'} >Last projects</NavLink>
             <p/>
             <div className="row">
-
                   {projectsList}
-
         </div>
         </div>
 

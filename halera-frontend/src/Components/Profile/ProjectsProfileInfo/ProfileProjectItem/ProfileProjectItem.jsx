@@ -2,13 +2,21 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import './ProfileProjectItem.scss'
 import $ from 'jquery'
+import projectImage from "../../../../common/Images/projectIcon.jpg";
 
 const ProfileProjectItem = (props) => {
+    let getAvatar = () =>{
+        if(props.projectImage === ''){
+            return projectImage
+        } else {
+            return props.projectImage
+        }
+    };
     let path = '/project/' + props.projectID;
     (function ($) {
 
         $(document).ready(function () {
-            var classes = ['purple-gradient', 'blue-gradient', 'aqua-gradient', 'peach-gradient', 'warm-flame-gradient', 'night-fade-gradient', 'spring-warmth-gradient', 'juicy-peach-gradient', 'young-passion-gradient', 'rainy-ashville-gradient', 'sunny-morning-gradient', 'lady-lips-gradient', 'winter-neva-gradient', 'frozen-dreams-gradient', 'morpheus-den-gradient', 'near-moon-gradient', 'ripe-malinka-gradient'];
+            let classes = ['purple-gradient', 'blue-gradient', 'aqua-gradient', 'peach-gradient', 'warm-flame-gradient', 'night-fade-gradient', 'spring-warmth-gradient', 'juicy-peach-gradient', 'young-passion-gradient', 'rainy-ashville-gradient', 'sunny-morning-gradient', 'lady-lips-gradient', 'winter-neva-gradient', 'frozen-dreams-gradient', 'morpheus-den-gradient', 'near-moon-gradient', 'ripe-malinka-gradient'];
             $('.bgcardcolor').each(function (i) {
                 $(this).addClass(classes[Math.floor(Math.random() * classes.length)]);
             });
@@ -22,7 +30,7 @@ const ProfileProjectItem = (props) => {
                 <div className="card-up bgcardcolor"></div>
 
                 <div className="avatar mx-auto white">
-                    <NavLink to={path}><img alt={'project'} src={props.projectImage}
+                    <NavLink to={path}><img alt={'project'} src={getAvatar()}
                                             className="rounded-circle"/></NavLink>
                 </div>
 
