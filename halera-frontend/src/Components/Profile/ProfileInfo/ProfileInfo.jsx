@@ -10,12 +10,12 @@ import ratelvl6 from '../../../common/Images/rateBoats/rate6.png'
 import ratelvl7 from '../../../common/Images/rateBoats/rate7.png'
 import ratelvl8 from '../../../common/Images/rateBoats/rate8.png'
 import ratelvl9 from '../../../common/Images/rateBoats/rate9.png'
+import avatarImage from '../../../common/Images/user.png'
 
 
 const ProfileInfo = (props) => {
 
-    let path = '/profile/' + props.profileData.userName;
-    let socialLink = props.profileData.socials;
+    let path = '/user/' + props.profileData.username;
 
     let rateImage = () => {
         if (props.profileData.rate === 1) {
@@ -61,6 +61,14 @@ const ProfileInfo = (props) => {
         }
     };
 
+    let getAvatar = () =>{
+        if(props.profileData.profileImage === ''){
+            return avatarImage
+        } else {
+            return props.profileData.profileImage
+        }
+    };
+
     return (
         <div className="revealator-fade revealator-delay1 revealator-once container_profile_info">
             <div className="container card testimonial-card">
@@ -72,7 +80,7 @@ const ProfileInfo = (props) => {
                                      src={rateImage()}/>
                             </div>
                             <img alt='profileImage' className="rounded-circle z-depth-2"
-                                 src={props.profileData.profileImage}/>
+                                 src={getAvatar()}/>
                             <div className="write_message">
                                 <div className="row">
                                     <div className="col">
@@ -90,11 +98,12 @@ const ProfileInfo = (props) => {
                         <div className="row">
                             <div className="col-9">
                                 <NavLink to={path}><h4>{props.profileData.name}</h4></NavLink>
-                                <p>Status: {props.profileData.status}</p>
+                                {/*<p>Status: {props.profileData.status}</p>*/}
                                 <p>Location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
                                 <p>Age: {props.profileData.age}</p>
-                                <p>Project: {props.profileData.project}</p>
-                                <p>Work: {props.profileData.work}</p>
+                                <p>Position: {props.profileData.position}</p>
+                                {/*<p>Project: {props.profileData.project}</p>*/}
+                                <p>Work: {props.profileData.company}</p>
                                 <div className="row follow_btn_group">
                                     <div className="col-6">
                                         <button type="button" className="btn btn-outline-default btn-rounded">
@@ -114,13 +123,13 @@ const ProfileInfo = (props) => {
                             <div className="col-3">
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.GitHub} target="_blank"
+                                        <a href={'https://github.com/'} target="_blank"
                                            className="btn-floating btn-md btn-git" title="GitHub" type="button"
                                            role="button"><i
                                             className="fab fa-github"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.StackOverflow} target="_blank"
+                                        <a href={'https://stackoverflow.com/'} target="_blank"
                                            className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
                                            role="button"><i
                                             className="fab fa-stack-overflow"/></a>
@@ -128,13 +137,13 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Twitter} target="_blank"
+                                        <a href={'https://twitter.com/'} target="_blank"
                                            className="btn-floating btn-md btn-tw" title="Twitter" type="button"
                                            role="button"><i
                                             className="fab fa-twitter"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Instagram} target="_blank"
+                                        <a href={'https://www.instagram.com/'} target="_blank"
                                            className="btn-floating btn-md btn-ins" title="Instagram" type="button"
                                            role="button"><i
                                             className="fab fa-instagram"/></a>
@@ -142,13 +151,13 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.LinkedIn} target="_blank"
+                                        <a href={'https://www.linkedin.com/'} target="_blank"
                                            className="btn-floating btn-md btn-li" title="Linkedin" type="button"
                                            role="button"><i
                                             className="fab fa-linkedin-in"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.YouTube} target="_blank"
+                                        <a href={'https://www.youtube.com/'} target="_blank"
                                            className="btn-floating btn-md btn-yt" title="YouTube" type="button"
                                            role="button"><i
                                             className="fab fa-youtube"/></a>
@@ -156,13 +165,13 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Telegram} target="_blank"
+                                        <a href={'https://web.telegram.org/#/login'} target="_blank"
                                            className="btn-floating btn-md btn-tw" title="Telegram" type="button"
                                            role="button"><i
                                             className="fab fa-telegram"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Facebook} target="_blank"
+                                        <a href={'https://www.facebook.com/'} target="_blank"
                                            className="btn-floating btn-md btn-reddit" title="Facebook" type="button"
                                            role="button"><i
                                             className="fab fa-facebook-square"/></a>
@@ -172,7 +181,7 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                     <div className="col-3 text-center">
-                        <img className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrCode}/>
+                        <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrcode}/>
                         <div className="align-content-center">
                             {props.profileData.followed
                                 ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {

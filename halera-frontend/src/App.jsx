@@ -36,7 +36,7 @@ const App = (props) => {
             <div className="content">
                 <Route exact path='/' render={() => <MainPage/>}/>
                 <Route path='/test' render={() => <Test/>}/>
-                <Route path='/profile' render={() => <ProfileContainer/>}/>
+                <Route path='/user' render={() => <ProfileContainer/>}/>
                 <Route path='/team' render={() => <Team/>}/>
                 <Route path='/projects' render={() => <ProjectsContainer/>}/>
                 <Route path='/search' render={() => <SearchContainer/>}/>

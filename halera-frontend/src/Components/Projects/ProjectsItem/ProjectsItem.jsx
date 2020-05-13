@@ -1,9 +1,17 @@
 import React from "react";
 import './ProjectsItem.scss'
 import {NavLink} from "react-router-dom";
+import projectImage from "../../../common/Images/projectIcon.jpg";
 
 
 const ProjectsItem = (props) => {
+    let getImage = () =>{
+        if(props.projectImage === ''){
+            return projectImage
+        } else {
+            return props.projectImage
+        }
+    };
     let path = '/project/' + props.projectID;
 
     let projectStatus = () => {
@@ -17,9 +25,9 @@ const ProjectsItem = (props) => {
     };
 
     let teamSearch = () => {
-        if (props.searchTeam === true) {
+        if (props.searchTeam === 1) {
             return (<span className="badge badge-success">Yes</span>);
-        } else if (props.searchTeam === false) {
+        } else if (props.searchTeam === 0) {
             return (<span className="badge badge-danger">No</span>);
         }
     };
@@ -35,7 +43,7 @@ const ProjectsItem = (props) => {
                 <div className="col-3 text-center">
                     <NavLink to={path}><img alt={'project img'}
                                             className="rounded-circle z-depth-2 white profile_list_img"
-                                            src={props.projectImage}/></NavLink>
+                                            src={getImage()}/></NavLink>
 
                 </div>
                 <div className="col-9 status_col">

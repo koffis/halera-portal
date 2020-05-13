@@ -3,31 +3,6 @@ import './Settings.scss'
 import Switch from '@material-ui/core/Switch';
 import {NavLink} from "react-router-dom";
 
-/*export default function Switches() {
-    const [state, setState] = React.useState({
-        checkedA: true,
-        checkedB: true,
-        checkedC: true,
-        checkedD: true,
-        checkedE: true,
-    });
-
-    const handleChange = (event) => {
-        setState({...state, [event.target.name]: event.target.checked});
-    };
-
-let emailRegex = new RegExp('/^[A-Za-z0-9!#$^&*|\-_+=~`?"]*([A-Za-z0-9!#$^&*|\-_+=~`?"]\.[A-Za-z0-9!#$^&*|\-_+=~`?"]+)*(\.{0,1}[A-Za-z0-9!#$^&*|\-_+=~`?"]@[A-Za-z0-9!#$^&*|\-_+=]{1,60})(\.[A-Za-z0-9!#$^&*|\-_+=~`?"]{2,60})*$/');
-let userRegex = new RegExp('(?:(?:; |^)(?: ?[A-ZÃÁÀÄÂÉÈËÊÍÌÏÎÕÓÒÖÔÚÙÜÛÝÇ'])+,(?:(?: [A-ZÃÁÀÄÂÉÈËÊÍÌÏÎÕÓÒÖÔÚÙÜÛÝÇ]\.| [A-ZÃÁÀÄÂÉÈËÊÍÌÏÎÕÓÒÖÔÚÙÜÛÝÇ][a-zãáàäâéèëêíìïîõóòöôúùüûýç]+)+(?: [a-zãáàäâéèëêíìïîõóòöôúùüûýç']{1,3})?)+)+');
-let passRegex = new RegExp('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){12,123}$/'); password must contain 1 number (0-9) password must contain 1 uppercase letters password must contain 1 lowercase letters password must contain 1 non-alpha numeric number password is 12-123 characters with no space
-let facebookRegex = new RegExp('(?:https?:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*?(\/)?([\w\-\.]{5,})');
-let githubRegex = new RegExp('(?:http?:\/\/|https?:\/\/)?(?:www\.)?github\.com\/(?:\/*)([\w\-\.\/]*)');
-let instagramRegex = new RegExp('(?:(?:http|https):\/\/)?(?:www.)?(?:instagram.com|instagr.am)\/([A-Za-z0-9-_]+)');
-let stackRegex = new RegExp('(?:(?:http|https):\/\/)?(?:www.)?(?:stackoverflow.com)\/([A-Za-z0-9-_]+)');
-let TelegramRegex = new RegExp('(https?:\/\/)?(www[.])?(telegram|t)\.me\/([a-zA-Z0-9_-]*)\/?$');
-let YoutubeRegex = new RegExp('(?:https?:)?(?:\/\/)?(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/\S*?[^\w\s-])((?!videoseries)[\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*');
-let LinkedInRegex = new RegExp('^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)');
-let TwitterRegex = new RegExp('^(http\:\/\/|https\:\/\/)?(?:www\.)?twitter\.com\/(?:#!\/)?@?([^\?#]*)(?:[?#].*)?$');
-*/
 const Settings = (props) => {
 
     let onSetChanges = () => {
@@ -47,46 +22,6 @@ const Settings = (props) => {
     let onWorkChanged = (event) => {
         let text = event.target.value;
         props.updateNewWorkText(text);
-    };
-
-    let onTwitterChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewTwitterURL(text);
-    };
-
-    let onLinkedInChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewLinkedInURL(text);
-    };
-
-    let onTelegramChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewTelegramURL(text);
-    };
-
-    let onStackOverFlowChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewStackOverflowURL(text);
-    };
-
-    let onInstagramChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewInstagramURL(text);
-    };
-
-    let onYouTubeChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewYouTubeURL(text);
-    };
-
-    let onFacebookChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewFacebookURL(text);
-    };
-
-    let onGitHubChanged = (event) => {
-        let text = event.target.value;
-        props.updateNewGitHubURL(text);
     };
 
     return (<div className="settings_page_bg heavy-rain-gradient">
@@ -209,44 +144,36 @@ const Settings = (props) => {
                         <div className="row">
                             <div className="col-6">
                                 <h5>GitHub</h5>
-                                <input className="form-control" value={props.newGitHubURL}
-                                       onChange={onGitHubChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>Twitter</h5>
-                                <input className="form-control" value={props.newTwitterURL}
-                                       onChange={onTwitterChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>LinkedIn</h5>
-                                <input className="form-control" value={props.newLinkedInURL}
-                                       onChange={onLinkedInChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>Telegram</h5>
-                                <input className="form-control" value={props.newTelegramURL}
-                                       onChange={onTelegramChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                             </div>
                             <div className="col-6">
                                 <h5>Stack Overflow</h5>
-                                <input className="form-control" value={props.newStackOverflowURL}
-                                       onChange={onStackOverFlowChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>Instagram</h5>
-                                <input className="form-control" value={props.newInstagramURL}
-                                       onChange={onInstagramChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>YouTube</h5>
-                                <input className="form-control" value={props.newYouTubeURL}
-                                       onChange={onYouTubeChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                                 <p/>
                                 <h5>Facebook</h5>
-                                <input className="form-control" value={props.newFacebookURL}
-                                       onChange={onFacebookChanged}
+                                <input className="form-control"
                                        placeholder={'link'}/>
                             </div>
                         </div>

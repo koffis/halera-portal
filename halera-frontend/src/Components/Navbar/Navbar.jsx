@@ -13,7 +13,7 @@ const Navbar = (props) => {
                 </div>
                 <div id="mainListDiv" className="main_list">
                     <ul className="navlinks">
-                        <li><NavLink activeClassName="activeLink" to='/profile'>Profile</NavLink></li>
+                        <li><NavLink activeClassName="activeLink" to='/user'>Profile</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/team'>Team</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/login'>Log in</NavLink></li>
