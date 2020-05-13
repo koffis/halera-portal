@@ -98,7 +98,6 @@ let initialState = {
 };
 
 
-debugger;
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
