@@ -18,24 +18,27 @@ const ProfileInfo = (props) => {
     let path = '/user/' + props.profileData.username;
 
     let rateImage = () => {
-        if (props.profileData.rate === 1) {
-            return ratelvl1;
-        } else if (props.profileData.rate === 2) {
-            return ratelvl2;
-        } else if (props.profileData.rate === 3) {
-            return ratelvl3;
-        } else if (props.profileData.rate === 4) {
-            return ratelvl4;
-        } else if (props.profileData.rate === 5) {
-            return ratelvl5;
-        } else if (props.profileData.rate === 6) {
-            return ratelvl6;
-        } else if (props.profileData.rate === 7) {
-            return ratelvl7;
-        } else if (props.profileData.rate === 8) {
-            return ratelvl8;
-        } else if (props.profileData.rate === 9) {
-            return ratelvl9;
+        switch (props.profileData.rate) {
+            case 1:
+                return ratelvl1;
+            case 2:
+                return ratelvl2;
+            case 3:
+                return ratelvl3;
+            case 4:
+                return ratelvl4;
+            case 5:
+                return ratelvl5;
+            case 6:
+                return ratelvl6;
+            case 7:
+                return ratelvl7;
+            case 8:
+                return ratelvl8;
+            case 9:
+                return ratelvl9;
+            default:
+                return ratelvl1;
         }
     };
 

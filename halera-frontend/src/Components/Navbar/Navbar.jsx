@@ -16,7 +16,11 @@ const Navbar = (props) => {
                         <li><NavLink activeClassName="activeLink" to='/user'>Profile</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/team'>Team</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
-                        <li><NavLink activeClassName="activeLink" to='/login'>Log in</NavLink></li>
+                        <li>{
+                            props.isAuth
+                                ? <div>{props.username} - <button onClick={props.logout}>Log out</button></div>
+                                : <NavLink to={'/login'}>Login</NavLink>
+                        }</li>
                     </ul>
                 </div>
                 <span className="navTrigger">

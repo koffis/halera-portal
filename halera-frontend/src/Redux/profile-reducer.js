@@ -157,7 +157,8 @@ export const unfollow = (userID) => ({type: UNFOLLOW, userID});
 export const setUserData = (username) =>(dispatch)=> {
     userAPI.me(username)
         .then(response => {
-            dispatch(getUser(response.data))
+            dispatch(getUser(response.data));
+            console.log(response);
         });
 };
 

@@ -3,9 +3,12 @@ import './Profile.scss';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProjectsProfileInfo from "./ProjectsProfileInfo/ProjectsProfileInfo";
 import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 const Profile = (props) => {
+
+    if(props.isAuth === false) return <Redirect to={'/login'}/>;
+
     return (
             <div className="page_bg heavy-rain-gradient">
                 <ProfileInfo

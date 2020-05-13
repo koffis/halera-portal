@@ -5,10 +5,15 @@ import {reduxForm, Field} from 'redux-form'
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Input} from "../../../common/FormControls/FormControls";
 import {connect} from "react-redux";
-import {loginAC} from "../../../Redux/auth-reducer";
+import {loginAC, UpdateUserName} from "../../../Redux/auth-reducer";
+import {compose} from "redux";
 
 
 const LoginForm = (props) => {
+    let setUserName = (event) => {
+        let text = event.target.value;
+        props.UpdateUserName(text);
+    };
     return (
         <div>
             <form onSubmit={props.handleSubmit} className="text-center" action="#!">
@@ -16,6 +21,8 @@ const LoginForm = (props) => {
                     <Field name={'username'} component={Input}
                            placeholder="login" className="form-control"
                            validate={[required]}
+                           onChange={setUserName}
+                           value={props.user}
                     />
                 </div>
 
@@ -52,7 +59,14 @@ const LoginForm = (props) => {
     )
 };
 
-const LoginReduxForm = reduxForm({form:'login'})(LoginForm);
+let mapStateToProps = (state) =>({
+    user: state.auth.username
+});
+
+const LoginReduxForm = compose(
+    reduxForm({form:'login'}),
+    connect(mapStateToProps,{UpdateUserName})
+)(LoginForm);
 
 
 const LogIn = (props) => {

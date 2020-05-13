@@ -1,12 +1,12 @@
 import * as axios from "axios";
-import store from './../Redux/redux-store'
 
 const instance = axios.create({
     baseURL: "http://194.187.154.148:5050/api/v1/",
     headers: {
-
-    }
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+}
 });
+
 
 
 export const userAPI = {
@@ -17,6 +17,9 @@ export const userAPI = {
 
 export const authAPI = {
     login(username, password) {
-        return instance.post(`/login`, {username, password})
+        return axios.post(`http://194.187.154.148:5050/api/v1/login`, {username, password})
+    },
+    logout(){
+        return instance.delete(`/login`)
     }
 };
