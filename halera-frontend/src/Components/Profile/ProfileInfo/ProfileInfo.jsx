@@ -10,6 +10,7 @@ import ratelvl6 from '../../../common/Images/rateBoats/rate6.png'
 import ratelvl7 from '../../../common/Images/rateBoats/rate7.png'
 import ratelvl8 from '../../../common/Images/rateBoats/rate8.png'
 import ratelvl9 from '../../../common/Images/rateBoats/rate9.png'
+import ratelvl10 from '../../../common/Images/rateBoats/rate10.png'
 
 
 const ProfileInfo = (props) => {
@@ -36,6 +37,8 @@ const ProfileInfo = (props) => {
             return ratelvl8;
         } else if (props.profileData.rate === 9) {
             return ratelvl9;
+        } else if (props.profileData.rate === 10) {
+            return ratelvl10;
         }
     };
 
@@ -58,6 +61,8 @@ const ProfileInfo = (props) => {
             return 'Reputation: 8 lvl';
         } else if (props.profileData.rate === 9) {
             return 'Reputation: 9 lvl';
+        } else if (props.profileData.rate === 10) {
+            return 'Reputation: 10 lvl';
         }
     };
 

@@ -25,7 +25,7 @@ import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageM
 import SettingsContainer from "./Components/Settings/SettingsContainer";
 import AllStats from "./Components/allStatsPage/AllStats"
 import Error from './Components/404/404';
-import {dark_theme_enable, check_mobile_enable, check_server_connection, global_url, global_way, maintenance_mode_enable} from './Config';
+import {dark_theme_enable, check_mobile_enable, maintenance_mode_enable} from './Config';
 
 const App = (props) => {
 
@@ -44,60 +44,7 @@ const App = (props) => {
 
         }
 
-        if (check_server_connection === true) {
 
-
-            function ping(host, port, pong) {
-
-                let started = new Date().getTime();
-                let connection = false
-                let http = new XMLHttpRequest();
-
-                console.log("Checking server connection with " + global_url)
-
-                http.open("GET", "http://" + global_way, /*async*/true);
-                http.onreadystatechange = function () {
-
-                    if (http.readyState === 4) {
-
-                        let ended = new Date().getTime();
-                        let milliseconds = ended - started;
-
-                        console.log("Ping: " + milliseconds + " ms")
-
-                        if (pong != null) {
-                            pong(milliseconds);
-                        }
-                    } else {
-                        console.log("Connected!")
-
-                        connection = true
-
-                    }
-                    if (connection === false) {
-
-                        console.log("Connection failed!!")
-
-                        function disable_class() {
-                            let element = document.getElementById("Error_cont");
-
-                            element.classList.remove("d-none");
-
-                        }
-                        disable_class()
-                    }
-                };
-
-                try {
-
-                    http.send(null);
-
-                } catch (err) {}
-            }
-            ping()
-        } else {
-            console.log("Checking connection disabled")
-        }
 
 
         let css = dark;
@@ -127,11 +74,6 @@ const App = (props) => {
                         <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
                         <Route path='*' component={Error}/>
                     </Switch>
-                </div>
-                <div id="Error_cont" className="alert alert-danger d-none alert_connect text_mobile_center"
-                     role="alert">
-                    <h4 className="alert-heading">Site is in Offline Mode!!!</h4>
-                    <p>Error! Backend is offline! React Backend: errors not found</p>
                 </div>
             </div>
         )

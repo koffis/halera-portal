@@ -44,7 +44,7 @@ let initialState = {
         project: 'Halera',
         work: 'Google',
         qrCode: qr,
-        rate: 9
+        rate: 10
     },
     projectsData: {
         'Hamno': {
@@ -99,7 +99,6 @@ let initialState = {
 };
 
 
-debugger;
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:

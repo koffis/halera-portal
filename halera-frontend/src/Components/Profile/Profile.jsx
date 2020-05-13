@@ -3,7 +3,8 @@ import './Profile.scss';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProjectsProfileInfo from "./ProjectsProfileInfo/ProjectsProfileInfo";
 import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
-import {NavLink} from "react-router-dom";
+import Footer from "../Footer/footer";
+
 
 const Profile = (props) => {
     return (
@@ -15,10 +16,7 @@ const Profile = (props) => {
                 />
                 <ProjectsProfileInfo projectsData={props.projectsData}/>
                 <ProfileAchievements achievementData={props.achievementData}/>
-                <div className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">© 2020
-                    Copyright:
-                    <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-                </div>
+                <Footer/>
             </div>
     )
 };

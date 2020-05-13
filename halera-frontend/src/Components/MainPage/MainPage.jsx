@@ -7,6 +7,7 @@ import cloud3 from './images/cloud3.png'
 import cloud4 from './images/cloud4.png'
 import cloud5 from './images/cloud5.png'
 import {facebook_main_link, google_plus_main_link, instagram_main_link, linked_in_main_link, pinterest_main_link, twitter_main_link} from "../../Config";
+import Footer from "../Footer/footer";
 
 
 const MainPage = (props) => {
@@ -33,6 +34,7 @@ const MainPage = (props) => {
             {/*MAINCONTENT*/}
             <div className="maincontent">
                 <div className="container text-center">
+                    <h1 className="header_main revealator-slideright revealator-once revealator-delay1" >Who we Are?</h1>
                     <div className="revealator-slideright revealator-once revealator-delay1">
                         liquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus
                         quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis
@@ -68,6 +70,7 @@ const MainPage = (props) => {
                         id donec ultrices tincidunt arcu non sodales neque
                     </div>
                 </div>
+
             </div>
             {/*FOOTER*/}
             <div className="revealator-slideright revealator-once">
@@ -157,14 +160,9 @@ const MainPage = (props) => {
 
                         </div>
                     </div>
-                    <div className="footer-copyright text-center py-3 footerlink ">© 2020
-                        Copyright:
-                        <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-                    </div>
+                    <Footer/>
                 </footer>
             </div>
-            {/*ADDDDDDDD*/}
-
         </div>
 
     )

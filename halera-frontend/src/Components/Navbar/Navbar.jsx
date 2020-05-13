@@ -8,6 +8,7 @@ const Navbar = (props) => {
     return (
         <nav className="nav ">
             <div className="container">
+
                 <div className="logo">
                     <NavLink to='/'><img alt={'logo'} src={logo}/></NavLink>
                 </div>

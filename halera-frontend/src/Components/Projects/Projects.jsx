@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectsItem from "./ProjectsItem/ProjectsItem";
-import {NavLink} from "react-router-dom";
+import Footer from "../Footer/footer";
 
 const Projects = (props) => {
 
@@ -19,10 +19,7 @@ const Projects = (props) => {
             <div className="project_list_main_cont container">
             {projectsList}
             </div>
-            <div className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">© 2020
-                Copyright:
-                <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-            </div>
+            <Footer/>
         </div>
     )
 };
