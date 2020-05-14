@@ -184,7 +184,7 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                     <div className="col-3 text-center">
-                        <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrcode}/>
+                        <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2" src={"http://"+props.profileData.qrcode}/>
                         <div className="align-content-center">
                             {props.profileData.followed
                                 ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {

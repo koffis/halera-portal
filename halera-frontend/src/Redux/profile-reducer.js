@@ -1,4 +1,3 @@
-import achievement from './../common/Images/achiev.svg'
 import {userAPI} from "../api/api";
 
 const FOLLOW = 'FOLLOW';

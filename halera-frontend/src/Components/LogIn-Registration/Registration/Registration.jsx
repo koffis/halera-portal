@@ -122,10 +122,12 @@ const Registration = (props) => {
             formData.email,
             formData.country,
             formData.city
-            )
+            );
     };
 
-
+    if(props.isAuth) {
+        return <Redirect to={'/user'}/>
+    }
     return (
         <div className="regbackgr rare-wind-gradient">
             <div className="registerPlace container">
