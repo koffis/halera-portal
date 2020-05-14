@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Team.module.css';
+import './Team.scss';
 
 const Team = (props) =>{
     return(

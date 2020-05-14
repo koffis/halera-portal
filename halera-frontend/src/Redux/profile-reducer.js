@@ -22,50 +22,60 @@ let initialState = {
             {projectName: 'test', projectId: 2, projectImage: '', role: 'backend', author: 'Dron'}
         ],
         location: {
-            city: "Lviv",
-            country: "Ukraine"
+            country: 'Ukraine',
+            city: "Lviv"
         },
-        name: "Minkal Andrii",
-        position: "Middle",
-        profileImage: "",
-        project_list: [
-            {
-                author: "Dron",
-                data: "",
-                id: 3,
-                image_url: "",
-                name: "test",
-                searching: 1,
-                status: 2
-            },
-            {
-                author: "Dron",
-                data: "",
-                id: 2,
-                image_url: "",
-                name: "test",
-                searching: 1,
-                status: 2
-            },
-            {
-                author: "Mask",
-                data: "",
-                id: 1,
-                image_url: "",
-                name: "ARGames",
-                searching: 1,
-                status: 2
-            }
-        ],
-        qrcode: "",
-        rate: 8,
-        skill_list: [
-            {achieveImage: achievement, achieveID: 21},
-            {achieveImage: achievement, achieveID: 1488},
-            {achieveImage: achievement, achieveID: 322},
-            {achieveImage: achievement, achieveID: 223}
-        ],
-        username: "Dron"
+        socials: {
+            GitHub: 'https://github.com/',
+            Twitter: 'https://twitter.com/explore',
+            LinkedIn: 'https://www.linkedin.com/',
+            Telegram: 'https://web.telegram.org/',
+            StackOverflow: 'https://stackoverflow.com/',
+            Instagram: 'https://www.instagram.com/',
+            YouTube: 'https://www.youtube.com/',
+            Facebook: 'https://www.facebook.com/'
+        },
+        project: 'Halera',
+        work: 'Google',
+        qrCode: qr,
+        rate: 10
+    },
+    projectsData: {
+        'Hamno': {
+            projectID: 69,
+            projectImage: proj,
+            projectName: 'Hamno',
+            projectStatus: 1,
+            searchTeam: true
+        },
+        'Maxim': {
+            projectID: 1488,
+            projectImage: proj,
+            projectName: 'Maxim',
+            projectStatus: 2,
+            searchTeam: true
+        },
+        'IhorLoh': {
+            projectID: 322,
+            projectImage: proj,
+            projectName: 'IhorLoh',
+            projectStatus: 3,
+            searchTeam: false
+        },
+        'gavno': {
+            projectID: 322,
+            projectImage: proj,
+            projectName: 'IhorLoh3000',
+            projectStatus: 1,
+            searchTeam: false
+        }
+    },
+    achievementData: {
+        'Java': {achieveImage: achievement, achieveID: 21, achievementStateValue: 45},
+        'JS': {achieveImage: achievement, achieveID: 1488, achievementStateValue: 56},
+        'Python': {achieveImage: achievement, achieveID: 322, achievementStateValue: 21},
+        'Debian': {achieveImage: achievement, achieveID: 223, achievementStateValue: 95},
+        'sass': {achieveImage: achievement, achieveID: 223, achievementStateValue: 11}
     },
 
     newStatusText: '',

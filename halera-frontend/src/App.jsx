@@ -1,5 +1,5 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
@@ -22,33 +22,59 @@ import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
 import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
-import NavbarContainer from "./Components/Navbar/NavbarContainer";
-
-
+import AllStats from "./Components/allStatsPage/AllStats"
+import Error from './Components/404/404';
+import {dark_theme_enable, check_mobile_enable, maintenance_mode_enable} from './Config';
 
 const App = (props) => {
-    if (isMobile) {
-        return <div className="textmobile">Use computer please!</div>
-    }
-    return (<div className="app_wrapper">
-            <NavbarContainer/>
-            <div className="content">
-                <Route exact path='/' render={() => <MainPage/>}/>
-                <Route path='/test' render={() => <Test/>}/>
-                <Route path='/user' render={() => <ProfileContainer/>}/>
-                <Route path='/team' render={() => <Team/>}/>
-                <Route path='/projects' render={() => <ProjectsContainer/>}/>
-                <Route path='/search' render={() => <SearchContainer/>}/>
-                <Route path='/login' render={() => <LogIn/>}/>
-                <Route path='/registration' render={() => <Registration/>}/>
-                <Route path='/settings' render={() => <SettingsContainer/>}/>
-                <Route path='/project' render={() => <ProjectPageContainer/>}/>
-                <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
+
+        if (check_mobile_enable === true) {
+            if (maintenance_mode_enable === true) {
+
+                return <div className="text_mobile">Site is closed!</div>
+
+            } else if (isMobile) {
+                return <div className="text_mobile">Use computer please!</div>
+            }
+        }
+        if (maintenance_mode_enable === true) {
+
+            return <div className="text_mobile">Site is closed!</div>
+
+        }
+
+
+
+
+        let css = dark;
+        if (dark_theme_enable === true) {
+            return (
+                <React.Fragment>
+                    <style>{css}</style>
+                </React.Fragment>
+            );
+        }
+
+        return (<div className="app_wrapper">
+                <NavBar/>
+                <div className="content">
+                    <Switch>
+                        <Route exact path='/' render={() => <MainPage/>}/>
+                        <Route path='/test' render={() => <Test/>}/>
+                        <Route path='/profile' render={() => <ProfileContainer/>}/>
+                        <Route path='/team' render={() => <Team/>}/>
+                        <Route path='/projects' render={() => <ProjectsContainer/>}/>
+                        <Route path='/search' render={() => <SearchContainer/>}/>
+                        <Route path='/login' render={() => <LogIn/>}/>
+                        <Route path='/registration' render={() => <Registration/>}/>
+                        <Route path='/settings' render={() => <SettingsContainer/>}/>
+                        <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                        <Route path='/AllStats' render={() => <AllStats/>}/>
+                        <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
+                        <Route path='*' component={Error}/>
+                    </Switch>
+                </div>
             </div>
-        </div>
-    )
-};
-
-
-
+        )
+    };
 export default App;

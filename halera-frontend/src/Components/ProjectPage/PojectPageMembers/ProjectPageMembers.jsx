@@ -1,10 +1,10 @@
 import React from "react";
 import './ProjectPageMembers.scss'
 import {NavLink} from "react-router-dom";
-
+import {def_max_cards_prj_mem} from '../../../Config'
 const ProjectPageMembers = (props) => {
 
-    let memberList = props.members.slice(0, 4).map(m => <div className="col-3 col_member">
+    let memberList = props.members.slice(0, def_max_cards_prj_mem).map(m => <div className="col-3 col_member">
         <div className="card testimonial-card">
             <NavLink to={'/profile/' + m.userName}>
                 <div className="card-up indigo lighten-1"/>

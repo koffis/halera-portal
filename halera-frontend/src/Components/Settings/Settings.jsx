@@ -1,7 +1,6 @@
 import React from "react";
 import './Settings.scss'
-import Switch from '@material-ui/core/Switch';
-import {NavLink} from "react-router-dom";
+import Footer from "../Footer/footer";
 
 const Settings = (props) => {
 
@@ -96,7 +95,7 @@ const Settings = (props) => {
                                    onChange=""
                                    placeholder={'New password'}/>
                             <p/>
-                            </div>
+                        </div>
                         <div className="col-6">
                             <h5>Confirm password</h5>
                             <input className="form-control" value=""
@@ -111,31 +110,29 @@ const Settings = (props) => {
 
                             <div className="col-12">
                                 <div className="row">
-                            <h5>Email verification</h5>
-                            <Switch
-                                /*                                checked={state.checkedD}
-                                                                onChange={handleChange}*/
-                                color="success"
-                                name="checkedE"
-                                inputProps={{'aria-label': 'success checkbox'}}
-                            />
+                                    <h5>Email verification</h5>
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                             <p/>
 
-                                <div className="col-12">
-                                    <div className="row">
-                                <h5>SMS verification</h5>
-                                <Switch
-                                    /*                                checked={state.checkedD}
-                                                                    onChange={handleChange}*/
-                                    color="success"
-                                    name="checkedE"
-                                    inputProps={{'aria-label': 'success checkbox'}}
-                                />
+                            <div className="col-12">
+                                <div className="row">
+                                    <h5>SMS verification</h5>
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                    </div>
+                        </div>
                     </div>
                     <div className={'Socials'}>
                         <p/>
@@ -184,51 +181,47 @@ const Settings = (props) => {
                             <div className="container">
                                 <div className="row">
                                     <h5>Enable dark theme</h5>
-                                    <Switch
-                                        /*                                checked={state.checkedA}
-                                                                        onChange={handleChange}*/
-                                        color="success"
-                                        name="checkedA"
-                                        inputProps={{'aria-label': 'success checkbox'}}
-                                    />
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
                                 </div>
                                 <p/>
                                 <div className="row">
                                     <h5>Can unfollowers view social</h5>
-                                    <Switch
-                                        /*                                checked={state.checkedB}
-                                                                        onChange={handleChange}*/
-                                        color="success"
-                                        name="checkedB"
-                                        inputProps={{'aria-label': 'success checkbox'}}
-                                    />
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
                                 </div>
                                 <p/>
                                 <div className="row">
                                     <h5>Can unfollowers view profile</h5>
-                                    <Switch
-                                        /*                                checked={state.checkedC}
-                                                                        onChange={handleChange}*/
-                                        color="success"
-                                        name="checkedC"
-                                        inputProps={{'aria-label': 'success checkbox'}}
-                                    />
-
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
                                 </div>
                                 <p/>
                                 <div className="row">
                                     <h5>Can unfollowers write me</h5>
-                                    <Switch
-                                        /*                                checked={state.checkedD}
-                                                                        onChange={handleChange}*/
-                                        color="success"
-                                        name="checkedD"
-                                        inputProps={{'aria-label': 'success checkbox'}}
-                                    />
+                                    <div className="switch">
+                                        <label>
+                                            <input type="checkbox"/>
+                                            <span className="lever"/>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div className="text-center">
                                 <hr/>
+
                                 <button className="btn btn-outline-success btn-rounded btn-follow"
                                         onClick={onSetChanges}>Save changes
                                 </button>
@@ -240,12 +233,7 @@ const Settings = (props) => {
                 </div>
 
             </div>
-            <div
-                className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">©
-                2020
-                Copyright:
-                <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-            </div>
+            <Footer/>
         </div>
 
 
