@@ -1,8 +1,8 @@
 import React from "react";
 import './LogIn.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import {reduxForm, Field} from 'redux-form'
-import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
+import {required} from "../../../Utils/Validators/validators";
 import {Input} from "../../../common/FormControls/FormControls";
 import {connect} from "react-redux";
 import {loginAC, UpdateUserName} from "../../../Redux/auth-reducer";
@@ -60,7 +60,8 @@ const LoginForm = (props) => {
 };
 
 let mapStateToProps = (state) =>({
-    user: state.auth.username
+    user: state.auth.username,
+    isAuth: state.auth.isAuth
 });
 
 const LoginReduxForm = compose(
@@ -73,6 +74,10 @@ const LogIn = (props) => {
     const onSubmit = (formData) => {
         props.loginAC(formData.username, formData.password)
     };
+
+    if(props.isAuth) {
+        return <Redirect to={'/user'}/>
+    }
     return (
         <div className="loignbackgr rare-wind-gradient">
             <div className="loginPlace container">
@@ -93,4 +98,4 @@ const LogIn = (props) => {
     )
 };
 
-export default connect(null,{loginAC})(LogIn);
+export default connect(mapStateToProps,{loginAC})(LogIn);

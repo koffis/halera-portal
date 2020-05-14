@@ -11,7 +11,8 @@ let mapStateToProps  = (state) => {
         profileData: state.profilePage.profileData,
         newStatusText: state.profilePage.newStatusText,
         newName: state.profilePage.newName,
-        newWork: state.profilePage.newCompany
+        newWork: state.profilePage.newCompany,
+        isAuth: state.auth.isAuth
     }
 };
 

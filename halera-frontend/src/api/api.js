@@ -21,5 +21,8 @@ export const authAPI = {
     },
     logout(){
         return instance.delete(`/login`)
+    },
+    registration(username,password,fullname,email,country,city){
+        return axios.post(`http://194.187.154.148:5050/api/v1/registration`, {username,password,fullname,email,country,city})
     }
 };

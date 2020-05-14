@@ -1,7 +1,7 @@
 import React from "react";
 import './Settings.scss'
 import Switch from '@material-ui/core/Switch';
-import {NavLink} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 const Settings = (props) => {
 
@@ -23,6 +23,7 @@ const Settings = (props) => {
         let text = event.target.value;
         props.updateNewWorkText(text);
     };
+
 
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">
