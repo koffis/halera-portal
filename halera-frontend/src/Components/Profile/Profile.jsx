@@ -7,6 +7,9 @@ import Footer from "../Footer/footer";
 
 
 const Profile = (props) => {
+
+    if(props.isAuth === false) return <Redirect to={'/login'}/>;
+
     return (
             <div className="page_bg heavy-rain-gradient">
                 <ProfileInfo

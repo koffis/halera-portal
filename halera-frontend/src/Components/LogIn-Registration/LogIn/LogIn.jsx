@@ -4,17 +4,25 @@ import {NavLink} from "react-router-dom";
 import {reduxForm, Field} from 'redux-form'
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
 import {Input} from "../../../common/FormControls/FormControls";
+import {connect} from "react-redux";
+import {loginAC, UpdateUserName} from "../../../Redux/auth-reducer";
+import {compose} from "redux";
 
-let maxLength10 = maxLengthCreator(10);
 
 const LoginForm = (props) => {
+    let setUserName = (event) => {
+        let text = event.target.value;
+        props.UpdateUserName(text);
+    };
     return (
         <div>
             <form onSubmit={props.handleSubmit} className="text-center" action="#!">
                 <div className="md-form">
-                    <Field name={'login'} component={Input}
+                    <Field name={'username'} component={Input}
                            placeholder="login" className="form-control"
-                           validate={[required, maxLength10]}
+                           validate={[required]}
+                           onChange={setUserName}
+                           value={props.user}
                     />
                 </div>
 
@@ -30,7 +38,7 @@ const LoginForm = (props) => {
                 <div className="d-flex justify-content-around">
                     <div>
                         <div className="form-check">
-                            <Field name={'rememberMe'} component={Input} type="checkbox" className="form-check-input"
+                            <Field name={'rememberMe'} component={'input'} type="checkbox" className="form-check-input"
                                    id="materialLoginFormRemember"/>
                             <label className="form-check-label" htmlFor="materialLoginFormRemember">Remember
                                 me</label>
@@ -51,12 +59,19 @@ const LoginForm = (props) => {
     )
 };
 
-const LoginReduxForm = reduxForm({form:'login'})(LoginForm);
+let mapStateToProps = (state) =>({
+    user: state.auth.username
+});
+
+const LoginReduxForm = compose(
+    reduxForm({form:'login'}),
+    connect(mapStateToProps,{UpdateUserName})
+)(LoginForm);
 
 
 const LogIn = (props) => {
-    const onSubmit = () => {
-        console.log('privet')
+    const onSubmit = (formData) => {
+        props.loginAC(formData.username, formData.password)
     };
     return (
         <div className="loignbackgr rare-wind-gradient">
@@ -115,4 +130,4 @@ const LogIn = (props) => {
     )
 };
 
-export default LogIn;
+export default connect(null,{loginAC})(LogIn);

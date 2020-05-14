@@ -9,9 +9,8 @@ import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
-import dark from './common/globalDark.component.scss'
+import './common/globalDark.scss'
 /*Components*/
-import NavBar from "./Components/Navbar/Navbar";
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
