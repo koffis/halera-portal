@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7208e8f0-afbf-4fdd-bb06-07f52e259444" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/Components/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/Components/MainPage/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/Components/MainPage/MainPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/Components/MainPage/MainPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/Components/ProjectPage/PojectPageMembers/ProjectPageMembers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/Components/ProjectPage/PojectPageMembers/ProjectPageMembers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/_custom-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/_custom-styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/_custom-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/_custom-variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_datatables-select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_datatables-select.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_datatables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_datatables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_directives.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_directives.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_flag.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_flag.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_hierarchical-display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_hierarchical-display.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_rating.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/addons/_rating.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_helpers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_masks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_masks.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_waves.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/_waves.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_functions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_rfs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_rfs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/core/bootstrap/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_animations-basic.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_animations-basic.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_badges.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_carousels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_carousels.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_depreciated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_depreciated.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_dropdowns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_dropdowns.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_footers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_footers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_input-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_list-group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_loader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_modals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_msc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_msc.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_navbars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_steppers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_steppers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_tables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_treeview.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/_treeview.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/modules/animations-extended/_module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/modules/animations-extended/_module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/modules/animations-extended/animations-extended.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/free/modules/animations-extended/animations-extended.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/img/svg/arrow_left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/img/svg/arrow_left.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/img/svg/arrow_right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/img/svg/arrow_right.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/mdb-free.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/mdb-free.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/mdb-lite-free.scss" beforeDir="false" afterPath="$PROJECT_DIR$/halera-frontend/src/common/mdboot/mdb-lite-free.scss" afterDir="false" />
-    </list>
+    <list default="true" id="7208e8f0-afbf-4fdd-bb06-07f52e259444" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +32,11 @@
       <option name="presentableId" value="Default" />
       <updated>1587235513230</updated>
       <workItem from="1587235517384" duration="11000" />
+      <workItem from="1589398484472" duration="24000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
 </project>
