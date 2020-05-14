@@ -1,6 +1,7 @@
 import React from "react";
 import './ProfileInfo.scss';
 import {NavLink} from "react-router-dom";
+import avatarImage from '../../../common/Images/user.png'
 import ratelvl1 from '../../../common/Images/rateBoats/rate1.png'
 import ratelvl2 from '../../../common/Images/rateBoats/rate2.png'
 import ratelvl3 from '../../../common/Images/rateBoats/rate3.png'
@@ -10,7 +11,7 @@ import ratelvl6 from '../../../common/Images/rateBoats/rate6.png'
 import ratelvl7 from '../../../common/Images/rateBoats/rate7.png'
 import ratelvl8 from '../../../common/Images/rateBoats/rate8.png'
 import ratelvl9 from '../../../common/Images/rateBoats/rate9.png'
-import avatarImage from '../../../common/Images/user.png'
+import ratelvl10 from '../../../common/Images/rateBoats/rate10.png'
 
 
 const ProfileInfo = (props) => {
@@ -18,27 +19,26 @@ const ProfileInfo = (props) => {
     let path = '/user/' + props.profileData.username;
 
     let rateImage = () => {
-        switch (props.profileData.rate) {
-            case 1:
-                return ratelvl1;
-            case 2:
-                return ratelvl2;
-            case 3:
-                return ratelvl3;
-            case 4:
-                return ratelvl4;
-            case 5:
-                return ratelvl5;
-            case 6:
-                return ratelvl6;
-            case 7:
-                return ratelvl7;
-            case 8:
-                return ratelvl8;
-            case 9:
-                return ratelvl9;
-            default:
-                return ratelvl1;
+        if (props.profileData.rate === 1) {
+            return ratelvl1;
+        } else if (props.profileData.rate === 2) {
+            return ratelvl2;
+        } else if (props.profileData.rate === 3) {
+            return ratelvl3;
+        } else if (props.profileData.rate === 4) {
+            return ratelvl4;
+        } else if (props.profileData.rate === 5) {
+            return ratelvl5;
+        } else if (props.profileData.rate === 6) {
+            return ratelvl6;
+        } else if (props.profileData.rate === 7) {
+            return ratelvl7;
+        } else if (props.profileData.rate === 8) {
+            return ratelvl8;
+        } else if (props.profileData.rate === 9) {
+            return ratelvl9;
+        } else if (props.profileData.rate === 10) {
+            return ratelvl10;
         }
     };
 
@@ -61,6 +61,8 @@ const ProfileInfo = (props) => {
             return 'Reputation: 8 lvl';
         } else if (props.profileData.rate === 9) {
             return 'Reputation: 9 lvl';
+        } else if (props.profileData.rate === 10) {
+            return 'Reputation: 10 lvl';
         }
     };
 
@@ -126,56 +128,64 @@ const ProfileInfo = (props) => {
                             <div className="col-3">
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={'https://github.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-git" title="GitHub" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-git" rel="noopener noreferrer"
+                                           title="GitHub" type="button"
                                            role="button"><i
                                             className="fab fa-github"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={'https://stackoverflow.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-so" title="Stack Overflow" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-so" rel="noopener noreferrer"
+                                           title="Stack Overflow" type="button"
                                            role="button"><i
                                             className="fab fa-stack-overflow"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={'https://twitter.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-tw" title="Twitter" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
+                                           title="Twitter" type="button"
                                            role="button"><i
                                             className="fab fa-twitter"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={'https://www.instagram.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-ins" title="Instagram" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-ins" rel="noopener noreferrer"
+                                           title="Instagram" type="button"
                                            role="button"><i
                                             className="fab fa-instagram"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={'https://www.linkedin.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-li" title="Linkedin" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-li" rel="noopener noreferrer"
+                                           title="Linkedin" type="button"
                                            role="button"><i
                                             className="fab fa-linkedin-in"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={'https://www.youtube.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-yt" title="YouTube" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-yt" rel="noopener noreferrer"
+                                           title="YouTube" type="button"
                                            role="button"><i
                                             className="fab fa-youtube"/></a>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={'https://web.telegram.org/#/login'} target="_blank"
-                                           className="btn-floating btn-md btn-tw" title="Telegram" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
+                                           title="Telegram" type="button"
                                            role="button"><i
                                             className="fab fa-telegram"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={'https://www.facebook.com/'} target="_blank"
-                                           className="btn-floating btn-md btn-reddit" title="Facebook" type="button"
+                                        <a href={'#'} target="_blank"
+                                           className="btn-floating btn-md btn-reddit" rel="noopener noreferrer"
+                                           title="Facebook" type="button"
                                            role="button"><i
                                             className="fab fa-facebook-square"/></a>
                                     </div>

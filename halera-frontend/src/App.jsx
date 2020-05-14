@@ -1,5 +1,5 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
@@ -9,7 +9,7 @@ import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
-import './common/globalDark.scss'
+import './common/globalDark.component.scss'
 /*Components*/
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
@@ -22,33 +22,40 @@ import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
 import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
+import {check_mobile_enable, maintenance_mode_enable} from './Config';
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 
-
-
 const App = (props) => {
-    if (isMobile) {
-        return <div className="textmobile">Use computer please!</div>
-    }
-    return (<div className="app_wrapper">
-            <NavbarContainer/>
-            <div className="content">
-                <Route exact path='/' render={() => <MainPage/>}/>
-                <Route path='/test' render={() => <Test/>}/>
-                <Route path='/user' render={() => <ProfileContainer/>}/>
-                <Route path='/team' render={() => <Team/>}/>
-                <Route path='/projects' render={() => <ProjectsContainer/>}/>
-                <Route path='/search' render={() => <SearchContainer/>}/>
-                <Route path='/login' render={() => <LogIn/>}/>
-                <Route path='/registration' render={() => <Registration/>}/>
-                <Route path='/settings' render={() => <SettingsContainer/>}/>
-                <Route path='/project' render={() => <ProjectPageContainer/>}/>
-                <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
+
+        if (check_mobile_enable === true) {
+            if (maintenance_mode_enable === true) {
+
+                return <div className="text_mobile">Site is closed!</div>
+
+            } else if (isMobile) {
+                return <div className="text_mobile">Use computer please!</div>
+            }
+        }
+        if (maintenance_mode_enable === true) {
+            return <div className="text_mobile">Site is closed!</div>
+        }
+        return (<div className="app_wrapper">
+                <NavbarContainer/>
+                <div className="content">
+                        <Route exact path='/' render={() => <MainPage/>}/>
+                        <Route path='/test' render={() => <Test/>}/>
+                        <Route path='/user' render={() => <ProfileContainer/>}/>
+                        <Route path='/team' render={() => <Team/>}/>
+                        <Route path='/projects' render={() => <ProjectsContainer/>}/>
+                        <Route path='/search' render={() => <SearchContainer/>}/>
+                        <Route path='/login' render={() => <LogIn/>}/>
+                        <Route path='/registration' render={() => <Registration/>}/>
+                        <Route path='/settings' render={() => <SettingsContainer/>}/>
+                        <Route path='/project' render={() => <ProjectPageContainer/>}/>
+                        <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
+                        {/*<Route path='*' component={Error}/>*/}
+                </div>
             </div>
-        </div>
-    )
-};
-
-
-
+        )
+    };
 export default App;

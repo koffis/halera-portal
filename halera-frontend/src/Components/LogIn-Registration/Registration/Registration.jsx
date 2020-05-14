@@ -15,92 +15,92 @@ const RegistrationForm = (props) =>{
         let text = event.target.value;
         props.UpdateUserName(text);
     };
-  return(
-      <form onSubmit={props.handleSubmit} className="text-center" action="#!">
-          <div className="md-form">
-              <Field component={Input}
-                     placeholder="Username"
-                     className="form-control"
-                     validate={[required, maxLength20]}
-                     name={'username'}
-                     value={props.user}
-                     onChange={setUserName}
-              />
-          </div>
-          <div className="md-form">
-              <Field component={Input}
-                     type="email"
-                     placeholder="E-mail"
-                     className="form-control"
-                     validate={[required]}
-                     name={'email'}
-              />
-          </div>
-          <div className="row">
-              <div className="col">
-                  <div className="md-form">
-                      <Field component={Input}
-                             type="password"
-                             placeholder="Password"
-                             className="form-control"
-                             validate={[required]}
-                             name={'password'}
-                      />
-                  </div>
-              </div>
-              <div className="col">
-                  <div className="md-form">
-                      <Field component={Input}
-                             type="password"
-                             placeholder="Confirm Password"
-                             className="form-control"
-                             validate={[required]}
-                             name={'checkPassword'}
-                      />
-                  </div>
-              </div>
-          </div>
-          <div className="md-form">
-              <Field component={Input}
-                     placeholder="Full name"
-                     className="form-control"
-                     validate={[required]}
-                     name={'fullname'}
-              />
-          </div>
-          <div className="row">
-              <div className="col">
-                  <div className="md-form">
-                      <Field component={Input}
-                             placeholder="Country"
-                             className="form-control"
-                             validate={[required]}
-                             name={'country'}
-                      />
-                  </div>
-              </div>
-              <div className="col">
-                  <div className="md-form">
-                      <Field component={Input}
-                             placeholder="City"
-                             className="form-control"
-                             validate={[required]}
-                             name={'city'}
-                      />
-                  </div>
-              </div>
-          </div>
-          <div className="d-flex justify-content-around">
-              <div>
-                  <NavLink to={'/login'}>Have account?</NavLink>
-              </div>
-          </div>
+    return(
+        <form onSubmit={props.handleSubmit} className="text-center" action="#!">
+            <div className="md-form">
+                <Field component={Input}
+                       placeholder="Username"
+                       className="form-control"
+                       validate={[required, maxLength20]}
+                       name={'username'}
+                       value={props.user}
+                       onChange={setUserName}
+                />
+            </div>
+            <div className="md-form">
+                <Field component={Input}
+                       type="email"
+                       placeholder="E-mail"
+                       className="form-control"
+                       validate={[required]}
+                       name={'email'}
+                />
+            </div>
+            <div className="row">
+                <div className="col">
+                    <div className="md-form">
+                        <Field component={Input}
+                               type="password"
+                               placeholder="Password"
+                               className="form-control"
+                               validate={[required]}
+                               name={'password'}
+                        />
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="md-form">
+                        <Field component={Input}
+                               type="password"
+                               placeholder="Confirm Password"
+                               className="form-control"
+                               validate={[required]}
+                               name={'checkPassword'}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="md-form">
+                <Field component={Input}
+                       placeholder="Full name"
+                       className="form-control"
+                       validate={[required]}
+                       name={'fullname'}
+                />
+            </div>
+            <div className="row">
+                <div className="col">
+                    <div className="md-form">
+                        <Field component={Input}
+                               placeholder="Country"
+                               className="form-control"
+                               validate={[required]}
+                               name={'country'}
+                        />
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="md-form">
+                        <Field component={Input}
+                               placeholder="City"
+                               className="form-control"
+                               validate={[required]}
+                               name={'city'}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="d-flex justify-content-around">
+                <div>
+                    <NavLink to={'/login'}>Have account?</NavLink>
+                </div>
+            </div>
 
-          <button className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect"
-                  >Sign up
-          </button>
-      </form>
-  )
+            <button className="btn btn-outline-info btn-rounded btn-block my-4 waves-effect"
+            >Sign up
+            </button>
+        </form>
+    )
 };
 
 const mapStateToProps = (state) =>({
@@ -122,7 +122,7 @@ const Registration = (props) => {
             formData.email,
             formData.country,
             formData.city
-            );
+        );
     };
 
     if(props.isAuth) {

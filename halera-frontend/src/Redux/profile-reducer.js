@@ -97,7 +97,7 @@ export const follow = (userID) => ({type: FOLLOW, userID});
 export const unfollow = (userID) => ({type: UNFOLLOW, userID});
 
 export const setUserData = (username) =>(dispatch)=> {
-   return  userAPI.me(username)
+    return  userAPI.me(username)
         .then(response => {
             dispatch(getUser(response.data));
         });

@@ -2,6 +2,7 @@ import React from "react";
 import "./ProjectsProfileInfo.scss"
 import ProfileProjectItem from "./ProfileProjectItem/ProfileProjectItem";
 import {NavLink} from "react-router-dom";
+import {def_max_cards_prj} from "../../../Config";
 
 const ProjectsProfileInfo = (props) => {
 

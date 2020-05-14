@@ -93,7 +93,7 @@ const LogIn = (props) => {
                 </div>
             </div>
             <div className="wave">
-        </div>
+            </div>
         </div>
     )
 };

@@ -32,7 +32,7 @@ export const setToken = (token, isAuth) => ({type: SET_TOKEN, token, isAuth});
 export const UpdateUserName = (username) => ({type: UPDATE_USER_NAME, username});
 
 export const registrationAC = (username,password,fullname,email,country,city) => (dispatch) => {
-   authAPI.registration(username,password,fullname,email,country,city)
+    authAPI.registration(username,password,fullname,email,country,city)
         .then(response =>{
             localStorage.setItem('token', response.data.token);
             dispatch(setToken(response.data.token, true));
@@ -40,7 +40,7 @@ export const registrationAC = (username,password,fullname,email,country,city) =>
 };
 
 export const loginAC = (username, password) => (dispatch) => {
-  return  authAPI.login(username, password)
+    return  authAPI.login(username, password)
         .then(response => {
             localStorage.setItem('token', response.data.token);
             dispatch(setToken(response.data.token, true));

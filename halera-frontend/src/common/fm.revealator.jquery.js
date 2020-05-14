@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import './fm.revealator.jquery.scss'
+// eslint-disable-next-line no-use-before-define
 var Revealator = typeof Revealator !== 'undefined' ? Revealator : {
 	timer:           null,
 	busy:            false,
@@ -16,6 +17,7 @@ $(function () {
 		let $window = $(window);
 		let $document = $(document);
 		let $body = $(document.body);
+		// eslint-disable-next-line no-unused-vars
 		let i = 0;
 		let window_top = Revealator.effects_padding;
 		let window_bottom = $window.height() - Revealator.effects_padding;

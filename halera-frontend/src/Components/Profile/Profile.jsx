@@ -17,19 +17,19 @@ const Profile = (props) => {
     }
 
     return (
-            <div className="page_bg heavy-rain-gradient">
-                <ProfileInfo
-                    profileData={props.profileData}
-                    follow={props.follow}
-                    unfollow={props.unfollow}
-                />
-                <ProjectsProfileInfo profileData={props.profileData}/>
-                <ProfileAchievements profileData={props.profileData}/>
-                <div className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">© 2020
-                    Copyright:
-                    <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-                </div>
+        <div className="page_bg heavy-rain-gradient">
+            <ProfileInfo
+                profileData={props.profileData}
+                follow={props.follow}
+                unfollow={props.unfollow}
+            />
+            <ProjectsProfileInfo profileData={props.profileData}/>
+            <ProfileAchievements profileData={props.profileData}/>
+            <div className="footer-copyright text-center py-3 footerlink white global_footer revealator-slideright revealator-once">© 2020
+                Copyright:
+                <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
             </div>
+        </div>
     )
 };
 

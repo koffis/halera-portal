@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Settings from "./Settings";
 import {connect} from "react-redux";
