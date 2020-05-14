@@ -23,6 +23,7 @@ const Settings = (props) => {
         props.updateNewWorkText(text);
     };
 
+
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">
                 <div className="container">

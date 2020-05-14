@@ -9,7 +9,7 @@ import './common/fm.revealator.jquery'
 import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
-import './common/globalDark.scss'
+import './common/globalDark.component.scss'
 /*Components*/
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
@@ -22,9 +22,8 @@ import ProjectsContainer from "./Components/Projects/ProjectsContainer";
 import SearchContainer from "./Components/Search/SearchContainer";
 import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageMembers/ProjectPageAllMembers/ProjectPageAllMembersContainer";
 import SettingsContainer from "./Components/Settings/SettingsContainer";
-import AllStats from "./Components/allStatsPage/AllStats"
-import Error from './Components/404/404';
-import {dark_theme_enable, check_mobile_enable, maintenance_mode_enable} from './Config';
+import {check_mobile_enable, maintenance_mode_enable} from './Config';
+import NavbarContainer from "./Components/Navbar/NavbarContainer";
 
 const App = (props) => {
 
@@ -38,30 +37,14 @@ const App = (props) => {
             }
         }
         if (maintenance_mode_enable === true) {
-
             return <div className="text_mobile">Site is closed!</div>
-
         }
-
-
-
-
-        let css = dark;
-        if (dark_theme_enable === true) {
-            return (
-                <React.Fragment>
-                    <style>{css}</style>
-                </React.Fragment>
-            );
-        }
-
         return (<div className="app_wrapper">
-                <NavBar/>
+                <NavbarContainer/>
                 <div className="content">
-                    <Switch>
                         <Route exact path='/' render={() => <MainPage/>}/>
                         <Route path='/test' render={() => <Test/>}/>
-                        <Route path='/profile' render={() => <ProfileContainer/>}/>
+                        <Route path='/user' render={() => <ProfileContainer/>}/>
                         <Route path='/team' render={() => <Team/>}/>
                         <Route path='/projects' render={() => <ProjectsContainer/>}/>
                         <Route path='/search' render={() => <SearchContainer/>}/>
@@ -69,10 +52,8 @@ const App = (props) => {
                         <Route path='/registration' render={() => <Registration/>}/>
                         <Route path='/settings' render={() => <SettingsContainer/>}/>
                         <Route path='/project' render={() => <ProjectPageContainer/>}/>
-                        <Route path='/AllStats' render={() => <AllStats/>}/>
                         <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
-                        <Route path='*' component={Error}/>
-                    </Switch>
+                        {/*<Route path='*' component={Error}/>*/}
                 </div>
             </div>
         )

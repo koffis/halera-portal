@@ -1,6 +1,7 @@
 import React from "react";
 import './ProfileInfo.scss';
 import {NavLink} from "react-router-dom";
+import avatarImage from '../../../common/Images/user.png'
 import ratelvl1 from '../../../common/Images/rateBoats/rate1.png'
 import ratelvl2 from '../../../common/Images/rateBoats/rate2.png'
 import ratelvl3 from '../../../common/Images/rateBoats/rate3.png'
@@ -127,14 +128,14 @@ const ProfileInfo = (props) => {
                             <div className="col-3">
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.GitHub} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-git" rel="noopener noreferrer"
                                            title="GitHub" type="button"
                                            role="button"><i
                                             className="fab fa-github"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.StackOverflow} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-so" rel="noopener noreferrer"
                                            title="Stack Overflow" type="button"
                                            role="button"><i
@@ -143,14 +144,14 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Twitter} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
                                            title="Twitter" type="button"
                                            role="button"><i
                                             className="fab fa-twitter"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Instagram} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-ins" rel="noopener noreferrer"
                                            title="Instagram" type="button"
                                            role="button"><i
@@ -159,14 +160,14 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.LinkedIn} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-li" rel="noopener noreferrer"
                                            title="Linkedin" type="button"
                                            role="button"><i
                                             className="fab fa-linkedin-in"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.YouTube} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-yt" rel="noopener noreferrer"
                                            title="YouTube" type="button"
                                            role="button"><i
@@ -175,14 +176,14 @@ const ProfileInfo = (props) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-6">
-                                        <a href={socialLink.Telegram} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-tw" rel="noopener noreferrer"
                                            title="Telegram" type="button"
                                            role="button"><i
                                             className="fab fa-telegram"/></a>
                                     </div>
                                     <div className="col-6">
-                                        <a href={socialLink.Facebook} target="_blank"
+                                        <a href={'#'} target="_blank"
                                            className="btn-floating btn-md btn-reddit" rel="noopener noreferrer"
                                            title="Facebook" type="button"
                                            role="button"><i
@@ -193,7 +194,7 @@ const ProfileInfo = (props) => {
                         </div>
                     </div>
                     <div className="col-3 text-center">
-                        <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2" src={props.profileData.qrcode}/>
+                        <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2" src={"http://"+props.profileData.qrcode}/>
                         <div className="align-content-center">
                             {props.profileData.followed
                                 ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {

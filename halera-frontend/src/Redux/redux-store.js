@@ -11,7 +11,7 @@ let reducers = combineReducers({
     projectPage : projectPageReducer,
     searchPage: searchReducer,
     form: formReducer,
-    auth:authReducer
+    auth:authReducer,
 });
 
 export let store = createStore(reducers, applyMiddleware(thunkMiddleware));
