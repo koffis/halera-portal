@@ -8,7 +8,6 @@ import {connect} from "react-redux";
 import {loginAC, UpdateUserName} from "../../../Redux/auth-reducer";
 import {compose} from "redux";
 
-
 const LoginForm = (props) => {
     let setUserName = (event) => {
         let text = event.target.value;
@@ -16,6 +15,7 @@ const LoginForm = (props) => {
     };
     return (
         <div>
+
             <form onSubmit={props.handleSubmit} className="text-center" action="#!">
                 <div className="md-form">
                     <Field name={'username'} component={Input}
@@ -24,6 +24,7 @@ const LoginForm = (props) => {
                            onChange={setUserName}
                            value={props.user}
                     />
+
                 </div>
 
                 <div className="md-form">
@@ -59,14 +60,14 @@ const LoginForm = (props) => {
     )
 };
 
-let mapStateToProps = (state) =>({
+let mapStateToProps = (state) => ({
     user: state.auth.username,
     isAuth: state.auth.isAuth
 });
 
 const LoginReduxForm = compose(
-    reduxForm({form:'login'}),
-    connect(mapStateToProps,{UpdateUserName})
+    reduxForm({form: 'login'}),
+    connect(mapStateToProps, {UpdateUserName})
 )(LoginForm);
 
 
@@ -75,7 +76,7 @@ const LogIn = (props) => {
         props.loginAC(formData.username, formData.password)
     };
 
-    if(props.isAuth) {
+    if (props.isAuth) {
         return <Redirect to={'/user'}/>
     }
     return (
@@ -98,4 +99,4 @@ const LogIn = (props) => {
     )
 };
 
-export default connect(mapStateToProps,{loginAC})(LogIn);
+export default connect(mapStateToProps, {loginAC})(LogIn);

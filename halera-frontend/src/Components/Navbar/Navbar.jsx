@@ -25,7 +25,46 @@ const Navbar = (props) => {
                         <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
                         <li>{
                             props.isAuth
-                                ? <div><a onClick={props.logout}>Log out</a></div>
+                                ? <div>
+                                    <a type="button" data-toggle="modal"
+                                       data-target="#exampleModalCenter">Log Out
+                                    </a>
+
+
+                                    <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle"
+                                         aria-hidden="true">
+
+
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+                                            <div className="modal-content">
+                                                <div className="modal-header">
+                                                    <h5 className="modal-title" id="exampleModalLongTitle">Log Out</h5>
+                                                    <button type="button" className="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div className="modal-body">
+                                                    Are you shure? Unsaved data will be
+                                                    lost forever;(
+                                                </div>
+                                                <div className="modal-footer">
+                                                    <button type="button" className="btn btn-outline-success btn-rounded btn-follow"
+                                                            data-dismiss="modal">Close
+                                                    </button>
+                                                    <button type="button" onClick={props.logout}
+                                                            data-dismiss="modal"  className="btn btn-outline-danger btn-rounded btn-follow">Log out
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
                                 : <NavLink to={'/login'}>Login</NavLink>
                         }</li>
                     </ul>
@@ -44,4 +83,5 @@ $(window).scroll(function () {
         $('.nav').removeClass('affix');
     }
 });
+
 export default Navbar;
