@@ -1,7 +1,8 @@
 import * as axios from "axios";
+import {global_url} from "../common/GlobalScripts";
 
 const instance = axios.create({
-    baseURL: "http://194.187.154.148:5050/api/v1/",
+    baseURL: global_url,
     headers: {
         'Accept': 'application/json, text/plain, */*',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -17,16 +18,18 @@ export const userAPI = {
 };
 
 export const authAPI = {
+
     login(username, password) {
         debugger;
-        return axios.post(`http://194.187.154.148:5050/api/v1/login`, {
+        return axios.post(global_url + `login`, {
             username: username,
             password: password
         })
+
     },
     registration(username, password, fullname, email, country, city) {
         debugger;
-        return axios.post(`http://194.187.154.148:5050/api/v1/registration`, {
+        return axios.post(global_url + `registration`, {
             username: username,
             password: password,
             fullname: fullname,

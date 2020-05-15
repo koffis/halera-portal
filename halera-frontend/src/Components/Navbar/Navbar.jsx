@@ -4,7 +4,9 @@ import logo from '../../common/Images/logo.svg'
 import './Navbar.scss'
 import $ from 'jquery'
 
+
 const Navbar = (props) => {
+
     return (
         <nav className="nav ">
             <div className="container">
@@ -14,12 +16,16 @@ const Navbar = (props) => {
                 </div>
                 <div id="mainListDiv" className="main_list">
                     <ul className="navlinks">
-                        <li><NavLink activeClassName="activeLink" to='/user'>Profile</NavLink></li>
+                        <li>{
+                            props.isAuth
+                                ? <NavLink activeClassName="activeLink" to='/user'>{props.username}</NavLink>
+                                : <NavLink activeClassName="activeLink" to='/user'>Profile</NavLink>
+                        }</li>
                         <li><NavLink activeClassName="activeLink" to='/team'>Team</NavLink></li>
                         <li><NavLink activeClassName="activeLink" to='/search'>Search</NavLink></li>
                         <li>{
                             props.isAuth
-                                ? <div>{props.username} - <button onClick={props.logout}>Log out</button></div>
+                                ? <div><a onClick={props.logout}>Log out</a></div>
                                 : <NavLink to={'/login'}>Login</NavLink>
                         }</li>
                     </ul>
@@ -31,7 +37,7 @@ const Navbar = (props) => {
     )
 };
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(document).scrollTop() > 40) {
         $('.nav').addClass('affix');
     } else {

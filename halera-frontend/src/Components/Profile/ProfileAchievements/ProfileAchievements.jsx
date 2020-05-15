@@ -2,7 +2,7 @@ import React from "react";
 import './ProfileAchievements.scss'
 import ProfileAchievementItem from "./ProfileAchievementsItem/ProfileAchievementItem";
 import {NavLink} from "react-router-dom";
-import {def_max_cards_ach} from '../../../Config'
+
 
 const ProfileAchievements = (props) => {
 

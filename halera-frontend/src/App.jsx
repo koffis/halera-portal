@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
 /*libs*/
 import './common/bootstrap.css'
 import './common/mdboot/mdb-pro.scss'
@@ -10,6 +10,7 @@ import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
 import './common/globalDark.component.scss'
+
 /*Components*/
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
@@ -26,6 +27,8 @@ import {check_mobile_enable, maintenance_mode_enable} from './Config';
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 
 const App = (props) => {
+
+
 
         if (check_mobile_enable === true) {
             if (maintenance_mode_enable === true) {

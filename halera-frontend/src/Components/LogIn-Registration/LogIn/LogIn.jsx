@@ -45,7 +45,7 @@ const LoginForm = (props) => {
                         </div>
                     </div>
                     <div>
-                        <a href="#">Forgot password?</a>
+                        <a href="/">Forgot password?</a>
                     </div>
                 </div>
 

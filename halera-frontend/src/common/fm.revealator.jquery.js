@@ -87,7 +87,7 @@ $(function () {
 		});
 	};
 
-	$(window).bind('scroll resize load ready click jQuery.ready change popstate', function () {
+	$(window).bind('scroll resize load ready click jQuery.ready change popstate eventType mouseenter mouseleave submit pagechange pageload pageshow', function () {
 		if (!Revealator.busy) {
 			Revealator.busy = true;
 			setTimeout(function () {
