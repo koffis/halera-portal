@@ -1,6 +1,4 @@
 /*cards const*/
-export const def_max_cards_prj = 4
-export const def_max_cards_ach = 5
 export const def_max_cards_prj_mem = 4
 
 /*theme settings*/ /*not working*/

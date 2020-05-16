@@ -68,7 +68,14 @@ body {
     font-size: 1.5rem;
 }
 .nav div.main_list ul li a.activeLink {
-    color: #00b0ff;
+    color: #007bff;;
+    pointer-events: none;
+
+}
+.nav div.main_list ul li a.activeLink:hover {
+    color: #007bff;;
+    pointer-events: none;
+
 }
 .nav div.main_list ul li a:hover {
     color: darkgray;
@@ -89,7 +96,7 @@ body {
 }
 
 .navTrigger {
-    cursor: pointer;
+    cursor: pointer !important;
     width: 30px;
     height: 25px;
     margin: auto;
@@ -162,4 +169,11 @@ body {
 .indicator {
     margin-top: -30px;
     margin-right: 20px;
+}
+.super_index {
+ z-index: 10000;
+}
+.modal-backdrop{
+    z-index: 1;
+
 }

@@ -1,15 +1,17 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
 /*libs*/
-import './common/bootstrap.css'
-import './common/mdboot/mdb-pro.scss'
-import './App.css'
-import './common/fm.revealator.jquery.scss'
-import './common/fm.revealator.jquery'
-import {isMobile} from 'react-device-detect'
 import './common/fa/all.css'
 import './common/fa/font-mfizz.scss'
-import './common/globalDark.component.scss'
+import 'bootstrap/scss/bootstrap.scss';
+import 'bootstrap/js/src/index';
+import 'mdbreact/dist/mdbreact';
+import 'mdbreact/dist/scss/mdb-pro.scss'
+import './common/fm.revealator.jquery'
+import './common/fm.revealator.jquery.scss'
+import {isMobile} from 'react-device-detect'
+
+/*import './common/globalDark.component.scss'*/
 /*Components*/
 import MainPage from "./Components/MainPage/MainPage";
 import Test from "./Components/TestPage/Test";
@@ -27,6 +29,8 @@ import NavbarContainer from "./Components/Navbar/NavbarContainer";
 
 const App = (props) => {
 
+
+
         if (check_mobile_enable === true) {
             if (maintenance_mode_enable === true) {
 
@@ -41,6 +45,7 @@ const App = (props) => {
         }
         return (<div className="app_wrapper">
                 <NavbarContainer/>
+
                 <div className="content">
                         <Route exact path='/' render={() => <MainPage/>}/>
                         <Route path='/test' render={() => <Test/>}/>
