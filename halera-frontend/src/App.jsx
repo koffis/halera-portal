@@ -53,7 +53,6 @@ const App = (props) => {
                         <Route path='/settings' render={() => <SettingsContainer/>}/>
                         <Route path='/project' render={() => <ProjectPageContainer/>}/>
                         <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
-                        {/*<Route path='*' component={Error}/>*/}
                 </div>
             </div>
         )
