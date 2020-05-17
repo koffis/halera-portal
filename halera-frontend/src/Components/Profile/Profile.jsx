@@ -6,6 +6,7 @@ import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
 import {Redirect} from "react-router-dom";
 import Preloader from "../../common/Preloader/Preloader";
 import Footer from "../Footer/footer";
+import {getSettings} from "../../Redux/setting-reducer";
 
 const Profile = (props) => {
 
@@ -23,6 +24,7 @@ const Profile = (props) => {
                 profileData={props.profileData}
                 follow={props.follow}
                 unfollow={props.unfollow}
+                getSettings={props.getSettings}
             />
             <ProjectsProfileInfo profileData={props.profileData}/>
             <ProfileAchievements profileData={props.profileData}/>

@@ -14,8 +14,25 @@ const instance = axios.create({
 export const userAPI = {
     me(username) {
         return instance.get(`/user/${username}`)
+    },
+    settings() {
+        return instance.get('/user/settings')
+    },
+    changeSettings(age, company, data, email, fullname, location, position, profile_image_url, username) {
+        return instance.patch('/user/settings', {
+            age,
+            company,
+            data,
+            email,
+            fullname,
+            location,
+            position,
+            profile_image_url,
+            username
+        })
     }
 };
+
 
 export const authAPI = {
 
@@ -39,5 +56,4 @@ export const authAPI = {
     logout() {
         return instance.delete(`/logout`)
     }
-
 };
