@@ -20,7 +20,6 @@ export const userAPI = {
 export const authAPI = {
 
     login(username, password) {
-        debugger;
         return axios.post(global_url + `login`, {
             username: username,
             password: password
@@ -28,7 +27,6 @@ export const authAPI = {
 
     },
     registration(username, password, fullname, email, country, city) {
-        debugger;
         return axios.post(global_url + `registration`, {
             username: username,
             password: password,
@@ -39,7 +37,7 @@ export const authAPI = {
         })
     },
     logout() {
-        return instance.delete(`/login`)
+        return instance.delete(`/logout`)
     }
 
 };
