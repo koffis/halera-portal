@@ -1,8 +1,16 @@
 import React from "react";
 import './Settings.scss'
 import Footer from "../Footer/footer";
+import avatarImage from "../../common/Images/user.png";
 
 const Settings = (props) => {
+    let getAvatar = () => {
+        if (props.profileData.profileImage === '') {
+            return avatarImage
+        } else {
+            return props.profileData.profileImage
+        }
+    };
 
     let onSetChanges = () => {
         props.setChanges();
@@ -53,7 +61,7 @@ const Settings = (props) => {
                             <form className="md-form text-center">
                                 <div className="file-field">
                                     <div className="mb-4">
-                                        <img src={props.profileData.profileImage}
+                                        <img src={getAvatar()}
                                              className="rounded-circle z-depth-1-half avatar-pic"
                                              alt="example placeholder avatar"/>
                                     </div>
@@ -222,10 +230,11 @@ const Settings = (props) => {
                             </div>
                             <div className="text-center">
                                 <hr/>
-
-                                <button className="btn btn-outline-success btn-rounded btn-follow"
-                                        onClick={onSetChanges}>Save changes
+                                <button type="button" className="btn btn-outline-success btn-rounded btn-follow" data-toggle="modal"
+                                        data-target="#SaveChanges">
+                                    Save Changes
                                 </button>
+
 
                             </div>
                         </div>
@@ -235,6 +244,33 @@ const Settings = (props) => {
 
             </div>
             <Footer/>
+            <div className="modal fade" id="SaveChanges" tabIndex="-1" role="dialog"
+                 aria-labelledby="SaveChanges"
+                 aria-hidden="true">
+
+
+                <div className="modal-dialog modal-dialog-centered" role="document">
+
+
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="SaveChanges">Save changes?</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            Are you shure?
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-outline-danger btn-rounded btn-follow" data-dismiss="modal">Close</button>
+                            <button className="btn btn-outline-success btn-rounded btn-follow"
+                                    onClick={onSetChanges}>Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 

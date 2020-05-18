@@ -5,7 +5,7 @@ export const def_max_cards_prj_mem = 4
 export const dark_theme_enable = false
 
 /*Site settings*/
-export const check_mobile_enable = true
+export const check_mobile_enable = false
 export const maintenance_mode_enable = false
 export const check_server_connection = true
 export const unable_https = false
