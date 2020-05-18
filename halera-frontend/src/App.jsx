@@ -55,7 +55,7 @@ const App = (props) => {
                         <Route path='/search' render={() => <SearchContainer/>}/>
                         <Route path='/login' render={() => <LogIn/>}/>
                         <Route path='/registration' render={() => <Registration/>}/>
-                        <Route path='/user/settings' render={() => <SettingsContainer/>}/>
+                        <Route path='/settings' render={() => <SettingsContainer/>}/>
                         <Route path='/project' render={() => <ProjectPageContainer/>}/>
                         <Route path='/projectMembers' render={() => <ProjectPageAllMembersContainer/>}/>
                 </div>

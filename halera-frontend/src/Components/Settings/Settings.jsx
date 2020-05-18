@@ -6,6 +6,7 @@ import {compose} from "redux";
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {Input} from "../../common/FormControls/FormControls";
+import {Redirect} from "react-router-dom";
 
 const SettingsFrom = (props) => {
     let getAvatar = () => {
@@ -63,7 +64,7 @@ const SettingsFrom = (props) => {
                 />
             </div>
             <div className="col-4">
-                <form className="md-form text-center">
+                <div className="md-form text-center">
                     <div className="file-field">
                         <div className="mb-4">
                             <img src={getAvatar()}
@@ -81,7 +82,7 @@ const SettingsFrom = (props) => {
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div className="container">
                 <p/>
@@ -127,33 +128,20 @@ const SettingsFrom = (props) => {
 };
 
 let mapStateToProps = (state) => ({
-    profileData: state.profilePage.profileData,
+    profileData: state.profilePage.profileData
 });
 
 const SettingsReduxForm = compose(
-    reduxForm({form: 'settings'}),
-    connect(mapStateToProps, {})
-)(SettingsFrom);
+    reduxForm({form:'settings'}),
+    connect(mapStateToProps, {}))(SettingsFrom);
+
+
 
 const Settings = (props) => {
-
     const onSubmit = (formData) => {
-        let location = {
-            country: formData.country,
-            city: formData.city
-        };
-        props.sendChanges(
-            formData.age,
-            formData.company,
-            formData.data,
-            formData.email,
-            formData.fullname,
-            location,
-            formData.position,
-            formData.profile_image_url,
-            props.profileData.username
-            )
+        props.sendChanges(formData)
     };
+
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">
                 <div className="container">
@@ -162,7 +150,7 @@ const Settings = (props) => {
                             <div className={'ChangeProfile'}>
                                 <h3>Profile settings</h3>
                                 <hr/>
-                                <SettingsReduxForm onSubmit={onSubmit}/>
+                                <SettingsReduxForm  onSubmit={onSubmit}/>
                                 <div className="container">
                                     <p/>
                                     <h4>Verification</h4>

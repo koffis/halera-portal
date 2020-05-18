@@ -110,7 +110,7 @@ const mapStateToProps = (state) =>({
 
 const RegistrationReduxForm = compose(
     reduxForm({form:'registration'}),
-    connect(mapStateToProps,{UpdateUserName}))
+    connect(mapStateToProps, {UpdateUserName}))
 (RegistrationForm);
 
 const Registration = (props) => {

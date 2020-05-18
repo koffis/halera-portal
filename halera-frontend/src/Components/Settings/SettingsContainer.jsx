@@ -10,7 +10,8 @@ let mapStateToProps  = (state) => {
     return {
         profileData: state.profilePage.profileData,
         isAuth: state.auth.isAuth,
-        settingsData: state.settings.settingsPage
+        settingsData: state.settings.settingsPage,
+        settingsConfirm: state.settings.settingsConfirm
     }
 };
 
