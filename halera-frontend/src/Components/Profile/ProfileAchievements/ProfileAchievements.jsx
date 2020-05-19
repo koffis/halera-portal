@@ -10,7 +10,6 @@ const ProfileAchievements = (props) => {
             achieveID={s.achieveID}
             achieveImage={s.achieveImage}
         />);
-        console.log(achievementsList)
         if (achievementsList !== Array(0)) {
             return (<div className="containerprj revealator-fade revealator-delay2 revealator-once">
                     <div className="container card testimonial-card">

@@ -10,8 +10,7 @@ var Revealator = typeof Revealator !== 'undefined' ? Revealator : {
 
 };
 $(function () {
-	Revealator = $.extend({}, {
-	}, typeof Revealator !== 'undefined' ? Revealator : {});
+	Revealator = $.extend({}, {}, typeof Revealator !== 'undefined' ? Revealator : {});
 
 	Revealator.refresh = function () {
 		let $window = $(window);
@@ -23,12 +22,12 @@ $(function () {
 		let window_bottom = $window.height() - Revealator.effects_padding;
 		let document_top = Revealator.scroll_padding;
 		let document_bottom = $document.height() - Revealator.scroll_padding;
-		
+
 		if ($window.scrollTop() === 0) {
 			if (!$body.hasClass('at-top')) {
 				$body.addClass('at-top').removeClass('at-bottom').removeClass('near-top').removeClass('near-bottom');
 			}
-		} else if ($window.scrollTop() + $window.height()=== $document.height()) {
+		} else if ($window.scrollTop() + $window.height() === $document.height()) {
 			if (!$body.hasClass('at-bottom')) {
 				$body.addClass('at-bottom').removeClass('at-top').removeClass('near-top').removeClass('near-bottom');
 			}
@@ -45,7 +44,7 @@ $(function () {
 				$body.removeClass('at-top').removeClass('at-bottom').removeClass('near-top').removeClass('near-bottom');
 			}
 		}
-		
+
 		$('*[class*="revealator"]').each(function () {
 			i++;
 			let element = this;
@@ -57,9 +56,9 @@ $(function () {
 				position_class = 'revealator-below';
 			} else if (element_bounding.top + 100 > window_bottom && element_bounding.bottom > window_bottom) {
 				position_class = 'revealator-partially-below'
-			} else if (element_bounding.top + 100> window_top && element_bounding.bottom > window_top) {
+			} else if (element_bounding.top + 100 > window_top && element_bounding.bottom > window_top) {
 				position_class = 'revealator-partially-above'
-			} else if (element_bounding.top + 100> window_top && element_bounding.bottom < window_top) {
+			} else if (element_bounding.top + 100 > window_top && element_bounding.bottom < window_top) {
 				position_class = 'revealator-above';
 			} else {
 				position_class = 'revealator-within';
@@ -87,14 +86,18 @@ $(function () {
 		});
 	};
 
-	$(window).bind('scroll resize load ready click jQuery.ready change popstate eventType mouseenter mouseleave submit pagechange pageload pageshow', function () {
-		if (!Revealator.busy) {
-			Revealator.busy = true;
-			setTimeout(function () {
-				Revealator.busy = false;
-				Revealator.refresh();
-			}, 150);
-		}
+
+
+		$(window).bind('DOMNodeInserted DOMNodeRemoved scroll resize load ready click jQuery.ready change popstate eventType mouseenter mouseleave submit pagechange pageload pageshow tap pageshow keypress pageinit events', function () {
+			if (!Revealator.busy) {
+				Revealator.busy = true;
+				setTimeout(function () {
+					Revealator.busy = false;
+					Revealator.refresh();
+				}, 150);
+			}
+
+		});
 
 	});
-});
+

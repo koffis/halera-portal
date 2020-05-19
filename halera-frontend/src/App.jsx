@@ -29,8 +29,6 @@ import NavbarContainer from "./Components/Navbar/NavbarContainer";
 
 const App = (props) => {
 
-
-
         if (check_mobile_enable === true) {
             if (maintenance_mode_enable === true) {
 

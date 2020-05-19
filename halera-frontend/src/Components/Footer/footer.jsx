@@ -29,7 +29,7 @@ let check_connection = (status_online, milliseconds, started, ended) => {
             if (status_online === true) {
                 console.log("Status: Online! Ping: " + milliseconds + " ms")
                 if (render_net_stats === true) {
-                    const server_online = <div>Server:&nbsp;<span
+                    const server_online = <div className="data_server">Server:&nbsp;<span
                         className="badge badge-success">Online</span>&nbsp;Ping:&nbsp;<span
                         className="badge badge-info"> {milliseconds} ms</span>{render_stats()}</div>
                     ReactDOM.render(server_online, document.getElementById('data_server'));
@@ -37,7 +37,7 @@ let check_connection = (status_online, milliseconds, started, ended) => {
             } else {
                 console.log("Status: Offline!")
                 if (render_net_stats === true) {
-                    const server_offline = <div>Server:&nbsp;<span
+                    const server_offline = <div className="data_server">Server:&nbsp;<span
                         className="badge badge-danger">Offline</span>{render_stats()}</div>
                     ReactDOM.render(server_offline, document.getElementById('data_server'));
                 }

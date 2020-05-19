@@ -4,8 +4,9 @@ import {global_url} from "../common/GlobalScripts";
 const instance = axios.create({
     baseURL: global_url,
     headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        Accept: 'application/json, text/plain, */*',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
     },
 });
 

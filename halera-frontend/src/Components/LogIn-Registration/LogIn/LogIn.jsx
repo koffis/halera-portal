@@ -30,7 +30,7 @@ const LoginForm = (props) => {
 
                 </div>
 
-                <div className="md-form">
+                <div className="md-form mb-form">
                     <Field name={'password'} component={Input}
                            type="password" id="materialLoginFormPassword"
                            placeholder="Password"

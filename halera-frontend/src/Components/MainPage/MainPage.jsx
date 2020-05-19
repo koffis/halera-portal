@@ -81,7 +81,7 @@ const MainPage = (props) => {
                         <div className="row text-center d-flex justify-content-center pt-5 mb-3 footerlink">
 
                             <div className="col-md-2 mb-3">
-                                <NavLink activeClassName="activeLink" to='/profile'>Profile</NavLink>
+                                <NavLink activeClassName="activeLink" to='/user'>Profile</NavLink>
                             </div>
                             <div className="col-md-2 mb-3">
                                 <NavLink activeClassName="activeLink" to='/team'>Team</NavLink>

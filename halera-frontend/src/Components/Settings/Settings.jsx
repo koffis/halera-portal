@@ -2,19 +2,18 @@ import React from "react";
 import './Settings.scss'
 import Footer from "../Footer/footer";
 import avatarImage from "../../common/Images/user.png";
-import {compose} from "redux";
-import {Field, reduxForm} from "redux-form";
-import {connect} from "react-redux";
-import {Input} from "../../common/FormControls/FormControls";
-import {Redirect} from "react-router-dom";
 
-const SettingsFrom = (props) => {
+const Settings = (props) => {
     let getAvatar = () => {
         if (props.profileData.profileImage === '') {
             return avatarImage
         } else {
             return props.profileData.profileImage
         }
+    };
+
+    let onSetChanges = () => {
+        props.setChanges();
     };
     return (
         <form onSubmit={props.handleSubmit}>
@@ -159,6 +158,70 @@ const Settings = (props) => {
                                     <p/>
                                     <h4>Verification</h4>
                                     <p/>
+                                    <h5>City</h5>
+                                    <input className="form-control" placeholder={'your city?'}/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-4">
+                            <form className="md-form text-center">
+                                <div className="file-field">
+                                    <div className="mb-4">
+                                        <img src={getAvatar()}
+                                             className="rounded-circle z-depth-1-half avatar-pic"
+                                             alt="example placeholder avatar"/>
+                                    </div>
+                                    <div className="d-flex justify-content-center">
+                                        <div className="btn btn-mdb-color btn-rounded float-left">
+                                            <span>Add photo</span>
+                                            <input type="file"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="container">
+                            <p/>
+                            <h3 className="header_settings">Set profile info</h3>
+                            <hr/>
+                            <h5>Set status</h5>
+                            <input className="form-control" onChange={onStatusChanged}
+                                   placeholder={'how are u?'}
+                                   value={props.newStatusText}
+                            />
+                            <p/>
+                            <h5>Set workplace</h5>
+                            <input className="form-control" onChange={onWorkChanged}
+                                   placeholder={'your work place'}
+                                   value={props.newWork}
+                            />
+                        </div>
+                    </div>
+                    <p/>
+                    <p/>
+                    <h3 className="header_settings">Security</h3>
+                    <hr/>
+                    <h4>Change password</h4>
+                    <p/>
+                    <div className="row">
+                        <div className="col-6">
+                            <h5>New password</h5>
+                            <input className="form-control" value=""
+                                   onChange=""
+                                   placeholder={'New password'}/>
+                            <p/>
+                        </div>
+                        <div className="col-6">
+                            <h5>Confirm password</h5>
+                            <input className="form-control" value=""
+                                   onChange=""
+                                   placeholder={'Confirm password'}/>
+                            <p/>
+                        </div>
+                        <div className="container">
+                            <p/>
+                            <h4>Verification</h4>
+                            <p/>
 
                                     <div className="col-12">
                                         <div className="row">
@@ -277,12 +340,48 @@ const Settings = (props) => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="text-center">
+                                <hr/>
+                                <button type="button" className="btn btn-outline-success btn-rounded btn-follow" data-toggle="modal"
+                                        data-target="#SaveChanges">
+                                    Save Changes
+                                </button>
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
             <Footer/>
+            <div className="modal fade" id="SaveChanges" tabIndex="-1" role="dialog"
+                 aria-labelledby="SaveChanges"
+                 aria-hidden="true">
+
+
+                <div className="modal-dialog modal-dialog-centered" role="document">
+
+
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="SaveChanges">Save changes?</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            Are you shure?
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-outline-danger btn-rounded btn-follow" data-dismiss="modal">Close</button>
+                            <button className="btn btn-outline-success btn-rounded btn-follow"
+                                    onClick={onSetChanges}>Save changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
