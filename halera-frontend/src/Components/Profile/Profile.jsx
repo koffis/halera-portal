@@ -6,12 +6,9 @@ import ProfileAchievements from "./ProfileAchievements/ProfileAchievements";
 import {Redirect} from "react-router-dom";
 import Preloader from "../../common/Preloader/Preloader";
 import Footer from "../Footer/footer";
-import {getSettings} from "../../Redux/setting-reducer";
 
 const Profile = (props) => {
-
     if(props.isAuth === false) return <Redirect to={'/login'}/>;
-
     if (!props.profileData) {
         return (
             <Preloader/>
@@ -19,8 +16,9 @@ const Profile = (props) => {
     }
 
     return (
-        <div className="page_bg heavy-rain-gradient">
+        <div  className="page_bg heavy-rain-gradient">
             <ProfileInfo
+                submitChanges={props.submitChanges}
                 profileData={props.profileData}
                 follow={props.follow}
                 unfollow={props.unfollow}

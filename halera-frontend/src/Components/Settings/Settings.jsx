@@ -142,6 +142,10 @@ const Settings = (props) => {
         props.sendChanges(formData)
     };
 
+    if(props.isChanged){
+        return <Redirect to={'/user'}/>
+    }
+
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">
                 <div className="container">
@@ -150,7 +154,7 @@ const Settings = (props) => {
                             <div className={'ChangeProfile'}>
                                 <h3>Profile settings</h3>
                                 <hr/>
-                                <SettingsReduxForm  onSubmit={onSubmit}/>
+                                <SettingsReduxForm onSubmit={onSubmit}/>
                                 <div className="container">
                                     <p/>
                                     <h4>Verification</h4>
