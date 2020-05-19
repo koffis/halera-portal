@@ -1,27 +1,34 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {follow, unfollow} from "../../Redux/profile-reducer";
+import {follow, setUserData, unfollow} from "../../Redux/profile-reducer";
+import {compose} from "redux";
+import {getSettings, submitChanges} from "../../Redux/setting-reducer";
+import {withRouter} from "react-router-dom";
+
+class ProfileContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.setUserData(this.props.username);
+    }
+
+    render() {
+        return (
+            <Profile {...this.props}/>
+        )
+    }
+}
 
 let mapStateToProps  = (state) => {
     return {
         profileData: state.profilePage.profileData,
-        projectsData: state.profilePage.projectsData,
-        achievementData: state.profilePage.achievementData
+        username: state.auth.username,
+        isAuth: state.auth.isAuth,
     }
 };
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userID) => {
-            dispatch(follow(userID))
-        },
-        unfollow: (userID) => {
-            dispatch(unfollow(userID))
-        }
-    }
-};
-
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);
-
-export default ProfileContainer;
+ export default compose(
+     withRouter,
+     connect(mapStateToProps, {follow, unfollow, setUserData, getSettings, submitChanges}))
+ (ProfileContainer);

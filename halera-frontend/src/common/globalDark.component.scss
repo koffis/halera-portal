@@ -1,0 +1,132 @@
+.content {
+  background-color: #232323 !important;
+  color: #c7c7c7 !important;
+}
+.card {
+  background-color: #232323 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.card a {
+  color: #c7c7c7 !important;
+}
+.card a:hover {
+  color: #909090 !important;
+}
+.footerlink a i {
+  color: #c7c7c7 !important;
+}
+.footerlink a i:hover {
+  color: #909090 !important;
+}
+footer {
+  color: #c7c7c7 !important;
+}
+.global_footer {
+  position: relative;
+  background-color: #232323 !important;
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.5);
+}
+.heavy-rain-gradient, .rare-wind-gradient {
+  background-color: #383838 !important;
+  background-image: url("#");
+}
+.affix {
+  background-color: #383838 !important;
+  box-shadow: 0 -10px 10px rgba(75, 75, 75, 0.8);
+}
+.nav div.main_list ul li a {
+  color: #c7c7c7 !important;
+}
+.nav div.main_list ul li a:hover {
+  color: #909090 !important;
+}
+.footerlink a {
+  color: #c7c7c7 !important;
+}
+.footerlink a:hover {
+  color: #909090 !important;
+}
+.card .card {
+  background-color: #383838 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.aqua-gradient {
+  background: linear-gradient(40deg, #292929, #5f5f5f) !important;
+}
+.loignbackgr .wave {
+
+}
+.btn:hover {
+  box-shadow: 0 0 10px rgba(154, 154, 154, 0.5);
+}
+.card .card:hover {
+  box-shadow: 0 0 10px rgba(154, 154, 154, 0.5);
+}
+.mainBanner {
+  background-image: url(./Images/mainbg_dark.png) !important;
+
+}
+.clouds {
+  display: none;
+}
+.wave {
+  display: none;
+}
+.nav div.main_list ul li a.activeLink {
+  color: #ffffff !important;
+}
+.btn-floating {
+  background-color: #848484 !important;
+}
+.btn-floating:hover {
+  background-color: #5a5a5a !important;
+  box-shadow: 0 0 10px rgba(154, 154, 154, 0.5);
+}
+.btn:hover {
+  background-color: #5a5a5a !important;
+  box-shadow: 0 0 10px rgba(154, 154, 154, 0.5);
+}
+.btn_settings a i:hover {
+  color: #5a5a5a !important;
+}
+.card-up {
+  background-image: url("#") !important;
+  background: linear-gradient(40deg, #292929, #5f5f5f) !important;
+
+}
+.mainBanner .mainText {
+  color: #dcdcdc !important;
+}
+.mainBanner .mainText p {
+  color: #dcdcdc !important;
+}
+.mainBanner .subText a {
+  color: #9c9c9c !important;
+  border: 1px solid #9c9c9c !important;
+}
+.mainBanner .subText a:hover {
+  color: #d2d2d2 !important;
+  background: #4c4c4c !important;
+  border: 1px solid #868686 !important;
+}
+.profile_list_cont:hover {
+  background-color: #282828 !important;
+  box-shadow: 0 0 10px rgba(62, 62, 62, 0.5);
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.switch label input[type="checkbox"]:checked + .lever:after {
+  left: 1.5rem;
+  background-color: #ffffff !important;
+}
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #7ad88c !important;
+}
+.switch label .lever {
+  background-color: #ff8a8a !important;
+}

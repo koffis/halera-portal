@@ -1,9 +1,9 @@
 import React from "react";
-import s from './ProjectPageInfo.module.css'
+import './ProjectPageInfo.scss'
 
 const ProjectPageInfo = (props) =>{
     return(
-        <div className={s.ProjectPageInfo}>
+        <div className="container card prj_page_info p-4 revealator-fade revealator-delay3 revealator-once">
             <p>{props.profileInfo}</p>
         </div>
     )

@@ -3,7 +3,8 @@ import Projects from "./Projects";
 
 let mapStateToProps  = (state) => {
     return {
-        projectsData: state.profilePage.projectsData,
+        projectsData: state.profilePage.profileData.project_list,
+        members: state.projectPage.projectData.members
     }
 };
 

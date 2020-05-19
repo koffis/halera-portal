@@ -1,20 +1,25 @@
 import React from "react";
 import ProjectsItem from "./ProjectsItem/ProjectsItem";
+import Footer from "../Footer/footer";
 
 const Projects = (props) => {
 
-    let projectsListArray = Object.values(props.projectsData);
-    let projectsList = projectsListArray.map(p => <ProjectsItem
-        projectID={p.projectID}
-        projectName={p.projectName}
-        projectImage={p.projectImage}
-        projectStatus={p.projectStatus}
-        searchTeam={p.searchTeam}
-    />);
+    let projectsList = props.projectsData.map(p => <ProjectsItem
+            projectID={p.id}
+            projectStatus={p.status}
+            searchTeam={p.searching}
+            projectImage={p.image_url}
+            projectName={p.name}
+            members={props.members}
+        />
+    );
 
-    return(
-        <div>
-            {projectsList}
+    return (
+        <div className="project_list_bg rare-wind-gradient">
+            <div className="project_list_main_cont container">
+                {projectsList}
+            </div>
+            <Footer/>
         </div>
     )
 };
