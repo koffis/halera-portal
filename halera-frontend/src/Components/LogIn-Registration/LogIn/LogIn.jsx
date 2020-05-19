@@ -7,6 +7,7 @@ import {Input} from "../../../common/FormControls/FormControls";
 import {connect} from "react-redux";
 import {loginAC, UpdateUserName} from "../../../Redux/auth-reducer";
 import {compose} from "redux";
+import s from '../../../common/FormControls/FormControl.module.css'
 
 const LoginForm = (props) => {
     let setUserName = (event) => {
@@ -15,8 +16,10 @@ const LoginForm = (props) => {
     };
     return (
         <div>
-
             <form onSubmit={props.handleSubmit} className="text-center" action="#!">
+                { props.error && <div className={s.form_summary_error}>
+                   {props.error}
+                </div>}
                 <div className="md-form">
                     <Field name={'username'} component={Input}
                            placeholder="login" className="form-control"

@@ -1,4 +1,5 @@
 import {authAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const SET_TOKEN = 'SET_TOKEN';
 const UPDATE_USER_NAME = 'UPDATE_USER_NAME';
@@ -36,14 +37,21 @@ export const registrationAC = (username,password,fullname,email,country,city) =>
         .then(response =>{
             localStorage.setItem('token', response.data.token);
             dispatch(setToken(response.data.token, true));
+            console.log(response);
         })
 };
 
 export const loginAC = (username, password) => (dispatch) => {
-    return  authAPI.login(username, password)
+      authAPI.login(username, password)
         .then(response => {
-            localStorage.setItem('token', response.data.token);
-            dispatch(setToken(response.data.token, true));
+            if(response.data.token) {
+                localStorage.setItem('token', response.data.token);
+                dispatch(setToken(response.data.token, true));
+            } else {
+                let action = stopSubmit('login', {_error: 'Incorrect Username or Password'});
+                dispatch(action);
+            }
+            console.log(response);
         });
 };
 
