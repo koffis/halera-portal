@@ -5,8 +5,7 @@ const instance = axios.create({
     baseURL: global_url,
     headers: {
         'Accept': 'application/json, text/plain, */*',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
     },
 });
 
@@ -14,21 +13,25 @@ const instance = axios.create({
 export const userAPI = {
     me(username) {
         return instance.get(`/user/${username}`)
+    },
+    settings() {
+        return instance.get('/settings')
+    },
+    changeSettings(payload){
+        console.log(payload);
+        return instance.patch("/settings", payload)
     }
 };
 
-export const authAPI = {
 
+export const authAPI = {
     login(username, password) {
-        debugger;
         return axios.post(global_url + `login`, {
             username: username,
             password: password
         })
-
     },
     registration(username, password, fullname, email, country, city) {
-        debugger;
         return axios.post(global_url + `registration`, {
             username: username,
             password: password,
@@ -39,7 +42,6 @@ export const authAPI = {
         })
     },
     logout() {
-        return instance.delete(`/login`)
+        return instance.delete(`/logout`)
     }
-
 };

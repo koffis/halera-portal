@@ -107,7 +107,7 @@ const ProfileInfo = (props) => {
                                             <button className="btn btn-outline-primary btn-rounded">Write me</button>
                                         </div>
                                         <div className="col btn_settings">
-                                            <NavLink to='/settings'><i className="fa fa-cog fa_settings"/></NavLink>
+                                            <NavLink to='/settings' onClick={props.getSettings}><i className="fa fa-cog fa_settings"/></NavLink>
                                         </div>
                                     </div>
                                 </div>

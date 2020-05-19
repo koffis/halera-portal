@@ -2,22 +2,19 @@
 import React from "react";
 import Settings from "./Settings";
 import {connect} from "react-redux";
-import {setChanges, updateNewNameText,
-    updateNewStatusText, updateNewWorkText
-} from "../../Redux/profile-reducer";
+import {sendChanges} from "../../Redux/setting-reducer";
+
 
 
 let mapStateToProps  = (state) => {
     return {
         profileData: state.profilePage.profileData,
-        newStatusText: state.profilePage.newStatusText,
-        newName: state.profilePage.newName,
-        newWork: state.profilePage.newCompany,
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        settingsData: state.settings.settingsPage,
+        settingsConfirm: state.settings.settingsConfirm
     }
 };
 
-const SettingsContainer = connect(mapStateToProps,
-    {setChanges, updateNewStatusText, updateNewNameText, updateNewWorkText})(Settings);
+const SettingsContainer = connect(mapStateToProps, {sendChanges})(Settings);
 
 export default SettingsContainer;
