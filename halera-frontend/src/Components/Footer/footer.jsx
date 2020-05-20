@@ -19,7 +19,7 @@ let check_connection = (status_online, milliseconds, started, ended) => {
             };
             return <span>&nbsp;Https:&nbsp;{http_status()}</span>
         }
-    }
+    };
     if (check_server_connection === true) {
         started = new Date().getTime();
         (async () => {
@@ -35,7 +35,7 @@ let check_connection = (status_online, milliseconds, started, ended) => {
                     ReactDOM.render(server_online, document.getElementById('data_server'));
                 }
             } else {
-                console.log("Status: Offline!")
+                console.log("Status: Offline!");
                 if (render_net_stats === true) {
                     const server_offline = <div className="data_server">Server:&nbsp;<span
                         className="badge badge-danger">Offline</span>{render_stats()}</div>
@@ -46,7 +46,7 @@ let check_connection = (status_online, milliseconds, started, ended) => {
     } else {
         console.log("Checking connection is disabled!")
     }
-}
+};
 
 
 const Footer = (props) => {
@@ -55,9 +55,9 @@ const Footer = (props) => {
             2020
             Copyright:
             <NavLink activeClassName="activeLink" to='/'> Halera Inc.</NavLink>
-            <div id="data_server" className="stats_footer">
+            {/*<div id="data_server" className="stats_footer">
                 {check_connection()}
-            </div>
+            </div>*/}
         </div>
     )
 };

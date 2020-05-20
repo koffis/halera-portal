@@ -6,7 +6,6 @@ const instance = axios.create({
     headers: {
         Accept: 'application/json, text/plain, */*',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
     },
 });
 
@@ -20,7 +19,17 @@ export const userAPI = {
     },
     changeSettings(payload){
         console.log(payload);
-        return instance.patch("/settings", payload)
+        return instance.patch("/settings",
+            {
+            fullname: payload.fullname,
+            age: payload.age,
+            email: payload.email,
+            position: payload.position,
+            location: `${payload.country}/${payload.city}`,
+            profile_image_url:payload.profile_image_url,
+            data:payload.data,
+            company:payload.company
+        })
     }
 };
 

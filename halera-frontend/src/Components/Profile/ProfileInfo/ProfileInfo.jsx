@@ -73,18 +73,23 @@ const ProfileInfo = (props) => {
             return props.profileData.profileImage
         }
     };
-    let Work = () => {
+    let work = () => {
         if (props.profileData.company === '') {
             return ("d-none")
         }
 
     };
-    let Age = () => {
+    let age = () => {
         if (props.profileData.age === 0) {
             return ("d-none")
         }
     };
-    let Position = () => {
+    let position = () => {
+        if (props.profileData.position === '') {
+            return ("d-none")
+        }
+    };
+    let status = () => {
         if (props.profileData.position === '') {
             return ("d-none")
         }
@@ -126,10 +131,10 @@ const ProfileInfo = (props) => {
                                     {/*<p>Status: {props.profileData.status}</p>*/}
                                     <p>Full name: {props.profileData.fullname}</p>
                                     <p>Location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
-                                    <div className={Age()}><p>Age: {props.profileData.age}</p></div>
-                                    <div className={Position()}><p>Position: {props.profileData.position}</p></div>
+                                    <div className={age()}><p>Age: {props.profileData.age}</p></div>
+                                    <div className={position()}><p>Position: {props.profileData.position}</p></div>
                                     {/*<p>Project: {props.profileData.project}</p>*/}
-                                    <div className={Work()}><p>Work: {props.profileData.company}</p></div>
+                                    <div className={work()}><p>Work: {props.profileData.company}</p></div>
                                     <div className="row follow_btn_group">
                                         {/* <div className="col-6">
                                         <button type="button" className="btn btn-outline-default btn-rounded">
