@@ -7,15 +7,18 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {Input} from "../../common/FormControls/FormControls";
 import {Redirect} from "react-router-dom";
+import $ from 'jquery'
+
 
 const SettingsFrom = (props) => {
     let getAvatar = () => {
-        if (props.profileData.profileImage === '') {
+        if (props.profileData.profile_image_url === '') {
             return avatarImage
         } else {
-            return props.profileData.profileImage
+            return props.profileData.profile_image_url
         }
     };
+
     return (
         <form onSubmit={props.handleSubmit}>
             <h5>Change name</h5>
@@ -90,7 +93,7 @@ const SettingsFrom = (props) => {
                 <hr/>
                 <h5>Set status</h5>
                 <Field component={Input}
-                       name={'data'}
+                       name={'about_me'}
                        className="form-control"
                        placeholder={'how are u?'}
                 />
@@ -120,9 +123,43 @@ const SettingsFrom = (props) => {
                     <p/>
                 </div>
             </div>
-            <button className="btn btn-outline-success btn-rounded btn-follow">
-                Save changes
-            </button>
+
+            <div>
+                <a type="button" data-toggle="modal"
+                   data-target="#SaveSettings" className="btn btn-outline-success btn-rounded btn-follow">
+                    Save changes
+                </a>
+
+                <div className="modal fade" id="SaveSettings" tabIndex="-1" role="dialog"
+                     aria-labelledby="SaveSettings"
+                     aria-hidden="true">
+
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="SaveSettings">Save settings?</h5>
+                                <button type="button" className="close" data-dismiss="modal"
+                                        aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                Are you shure? Unsaved data will be
+                                lost forever;(
+                            </div>
+                            <div className="modal-footer">
+                                <div  className="btn btn-outline-danger btn-rounded btn-follow"
+                                      data-dismiss="modal">Close
+                                </div>
+                                <button className="btn btn-outline-success btn-rounded btn-follow">
+                                    Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     )
 };
@@ -132,9 +169,8 @@ let mapStateToProps = (state) => ({
 });
 
 const SettingsReduxForm = compose(
-    reduxForm({form:'settings'}),
+    reduxForm({form: 'settings'}),
     connect(mapStateToProps, {}))(SettingsFrom);
-
 
 
 const Settings = (props) => {
@@ -142,9 +178,12 @@ const Settings = (props) => {
         props.sendChanges(formData)
     };
 
-    if(props.isChanged){
+    if (props.isChanged) {
+        $('#SaveSettings').modal('hide');
         return <Redirect to={'/user'}/>
+
     }
+    if(props.isAuth === false) return <Redirect to={'/login'}/>;
 
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">
@@ -273,19 +312,15 @@ const Settings = (props) => {
                                     </div>
                                     <div className="text-center">
                                         <hr/>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <Footer/>
         </div>
-
-
     )
 };
 export default Settings;

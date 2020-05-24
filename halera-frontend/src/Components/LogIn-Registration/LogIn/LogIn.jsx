@@ -30,7 +30,7 @@ const LoginForm = (props) => {
 
                 </div>
 
-                <div className="md-form">
+                <div className="md-form mb-form">
                     <Field name={'password'} component={Input}
                            type="password" id="materialLoginFormPassword"
                            placeholder="Password"
@@ -72,7 +72,6 @@ const LoginReduxForm = compose(
     reduxForm({form: 'login'}),
     connect(mapStateToProps, {UpdateUserName})
 )(LoginForm);
-
 
 const LogIn = (props) => {
     const onSubmit = (formData) => {

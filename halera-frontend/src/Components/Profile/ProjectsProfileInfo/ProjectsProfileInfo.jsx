@@ -6,12 +6,16 @@ import {NavLink} from "react-router-dom";
 const ProjectsProfileInfo = (props) => {
 
     let projectsList = props.profileData.project_list.map(p => <ProfileProjectItem
-        projectID={p.id}
-        projectImage={p.image_url}
-        projectName={p.name}
-
+        key={p.id}
+        author={p.author}
+        data={p.data}
+        id={p.id}
+        image_url={p.image_url}
+        name={p.name}
+        searching={p.searching}
+        status={p.status}
     />);
-    if (projectsList !== Array(0)) {
+    if (projectsList.length === 0) {
         return (<div className="containerprj revealator-fade revealator-delay2 revealator-once">
                 <div className="container card testimonial-card">
                     <div className="error_empty text-center"><h4>

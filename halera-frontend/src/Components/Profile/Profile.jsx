@@ -14,7 +14,6 @@ const Profile = (props) => {
             <Preloader/>
         )
     }
-
     return (
         <div  className="page_bg heavy-rain-gradient">
             <ProfileInfo

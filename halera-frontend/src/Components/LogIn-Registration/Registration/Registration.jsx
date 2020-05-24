@@ -7,16 +7,21 @@ import {connect} from "react-redux";
 import {registrationAC, UpdateUserName} from "../../../Redux/auth-reducer";
 import {Input} from "../../../common/FormControls/FormControls";
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
-
+import s from "../../../common/FormControls/FormControl.module.css";
 const maxLength20 = maxLengthCreator(20);
 
 const RegistrationForm = (props) =>{
     let setUserName = (event) => {
         let text = event.target.value;
         props.UpdateUserName(text);
+
     };
+
     return(
-        <form onSubmit={props.handleSubmit} className="text-center" action="#!">
+        <form onSubmit={props.handleSubmit} className="text-center">
+            { props.error && <div className={s.form_summary_error}>
+                {props.error}
+            </div>}
             <div className="md-form">
                 <Field component={Input}
                        placeholder="Username"
@@ -36,7 +41,7 @@ const RegistrationForm = (props) =>{
                        name={'email'}
                 />
             </div>
-            <div className="row">
+            <div className="row md_margin_top_super">
                 <div className="col">
                     <div className="md-form">
                         <Field component={Input}
@@ -45,7 +50,8 @@ const RegistrationForm = (props) =>{
                                className="form-control"
                                validate={[required]}
                                name={'password'}
-                        />
+                             /*  onChange={e => this.setState({ password: e.target.value })}*/ />
+             {/*           <PasswordStrengthMeter password={password} />*/}
                     </div>
                 </div>
                 <div className="col">
@@ -60,7 +66,7 @@ const RegistrationForm = (props) =>{
                     </div>
                 </div>
             </div>
-            <div className="md-form">
+            <div className="md-form md_margin_top">
                 <Field component={Input}
                        placeholder="Full name"
                        className="form-control"
@@ -68,7 +74,7 @@ const RegistrationForm = (props) =>{
                        name={'fullname'}
                 />
             </div>
-            <div className="row">
+            <div className="row md_margin_top_super">
                 <div className="col">
                     <div className="md-form">
                         <Field component={Input}
@@ -142,7 +148,7 @@ const Registration = (props) => {
                     </div>
 
                 </div>
-                <div className="wave"></div>
+                <div className="wave"/>
             </div>
         </div>
     )

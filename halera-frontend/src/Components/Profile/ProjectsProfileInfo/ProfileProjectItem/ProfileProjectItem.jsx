@@ -6,13 +6,13 @@ import projectImage from "../../../../common/Images/projectIcon.jpg";
 
 const ProfileProjectItem = (props) => {
     let getAvatar = () =>{
-        if(props.projectImage === ''){
+        if(props.image_url === ''){
             return projectImage
         } else {
-            return props.projectImage
+            return props.image_url
         }
     };
-    let path = '/project/' + props.projectID;
+    let path = '/project/' + props.id;
     (function ($) {
 
         $(document).ready(function () {
@@ -37,7 +37,7 @@ const ProfileProjectItem = (props) => {
 
                 <div className="card-body">
 
-                    <h4 className="card-title"><NavLink to={path}>{props.projectName}</NavLink></h4>
+                    <h4 className="card-title"><NavLink to={path}>{props.name}</NavLink></h4>
                 </div>
 
             </div>
