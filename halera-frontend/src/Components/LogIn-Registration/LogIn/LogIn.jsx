@@ -73,7 +73,6 @@ const LoginReduxForm = compose(
     connect(mapStateToProps, {UpdateUserName})
 )(LoginForm);
 
-
 const LogIn = (props) => {
     const onSubmit = (formData) => {
         props.loginAC(formData.username, formData.password)

@@ -1,25 +1,18 @@
 import * as axios from "axios";
 import {global_url} from "../common/GlobalScripts";
 
-const instance = axios.create({
-    baseURL: global_url,
-    headers: {
-        Accept: 'application/json, text/plain, */*',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-});
-
-
 export const userAPI = {
     me(username) {
-        return instance.get(`/user/${username}`)
+        return axios.get(global_url + `user/${username}`,
+            { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`} }
+        )
     },
     settings() {
-        return instance.get('/settings')
+        return axios.get(global_url + 'settings',
+            { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`} })
     },
     changeSettings(payload){
-        console.log(payload);
-        return instance.patch("/settings",
+        return axios.patch(global_url + "settings",
             {
             fullname: payload.fullname,
             age: payload.age,
@@ -27,9 +20,10 @@ export const userAPI = {
             position: payload.position,
             location: `${payload.country}/${payload.city}`,
             profile_image_url:payload.profile_image_url,
-            data:payload.data,
+            about_me:payload.about_me,
             company:payload.company
-        })
+        },
+            { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`} })
     }
 };
 
@@ -42,8 +36,8 @@ export const authAPI = {
         })
     },
     registration(username, password, fullname, email, country, city) {
-        return axios.post(global_url + `registration`, {
-            username: username,
+        return axios.post(global_url + `registration`,
+            {username: username,
             password: password,
             fullname: fullname,
             email: email,
@@ -52,6 +46,7 @@ export const authAPI = {
         })
     },
     logout() {
-        return instance.delete(`/logout`)
+        return axios.delete(global_url + `logout`,
+            { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`}} );
     }
 };

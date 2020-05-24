@@ -50,7 +50,7 @@ const Navbar = (props) => {
 
 
 
-                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div className="modal-dialog modal-dialog-centered" role="document">
 
 
                                     <div className="modal-content">

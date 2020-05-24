@@ -5,7 +5,6 @@ const SET_TOKEN = 'SET_TOKEN';
 const UPDATE_USER_NAME = 'UPDATE_USER_NAME';
 
 let initialState = {
-    token: null,
     username: '',
     isAuth: false
 };
@@ -29,35 +28,29 @@ const authReducer = (state = initialState, action) => {
 };
 
 
-export const setToken = (token, isAuth) => ({type: SET_TOKEN, token, isAuth});
+export const setToken = ( isAuth) => ({type: SET_TOKEN, isAuth});
 export const UpdateUserName = (username) => ({type: UPDATE_USER_NAME, username});
 
-export const registrationAC = (username,password,fullname,email,country,city) => (dispatch) => {
-    authAPI.registration(username,password,fullname,email,country,city)
-        .then(response =>{
-            localStorage.setItem('token', response.data.token);
-            dispatch(setToken(response.data.token, true));
-            console.log(response);
-        })
+export const registrationAC = (username, password, fullname, email, country, city) => async (dispatch) => {
+    const response = await authAPI.registration(username, password, fullname, email, country, city);
+    sessionStorage.setItem('token', response.data.token);
+    dispatch(setToken(response.data.token, true));
 };
 
-export const loginAC = (username, password) => (dispatch) => {
-      authAPI.login(username, password)
-        .then(response => {
-            if(response.data.token) {
-                localStorage.setItem('token', response.data.token);
-                dispatch(setToken(response.data.token, true));
-            } else {
-                let action = stopSubmit('login', {_error: 'Incorrect Username or Password'});
-                dispatch(action);
-            }
-            console.log(response);
-        });
+export const loginAC = (username, password) => async (dispatch) => {
+    const response = await authAPI.login(username, password);
+    if (response.data.token) {
+        sessionStorage.setItem('token', response.data.token);
+        dispatch(setToken(true));
+    } else {
+        let action = stopSubmit('login', {_error: 'Incorrect Username or Password'});
+        dispatch(action);
+    }
+    console.log(response);
 };
 
-export const logout = () => (dispatch) => {
-    authAPI.logout()
-        .then(dispatch(setToken(null, false)));
+export const logout = () => async (dispatch) => {
+    authAPI.logout().then(dispatch(setToken(null, false)))
 };
 
 

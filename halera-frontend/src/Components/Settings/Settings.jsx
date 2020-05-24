@@ -93,7 +93,7 @@ const SettingsFrom = (props) => {
                 <hr/>
                 <h5>Set status</h5>
                 <Field component={Input}
-                       name={'data'}
+                       name={'about_me'}
                        className="form-control"
                        placeholder={'how are u?'}
                 />

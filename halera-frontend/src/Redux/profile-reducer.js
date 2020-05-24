@@ -50,6 +50,7 @@ export const setUserData = (username) => (dispatch) => {
     return userAPI.me(username)
         .then(response => {
             dispatch(getUser(response.data));
+            console.log(response)
         });
 };
 

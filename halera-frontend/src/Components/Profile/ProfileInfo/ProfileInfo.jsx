@@ -19,58 +19,58 @@ const ProfileInfo = (props) => {
     let path = '/user/' + props.profileData.username;
 
     let rateImage = () => {
-        if (props.profileData.rate === 1) {
+        if (props.profileData.rating === 1) {
             return ratelvl1;
-        } else if (props.profileData.rate === 2) {
+        } else if (props.profileData.rating === 2) {
             return ratelvl2;
-        } else if (props.profileData.rate === 3) {
+        } else if (props.profileData.rating === 3) {
             return ratelvl3;
-        } else if (props.profileData.rate === 4) {
+        } else if (props.profileData.rating === 4) {
             return ratelvl4;
-        } else if (props.profileData.rate === 5) {
+        } else if (props.profileData.rating === 5) {
             return ratelvl5;
-        } else if (props.profileData.rate === 6) {
+        } else if (props.profileData.rating === 6) {
             return ratelvl6;
-        } else if (props.profileData.rate === 7) {
+        } else if (props.profileData.rating === 7) {
             return ratelvl7;
-        } else if (props.profileData.rate === 8) {
+        } else if (props.profileData.rating === 8) {
             return ratelvl8;
-        } else if (props.profileData.rate === 9) {
+        } else if (props.profileData.rating === 9) {
             return ratelvl9;
-        } else if (props.profileData.rate === 10) {
+        } else if (props.profileData.rating === 10) {
             return ratelvl10;
         }
     };
 
     let rateTitle = () => {
-        if (props.profileData.rate === 1) {
+        if (props.profileData.rating === 1) {
             return 'Reputation: 1 lvl';
-        } else if (props.profileData.rate === 2) {
+        } else if (props.profileData.rating === 2) {
             return 'Reputation: 2 lvl';
-        } else if (props.profileData.rate === 3) {
+        } else if (props.profileData.rating === 3) {
             return 'Reputation: 3 lvl';
-        } else if (props.profileData.rate === 4) {
+        } else if (props.profileData.rating === 4) {
             return 'Reputation: 4 lvl';
-        } else if (props.profileData.rate === 5) {
+        } else if (props.profileData.rating === 5) {
             return 'Reputation: 5 lvl';
-        } else if (props.profileData.rate === 6) {
+        } else if (props.profileData.rating === 6) {
             return 'Reputation: 6 lvl';
-        } else if (props.profileData.rate === 7) {
+        } else if (props.profileData.rating === 7) {
             return 'Reputation: 7 lvl';
-        } else if (props.profileData.rate === 8) {
+        } else if (props.profileData.rating === 8) {
             return 'Reputation: 8 lvl';
-        } else if (props.profileData.rate === 9) {
+        } else if (props.profileData.rating === 9) {
             return 'Reputation: 9 lvl';
-        } else if (props.profileData.rate === 10) {
+        } else if (props.profileData.rating === 10) {
             return 'Reputation: 10 lvl';
         }
     };
 
     let getAvatar = () => {
-        if (props.profileData.profileImage === '') {
+        if (props.profileData.profile_image_url === '') {
             return avatarImage
         } else {
-            return props.profileData.profileImage
+            return props.profileData.profile_image_url
         }
     };
     let work = () => {
@@ -90,7 +90,7 @@ const ProfileInfo = (props) => {
         }
     };
     let status = () => {
-        if (props.profileData.position === '') {
+        if (props.profileData.about_me === '') {
             return ("d-none")
         }
     };
@@ -128,7 +128,7 @@ const ProfileInfo = (props) => {
                                     <div className="profileInfo_user"><NavLink to={path}>
                                         <h2>{props.profileData.username}</h2></NavLink></div>
                                     <hr/>
-                                    {/*<p>Status: {props.profileData.status}</p>*/}
+                                    <div className={status()}><p>Status: {props.profileData.about_me}</p></div>
                                     <p>Full name: {props.profileData.fullname}</p>
                                     <p>Location: {[props.profileData.location.country, ' ', props.profileData.location.city]}</p>
                                     <div className={age()}><p>Age: {props.profileData.age}</p></div>
@@ -221,7 +221,7 @@ const ProfileInfo = (props) => {
                         </div>
                         <div className="col-3 text-center">
                             <img alt={'qrcode'} className="avatar-img qr_code_img z-depth-2"
-                                 src={props.profileData.qrcode}/>
+                                 src={props.profileData.qr_code_url}/>
                             <div className="align-content-center">
                                 {props.profileData.followed
                                     ? <button className="btn btn-outline-danger btn-rounded btn-follow" onClick={() => {
