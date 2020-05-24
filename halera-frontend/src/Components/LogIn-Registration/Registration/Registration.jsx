@@ -7,7 +7,7 @@ import {connect} from "react-redux";
 import {registrationAC, UpdateUserName} from "../../../Redux/auth-reducer";
 import {Input} from "../../../common/FormControls/FormControls";
 import {maxLengthCreator, required} from "../../../Utils/Validators/validators";
-import PasswordStrengthMeter from './PasswordStrengthMeter';
+import s from "../../../common/FormControls/FormControl.module.css";
 const maxLength20 = maxLengthCreator(20);
 
 const RegistrationForm = (props) =>{
@@ -19,6 +19,9 @@ const RegistrationForm = (props) =>{
 
     return(
         <form onSubmit={props.handleSubmit} className="text-center">
+            { props.error && <div className={s.form_summary_error}>
+                {props.error}
+            </div>}
             <div className="md-form">
                 <Field component={Input}
                        placeholder="Username"

@@ -12,10 +12,10 @@ import $ from 'jquery'
 
 const SettingsFrom = (props) => {
     let getAvatar = () => {
-        if (props.profileData.profileImage === '') {
+        if (props.profileData.profile_image_url === '') {
             return avatarImage
         } else {
-            return props.profileData.profileImage
+            return props.profileData.profile_image_url
         }
     };
 
@@ -183,6 +183,7 @@ const Settings = (props) => {
         return <Redirect to={'/user'}/>
 
     }
+    if(props.isAuth === false) return <Redirect to={'/login'}/>;
 
     return (<div className="settings_page_bg heavy-rain-gradient">
             <div className="container settings_cont card revealator-fade revealator-delay1 revealator-once">

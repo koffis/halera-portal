@@ -14,7 +14,6 @@ import {isMobile} from 'react-device-detect'
 /*import './common/globalDark.component.scss'*/
 /*Components*/
 import MainPage from "./Components/MainPage/MainPage";
-import Test from "./Components/TestPage/Test";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import Team from "./Components/Team/Team";
 import LogIn from "./Components/LogIn-Registration/LogIn/LogIn";
@@ -26,6 +25,8 @@ import ProjectPageAllMembersContainer from "./Components/ProjectPage/PojectPageM
 import SettingsContainer from "./Components/Settings/SettingsContainer";
 import {check_mobile_enable, maintenance_mode_enable} from './Config';
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
+import TestsPageContainer from "./Components/TestPage/ContainerTestsPage";
+import TestTechnologiesContainer from "./Components/TestPage/TestTechnologies/TestTechnologiesContainer";
 
 const App = (props) => {
 
@@ -46,7 +47,8 @@ const App = (props) => {
 
                 <div className="content">
                         <Route exact path='/' render={() => <MainPage/>}/>
-                        <Route path='/test' render={() => <Test/>}/>
+                        <Route path='/units' render={() => <TestsPageContainer/>}/>
+                        <Route path='/tests' render={() => <TestTechnologiesContainer/>}/>
                         <Route path='/user' render={() => <ProfileContainer/>}/>
                         <Route path='/team' render={() => <Team/>}/>
                         <Route path='/projects' render={() => <ProjectsContainer/>}/>

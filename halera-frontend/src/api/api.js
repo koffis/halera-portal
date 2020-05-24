@@ -4,7 +4,7 @@ import {global_url} from "../common/GlobalScripts";
 export const userAPI = {
     me(username) {
         return axios.get(global_url + `user/${username}`,
-            { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`} }
+            { headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`} }
         )
     },
     settings() {
@@ -48,5 +48,15 @@ export const authAPI = {
     logout() {
         return axios.delete(global_url + `logout`,
             { headers: {"Authorization" : `Bearer ${sessionStorage.getItem('token')}`}} );
+    }
+};
+
+export const testsAPI = {
+    units(){
+        return axios.get(global_url + 'units')
+    },
+    technoTest(unit, sub_unit){
+        return axios.get(global_url + `tests?unit=${unit}&sub_unit=${sub_unit}`,
+            { headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`} })
     }
 };

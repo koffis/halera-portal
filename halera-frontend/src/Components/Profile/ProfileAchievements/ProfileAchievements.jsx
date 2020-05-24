@@ -18,7 +18,7 @@ const ProfileAchievements = (props) => {
                         <div className="text-center">
                             <h5>
                                 <p/>
-                                <div className="error_empty_under"> You can <NavLink to={'/test'}>pass test</NavLink> to
+                                <div className="error_empty_under"> You can <NavLink to={'/units'}>pass test</NavLink> to
                                     receive any skills stats
                                 </div>
                             </h5>

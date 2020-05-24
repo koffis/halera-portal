@@ -9,5 +9,13 @@
     color: red;
     font-size: 13px;
     position: fixed;
-margin-left: -50px;
+ margin-left: -50px;
+}
+
+.form_summary_error div{
+    border: red 1px solid;
+    color: red;
+    font-size: 13px;
+    position: fixed;
+    margin-left: -50px;
 }
