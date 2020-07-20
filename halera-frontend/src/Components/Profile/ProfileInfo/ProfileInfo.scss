@@ -1,0 +1,60 @@
+
+.profileImage img {
+    width: 200px;
+}
+.profileInfo{
+    grid-column-start: 1;
+    padding: 15px;
+}
+.QRCodePlace{
+    grid-column-start: 3;
+}
+
+.QRCodePlace img{
+    width: 230px;
+    margin-left: 15px;
+}
+.container_profile_info {
+    padding-top: 140px;
+}
+.container_profile_info .container {
+    padding: 30px;
+}
+.ratePlace {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 130px;
+}
+.ratePlace img {
+ max-height: 70px;
+    max-width: 70px;
+    padding: 5px;
+}
+.fa_settings {
+  font-size: 40px;
+}
+.write_message {
+  margin-top: 30px;
+}
+.btn_settings {
+  position: absolute;
+  margin-left: 144px;
+  margin-top: 8px;
+}
+.qr_code_img {
+  height: 210px;
+  width: 210px;
+}
+.btn-follow {
+  margin-top: 25px;
+}
+.btn-md {
+margin: 3.5px;
+}
+.profileInfo_user .status {
+  padding-top: -40px;
+
+}
+
+
+

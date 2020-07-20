@@ -1,0 +1,23 @@
+.searchPage{
+    display: grid;
+    grid-template-areas:
+            's s'
+            'p r';
+}
+
+.searchInput{
+    margin-top: 50px;
+    grid-area: s;
+}
+
+.searchInput input{
+    width: 100%
+}
+
+.searchParameters{
+    grid-area: p;
+}
+
+.searchResultPlace{
+    grid-area: r;
+}

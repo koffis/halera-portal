@@ -1,0 +1,181 @@
+@media screen and (max-width: 768px) {
+  .fixedNavBarItem {
+
+    top: 10px;
+    right: 10px;
+  }
+  .logo {
+    position: absolute;
+    width: 67%;
+    text-align: center;
+    margin-left: 15%;
+  }
+  .mainText {
+    margin-top: 100px !important;
+  }
+  .containerprj {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
+
+  .mainBanner {
+    background-position: center !important;
+  }
+  .subText {
+    margin-top: 200px !important;
+    margin-left: 65px !important;
+    transform: translate(-50%, -50%)
+  }
+  .mainBanner .mainText p {
+    font-size: 30px;
+  }
+  .row {
+    flex-wrap: nowrap !important;
+  }
+  .qr_code_img {
+    overflow: hidden;
+  }
+  .nav-item a {
+    margin-left: 0 !important;
+  }
+  .logo img {
+    width: 160px;
+    height: auto;
+    margin-top: -10px !important;
+    padding-left: 0;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+
+  }
+  .loginPlace {
+    margin-top: 100px;
+    max-width: 500px;
+    z-index: 9999;
+  }
+  .navbar-collapse {
+    position: absolute;
+    width: 90%;
+    margin-top: 180px;
+    margin-right: 10px!important;
+    margin-left: 5px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  .logo_change img {
+    width: 130px;
+    margin-bottom: 15px !important;
+
+  }
+  #data_server {
+    padding-top: 8px;
+    margin-top: -5px;
+    height: 40px;
+    width: 100%;
+    background-color: white;
+
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  line-height: 70px;
+  text-align: center;
+  z-index: 100;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.navbar-nav:after {
+  background-color: white;
+}
+
+.affix {
+  height: 60px;
+  background-color: #f3f3f3;
+}
+
+.nav-link {
+  color: black !important;
+  font-size: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #000000;
+  line-height: 90px;
+  font-size: 1.5rem;
+  margin-left: 40px;
+
+}
+
+.nav-item a.activeLink {
+  color: #007bff;
+  pointer-events: none;
+
+}
+
+.nav-item a.activeLink:hover {
+  color: #007bff;
+  pointer-events: none;
+
+}
+
+.nav-item a:hover {
+  color: darkgray;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.nav-link {
+  background-color: rgba(255, 255, 255, 0.0) !important;
+
+}
+
+.nav_icon, navbar-toggler {
+  color: black;
+  font-size: 40px;
+  position: fixed;
+}
+
+.nav_icon {
+  margin-top: -20px;
+}
+
+.nav_icon_user {
+  font-size: 20px;
+  margin-top: -20px;
+  margin-right: 20px;
+}
+
+.show.white_bg {
+  background-color: white;
+
+}
+
+.sign_out {
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+.logo img {
+  width: 130px;
+  height: auto;
+  margin-top: 25px !important;
+  padding-left: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+
+
+}
+
+.modal-backdrop {
+  z-index: 1;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+a {
+  cursor: pointer !important;
+}

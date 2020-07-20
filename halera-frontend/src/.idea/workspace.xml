@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f0c2044-0e2a-4fde-befa-2d7f9209ba56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProfileAchievements/ProfileAchievements.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProfileAchievements/ProfileAchievements.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProfileAchievements/ProfileAchievementsItem/ProfileAchievementItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProfileAchievements/ProfileAchievementsItem/ProfileAchievementItem.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProjectsProfileInfo/ProfileProjectItem/ProfileProjectItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProjectsProfileInfo/ProfileProjectItem/ProfileProjectItem.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProjectsProfileInfo/ProjectsProfileInfo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Profile/ProjectsProfileInfo/ProjectsProfileInfo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Settings/Settings.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/Settings/Settings.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Redux/profile-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/Images/achiev.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MainPage/MainPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MainPage/MainPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Navbar/Navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Navbar/Navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Profile/ProfileInfo/ProfileInfo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Profile/ProfileInfo/ProfileInfo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/Redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1aaW7YU6yaGWKh1zacyFOHisUHX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f0c2044-0e2a-4fde-befa-2d7f9209ba56" name="Default Changelist" comment="" />
+      <created>1586974017294</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586974017294</updated>
+      <workItem from="1586974019374" duration="42000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

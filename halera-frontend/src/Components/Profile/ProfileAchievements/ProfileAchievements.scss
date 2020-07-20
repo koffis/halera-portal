@@ -1,0 +1,14 @@
+.profileAchievements{
+    display: flex;
+    justify-content: space-around;
+    grid-row-start: 1;
+    padding: 50px;
+    padding-bottom: 100px;
+ }
+
+.profileAchievements img{
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
+}
+

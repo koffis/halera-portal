@@ -1,0 +1,68 @@
+.registerPlace {
+  max-width: 600px;
+  margin-top: 100px;
+  z-index: 9999;
+}
+.regbackgr {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+.regbackgr .wave {
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  bottom: 0;
+  left: 0;
+  background-image: url("./wave.png");
+  z-index: 100;
+  animation: animatewaves 10s linear infinite;
+}
+.regbackgr .wave:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  background-image: url("./wave.png");
+  z-index: 100;
+  opacity: 0.7;
+  animation: animatewaves-reverse 10s linear infinite;
+
+}
+.regbackgr .wave:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  background-image: url("./wave.png");
+  z-index: 100;
+  opacity: 0.9;
+  animation-delay: -5s;
+  animation: animatewaves 20s linear infinite;
+
+}
+@keyframes animatewaves {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 1360px;
+  }
+}
+@keyframes animatewaves-reverse {
+  0% {
+    background-position: 1360px;
+  }
+
+  100% {
+    background-position: 0;
+  }
+}
+.md_margin_top{
+
+}
+.md_margin_top_super{
+  margin-top: -20px;
+}

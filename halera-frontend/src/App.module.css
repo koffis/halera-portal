@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb {
 .content{
     grid-area: con;
 }
-.text_mobile {
+.textmobile {
     background: white;
     position: absolute;
     top: 50%;
@@ -38,16 +38,4 @@ body::-webkit-scrollbar-thumb {
     transform: translate(-50%, -50%);
     font-family: Tahoma;
     font-size: 20px;
-}
-.alert_connect  {
-    z-index: 10000;
-    position: absolute;
-    margin-top: -300px;
-}
-.text_mobile_center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
 }
